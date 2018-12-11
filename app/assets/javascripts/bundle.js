@@ -136,9 +136,7 @@ var login = function login(user) {
   return $.ajax({
     method: "POST",
     url: "api/session",
-    data: {
-      user: user
-    }
+    data: user
   });
 };
 var logout = function logout() {

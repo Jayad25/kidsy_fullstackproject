@@ -4,6 +4,7 @@ class Api::SessionsController < ApplicationController
             params[:user][:username],params[:user][:password])
             if @user
                 login(@user)
+                # debugger
                 render "api/users/show"
             else
                 render json:["invalid username/password"],status:101
@@ -11,7 +12,9 @@ class Api::SessionsController < ApplicationController
     end
     
     def destroy
+        
         @user = current_user
+        debugger
         if @user
             logout
             render "api/users/show"
