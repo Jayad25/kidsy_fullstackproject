@@ -25,12 +25,13 @@ import { Link } from 'react-router-dom';
 
 
 
-const Greeting = ({ currentUser, logout }) => {
+const Greeting = ({ currentUser, logout,demoLogin }) => {
   const sessionLinks = () => (
-        <div>
-      <Link to="/login">Login</Link>
-     
-      <Link to="/signup">Sign up!</Link>
+        <div className="headerright">
+        <Link to="/signup" className="login">Register</Link>
+      <Link to="/login" className="login">Login</Link>
+      <button onClick={() => demoLogin()} className="login">Demo User</button>
+      <i className="fas fa-shopping-cart"></i>
     </div>
   )
   const personalGreeting = () => (

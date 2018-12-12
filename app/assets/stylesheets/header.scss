@@ -1,0 +1,48 @@
+
+.header{
+    display:flex;
+    justify-content: space-between;
+    // align-items: center;
+    margin-top: 2%;
+    position: relative;
+    color:#f45800;
+}
+.headerright{
+    display: flex;
+    align-items: flex-end;
+    justify-content:right;
+    position: absolute;
+    float: right;
+    right: 13px;
+    text-decoration: none;
+}
+.logo{
+    display: flex;
+    position: absolute;
+    align-items: left;
+    font-family: 'Roboto', sans-serif;
+    color: #f45800;
+    font-size: 30px;
+}
+.login{
+    margin-right: 10px;
+    color: #f45800;
+    text-decoration: none;
+}
+.search{
+    background-color: black;
+    color: white;
+}
+.inputSearch{
+    width: 100%;
+    top:50%;
+    padding: 6px 10px;
+    height: 34px;
+    border: 1px solid #CFCBC8;
+    background: #f9f9f8;
+    box-sizing: border-box;
+    box-shadow:  inset 0 1px 2px #E9E9E8, 0 0 0 1000px #fbfbfa inset;
+}
+.searchbar{
+    display: flex;
+}
