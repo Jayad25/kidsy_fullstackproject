@@ -1,47 +1,64 @@
-// import React from 'react';
-// import { Link } from 'react-router-dom';
 
-// const Greeting = ({currentUser,logout}) => {
-//     const sessionLinks = () => (
-//         <div>
-//         <Link to ={"/login"}>Login</Link>
-//         <Link to ={"/signup"}>Register</Link>
-//         </div>
-//     )
-//     const personalGreeting = () => (
-//         <div>
-//             <h2>{currentUser.username}</h2>
-//             <button onClick={() => logout}></button>
-//         </div>
-//     )
-//     return currentUser ? personalGreeting() :sessionLinks()
-
-// }
-
-// export default Greeting
 
 import React from 'react';
 import { Link } from 'react-router-dom';
+import SearchForm from '../search'
+import CategorieForm from '../categories'
 
 
 
-const Greeting = ({ currentUser, logout,demoLogin }) => {
-  const sessionLinks = () => (
+class Greeting extends React.Component{
+  constructor(props){
+    super(props)
+    this.personalGreeting=this.personalGreeting.bind(this);
+    this.sessionLinks=this.sessionLinks.bind(this);
+    this.welcome=this.welcome.bind(this);
+    }
+//  ({ currentUser, logout,demoLogin }) => {
+  sessionLinks(){
+  return(
         <div className="headerright">
-        <Link to="/signup" className="login">Register</Link>
-      <Link to="/login" className="login"><button className="login">Sign in</button></Link>
-      <button onClick={() => demoLogin()} className="login">Demo User</button>
-      <i className="fas fa-shopping-cart"></i>
+          <Link className="sell-link" to="/" className="Register">
+          Sell on Eatsy
+        </Link>
+        <Link to="/signup" className="Register">Register</Link>
+      <Link to="/login" ><button className="login">Sign in</button></Link>
+      <button onClick={() => this.props.demoLogin()} className="login">Demo User</button>
     </div>
-  )
-  const personalGreeting = () => (
-    <div>
-      <h2 >Hi, {currentUser.username}!</h2>
-      <button  onClick={logout}>Log Out</button>
+    )
+  }
+   personalGreeting(){
+     return(
+    <div className="righit-after-signin">
+      <Link className="sell" to="/" className="Register">
+          Sell on Eatsy
+        </Link>
+      <h2 className="username">Hi, {this.props.currentUser.username}!</h2>
+      <button className="logout-button" onClick={this.props.logout}><div className="logout-div">Log out</div></button>
     </div>
   );
+ }
 
-  return currentUser ? personalGreeting() : sessionLinks()
+ welcome(){
+  return this.props.currentUser ? this.personalGreeting() : this.sessionLinks()
+ }
+ render(){
+   return(<div className="NavBarTotal">
+   <nav className="NavBar"> 
+     <div className="NavBarLeft">
+     <Link to="/" className="header-link">
+      <h1 className="logo">Kidsy</h1>
+     </Link>
+     <SearchForm />
+     </div>
+     
+     <div className="NavbarRight"> 
+     {this.welcome()}
+     </div>
+     </nav>
+     <CategorieForm />
+   </div>
+   )}
 };
 
 
