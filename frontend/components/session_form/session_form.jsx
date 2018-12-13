@@ -17,8 +17,8 @@ class SessionForm extends React.Component{
         
         e.preventDefault();
         const user = {user:Object.assign({}, this.state)};
-        console.log("sdmvnkjsbv"+{user})
-        this.props.processForm(user);
+        // console.log("sdmvnkjsbv"+{user})
+        this.props.processForm(user).then(this.props.closeModal);
       }
     
     update(field) {
@@ -43,19 +43,21 @@ class SessionForm extends React.Component{
         return (
             <div className="login-form-container">
             <form onSubmit={this.handleSubmit} className="login-form-box">
-             
               
               {this.renderErrors()}
+              {/* Please {this.props.formType} or {this.props.otherForm} */}
+              <div onClick={this.props.closeModal} className="close-x">X</div>
               <div className="login-form">
                 <br/>
-                <label>Email:
+                <label className="sesion-labels">Email:
                   <input type="email"
                     value={this.state.email}
                     onChange={this.update('email')}
                     className="login-input"
                   />
                 </label>
-                <label>Username:
+                <label className="sesion-labels">Username:
+
                   <input type="text"
                     value={this.state.username}
                     onChange={this.update('username')}
@@ -63,7 +65,7 @@ class SessionForm extends React.Component{
                   />
                 </label>
                 <br/>
-                <label>Password:
+                <label className="sesion-labels">Password:
                   <input type="password"
                     value={this.state.password}
                     onChange={this.update('password')}

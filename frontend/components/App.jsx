@@ -7,6 +7,7 @@ import SearchForm from './search';
 
 import {AuthRoute} from '../util/route_util';
 import CenterDisplay from './center_display';
+import Modal from './modal/modal'
 
 
 import {
@@ -17,49 +18,12 @@ import {
     HashRouter
   } from 'react-router-dom';
 
-// const App = () => {
-//   return (< div>
-//     <div className="header">
-//       <Link to="/">
-//         <div className="logo">
-//           Kidsy
-//         </div>
-//       </Link>
-//       <SearchForm />
-//       <div className="greeting">
-//         <GreetingContainer />
-//       </div>
-//       <div>
-//         <Route exact path="/" component={GreetingContainer}/>
-//         <AuthRoute path="/login" component={LoginFormContainer} />
-//         <AuthRoute path="/signup" component={SignupFormContainer} />
-//       </div>
-//     </div>
-//     <div className="categories">
-//     <hr></hr>
-//       <ul>
-//         <li>Gifts</li>
-//         <li>Jewelry&Accessoried</li>
-//         <li>Clothing & shoes</li>
-//         <li>Home & living</li>
-//         <li>Party</li>
-//         <li>Toys</li>
-//         <li>food</li>
-//       </ul>
-//     </div>
-//     <hr></hr>
-//   </div>
-// )
-// }
-
 const App = () => {
   return (<div className="page">
     
-  <Switch>
-    <Route exact path="/" component={GreetingContainer}/>
-    <AuthRoute path="/login" component={LoginFormContainer} />
- <AuthRoute path="/signup" component={SignupFormContainer} />
-  </Switch>
+    <Modal />
+    <GreetingContainer />
+    {/* <Route exact path="/" component={GreetingContainer}/> */}
   <div className="search-head-title-wrap">
   <h1 className="center-header">If it’s handcrafted, vintage, custom, or unique, it’s on Kidsy.</h1>
   </div>

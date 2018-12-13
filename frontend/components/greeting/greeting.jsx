@@ -17,14 +17,15 @@ class Greeting extends React.Component{
 //  ({ currentUser, logout,demoLogin }) => {
   sessionLinks(){
   return(
-        <div className="headerright">
+    
+        <nav className="headerright">
           <Link className="sell-link" to="/" className="Register">
           Sell on Eatsy
         </Link>
-        <Link to="/signup" className="Register">Register</Link>
-      <Link to="/login" ><button className="login">Sign in</button></Link>
+        <button onClick={()=>this.props.openModal('signup')} className="Register">Register</button>
+      <button onClick={()=>this.props.openModal('login')} className="login">sign in</button>
       <button onClick={() => this.props.demoLogin()} className="login">Demo User</button>
-    </div>
+    </nav>
     )
   }
    personalGreeting(){
