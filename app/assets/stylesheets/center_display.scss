@@ -1,0 +1,29 @@
+
+  //center display
+  .search-head-title-wrap{
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+    max-width: 45%;
+    box-sizing: border-box;
+  }
+  // .center-display {
+  //   display: flex;
+  //   justify-content: center;
+  //   margin: 40px 55px;
+  //   margin-top: 20px;
+  // }
+  .center-header{
+    padding-top: 30px;
+    padding-bottom: 12px;
+    padding-left: 12px;
+    padding-right: 12px;
+    text-align: center;
+    font-size:32px;
+    line-height: 36px;
+    font-family: "Graphik Webfont",-apple-system,BlinkMacSystemFont,"Droid Sans","Segoe UI","Helvetica",Arial,sans-serif;
+    font-weight: 300;
+    letter-spacing: 2px;
+
+    
+  }

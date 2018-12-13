@@ -7,7 +7,8 @@
   width: 100%;
 //   display: flex;
 //   justify-content: space-between;
-  min-width: 1034px;
+  min-width: 1400px;
+  font-family: "Graphik Webfont",-apple-system,BlinkMacSystemFont,"Roboto","Droid Sans","Segoe UI","Helvetica",Arial,sans-serif;
 }
 
 .NavBar {
@@ -20,9 +21,9 @@
   padding-bottom: 20px;
 }
 
-.NavbarLeft {
+.NavBarLeft {
   display: flex;
-  align-items: center;
+//   align-items: center;
   width: 50%;
   min-width: 555px;
 }
@@ -31,8 +32,9 @@
   display: flex;
   justify-content: flex-end;
   align-items: center;
-  min-height: 42px;
+  min-height: 72px;
   font-size: 16px;
+  font-family: inherit;
 }
 
 .right-after-signin {
@@ -46,14 +48,8 @@
   padding-right: 20px;
   font-size: 35px;
   color: #f56416;
-font-family: 'Open Sans', sans-serif;
+  font-family: inherit;
 }
-
-// .sessionbuttons .header-group{
-//   display: flex;
-//   justify-content: space-between;
-//   width: 100px;
-// }
 
 .Register, .sell {
   font-size: 18px;
@@ -78,6 +74,7 @@ font-family: 'Open Sans', sans-serif;
 
 .login {
   font-size: 15px;
+  font-family: inherit;
   color: #f56416;
   padding-left: 10px;
   padding-right: 10px;
@@ -91,6 +88,7 @@ font-family: 'Open Sans', sans-serif;
 .login:hover{
   background-color: #f56416;
   cursor: pointer;
+  color: white
 }
 
 .login:focus, .logout:focus {
@@ -118,6 +116,7 @@ font-family: 'Open Sans', sans-serif;
   color: #f56416;
   margin-top: 2px;
   font-size: 14px;
+  font-family: inherit;
   text-decoration: none;
 }
 
@@ -125,15 +124,18 @@ font-family: 'Open Sans', sans-serif;
   color: #e5e4e2;
   margin-top: 3px;
   font-size: 14px;
+  font-family: inherit;
   text-decoration: none;
 }
 
 
 .search-form {
+  padding-top: 5px;
   .inputSearch {
     padding-left: 7px;
-    height: 26px;
+    height: 28px;
     font-size: 15px;
+    font-family: inherit;
     width: 350px;
     border: 1px solid #e5e4e2;
     border-top-left-radius: 5px;
@@ -150,8 +152,9 @@ font-family: 'Open Sans', sans-serif;
     padding-top: 3px;
     border: 1px solid #f56416;
     padding-bottom: 3px;
-    height: 30px;
+    height: 32px;
     font-size: 15px;
+    font-family: inherit;
     background-color: #f56416;
     color: white;
     width: 80px;
@@ -173,12 +176,12 @@ font-family: 'Open Sans', sans-serif;
 .category-div {
   width: 100%;
   border-top: 1px solid #e5e4e2;
+  font-family: inherit;
 }
-
 .nav-category {
     width: 85%;
     margin: 0 auto;
-    padding-top: 7px;
+    padding-top: 12px;
     padding-bottom: 5px;
     display: flex;
     justify-content: space-between;

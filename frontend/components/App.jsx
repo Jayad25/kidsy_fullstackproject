@@ -54,13 +54,16 @@ import {
 
 const App = () => {
   return (<div>
-    {/* <CenterDisplay /> */}
+    
   <Switch>
     <Route exact path="/" component={GreetingContainer}/>
     <AuthRoute path="/login" component={LoginFormContainer} />
  <AuthRoute path="/signup" component={SignupFormContainer} />
   </Switch>
- 
+  <div className="search-head-title-wrap">
+  <h1 className="center-header">If it’s handcrafted, vintage, custom, or unique, it’s on Kidsy.</h1>
+  </div>
+  <CenterDisplay />
   </div>
   )
 }
