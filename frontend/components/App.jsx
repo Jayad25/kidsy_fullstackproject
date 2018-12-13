@@ -20,23 +20,19 @@ const App = () => (
   <div>
     <div className="header">
       <Link to="/">
-      <div className="logo">
-        Kidsy
-      </div>
+        <div className="logo">
+          Kidsy
+        </div>
       </Link>
       <SearchForm />
       <div className="greeting">
         <GreetingContainer />
       </div>
-     
-        <div>
-          <AuthRoute path="/login" component={LoginFormContainer} />
-          <AuthRoute path="/signup" component={SignupFormContainer} />
-       
+      <div>
+        <AuthRoute path="/login" component={LoginFormContainer} />
+        <AuthRoute path="/signup" component={SignupFormContainer} />
       </div>
-      
-  
-      </div>
+    </div>
   </div>
 )
 

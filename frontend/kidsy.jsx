@@ -5,8 +5,8 @@ import configureStore from './store/store'
 import Root from './components/root'
 
 document.addEventListener("DOMContentLoaded",()=>{
-    // window.login=login
-    // window.signup=signup
+    window.login=login
+    window.signup=signup
     window.logout=logout
     const root = document.getElementById("root");
     let store;
@@ -22,7 +22,7 @@ document.addEventListener("DOMContentLoaded",()=>{
         store=configureStore();
     }
         
-    // window.getState = store.getState
-    // window.dispatch=store.dispatch
+    window.getState = store.getState
+    window.dispatch=store.dispatch
     ReactDOM.render(<Root store={store}/>,root)
 })
