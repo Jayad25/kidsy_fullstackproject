@@ -332,7 +332,7 @@ function _inherits(subClass, superClass) { if (typeof superClass !== "function" 
 function _setPrototypeOf(o, p) { _setPrototypeOf = Object.setPrototypeOf || function _setPrototypeOf(o, p) { o.__proto__ = p; return o; }; return _setPrototypeOf(o, p); }
 
 
-
+ // import "../../app/assets/images/"
 
 var CenterDisplay =
 /*#__PURE__*/
@@ -348,7 +348,25 @@ function (_React$Component) {
   _createClass(CenterDisplay, [{
     key: "render",
     value: function render() {
-      return react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", null);
+      return react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
+        className: "center-advertisement"
+      }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("a", {
+        href: "/"
+      }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
+        className: "left"
+      }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
+        className: "inner-left"
+      }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("h2", {
+        className: "top"
+      }, "Toys"), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("h2", {
+        className: "middle"
+      }, "Toys are put on this Earth to be played with by a child"), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("h3", {
+        className: "bottom"
+      }, "Buy Now")), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
+        className: "inner-right"
+      }))), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
+        className: "right"
+      }));
     }
   }]);
 

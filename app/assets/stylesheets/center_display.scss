@@ -7,12 +7,6 @@
     max-width: 45%;
     box-sizing: border-box;
   }
-  // .center-display {
-  //   display: flex;
-  //   justify-content: center;
-  //   margin: 40px 55px;
-  //   margin-top: 20px;
-  // }
   .center-header{
     padding-top: 30px;
     padding-bottom: 12px;
@@ -23,7 +17,70 @@
     line-height: 36px;
     font-family: "Graphik Webfont",-apple-system,BlinkMacSystemFont,"Droid Sans","Segoe UI","Helvetica",Arial,sans-serif;
     font-weight: 300;
-    letter-spacing: 2px;
-
-    
+    letter-spacing: 2px;  
   }
+
+  .center-advertisement{
+    max-width: 1402px;
+    padding: 18px;
+    display: flex;
+    // flex-direction: column;
+    margin: 40px 55px;
+    margin-top: 20px;
+  }
+  .left{
+    width: 211.66667%;
+    // padding-left: 18px;
+    padding-right: 18px;
+    display: flex;
+    height: 330px;
+    width: 870px;
+  }
+  .inner-left{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    background-color:#e69530;
+    color:#ea0916;
+    padding: 0px 40px;
+    text-decoration: none;
+    font-family: inherit;
+    width: 270px;
+  }
+  .top{
+    font-size: 43px;
+    color: #ea0916;
+    font-family: 'Lato', sans-serif;
+    text-decoration: none;
+    text-align: center;
+    padding-bottom: 5px;
+    font-style: italic;
+  }
+  .middle{
+    padding-top: 8px;
+    font-family: 'Open Sans', sans-serif;
+    font-size: 22px;
+
+    text-align: center;
+    font-weight: 100;
+    margin: 5px;
+    color:inherit;
+    padding-bottom: 5px;
+    font-style: italic;
+  }
+  .bottom{
+    font-size: 23px;
+    color:inherit;
+    font-family: inherit;
+    text-align: center;
+    padding-top:26px;
+    font-style: oblique;
+
+  }
+  .inner-right{
+    height: inherit;
+    width: inherit;
+    background-size: cover;
+    background-image: url("https://i.imgur.com/FctLs3w.jpg");
+  }
+
