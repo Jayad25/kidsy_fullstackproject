@@ -14,13 +14,24 @@ class CenterDisplay extends React.Component {
               <h3 className="bottom">Buy Now</h3>
             </div>
             <div className="inner-right">
-              
             </div>
           </div>
-        </a>
-        <div className="right">
+          </a>
+         
+          <a href="/">
+          <div className="right">
+              <div className="right-top-1">
+                <div className="right-top">
 
-        </div>
+                </div>
+              </div>
+              <div className="right-bottom">
+              <div className="right-bottom-text">Shop ready-to-ship-funds</div>
+              </div>
+              </div>
+            </a>
+          
+      
 
       </div>
     )
