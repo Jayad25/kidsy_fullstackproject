@@ -199,7 +199,9 @@ var App = function App() {
   }), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(_util_route_util__WEBPACK_IMPORTED_MODULE_6__["AuthRoute"], {
     path: "/signup",
     component: _session_form_signup_form_container__WEBPACK_IMPORTED_MODULE_4__["default"]
-  }))));
+  }))), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
+    className: "categories"
+  }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("hr", null), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("ul", null, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("li", null, "Gifts"), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("li", null, "Jewelry&Accessoried"), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("li", null, "Clothing & shoes"), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("li", null, "Home & living"), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("li", null, "Party"), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("li", null, "Toys"), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("li", null, "food"))), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("hr", null));
 };
 
 /* harmony default export */ __webpack_exports__["default"] = (App);
@@ -253,7 +255,9 @@ var Greeting = function Greeting(_ref) {
     }, "Register"), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(react_router_dom__WEBPACK_IMPORTED_MODULE_1__["Link"], {
       to: "/login",
       className: "login"
-    }, "Login"), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("button", {
+    }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("button", {
+      className: "login"
+    }, "Sign in")), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("button", {
       onClick: function onClick() {
         return demoLogin();
       },

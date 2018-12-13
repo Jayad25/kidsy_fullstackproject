@@ -5,7 +5,7 @@
     // align-items: center;
     margin-top: 2%;
     position: relative;
-    color:#f45800;
+   
 }
 .headerright{
     display: flex;
@@ -27,13 +27,14 @@
 }
 .login{
     margin-right: 10px;
-    color: #f45800;
     text-decoration: none;
+    font-size: 18px;
 }
 .search{
     position: relative;
     top: 0;
-    margin-top: 10px;
+    top:inherit;
+    margin-top: inherit;
     margin-bottom: 10px;
     display: block;
 }

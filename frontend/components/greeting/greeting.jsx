@@ -29,7 +29,7 @@ const Greeting = ({ currentUser, logout,demoLogin }) => {
   const sessionLinks = () => (
         <div className="headerright">
         <Link to="/signup" className="login">Register</Link>
-      <Link to="/login" className="login">Login</Link>
+      <Link to="/login" className="login"><button className="login">Sign in</button></Link>
       <button onClick={() => demoLogin()} className="login">Demo User</button>
       <i className="fas fa-shopping-cart"></i>
     </div>

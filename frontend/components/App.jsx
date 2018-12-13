@@ -33,6 +33,19 @@ const App = () => (
         <AuthRoute path="/signup" component={SignupFormContainer} />
       </div>
     </div>
+    <div className="categories">
+    <hr></hr>
+      <ul>
+        <li>Gifts</li>
+        <li>Jewelry&Accessoried</li>
+        <li>Clothing & shoes</li>
+        <li>Home & living</li>
+        <li>Party</li>
+        <li>Toys</li>
+        <li>food</li>
+      </ul>
+    </div>
+    <hr></hr>
   </div>
 )
 
