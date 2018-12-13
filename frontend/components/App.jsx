@@ -53,7 +53,7 @@ import {
 // }
 
 const App = () => {
-  return (<div>
+  return (<div className="page">
     
   <Switch>
     <Route exact path="/" component={GreetingContainer}/>
