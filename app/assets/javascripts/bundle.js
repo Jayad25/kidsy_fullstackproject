@@ -870,11 +870,25 @@ function (_React$Component) {
   }, {
     key: "renderErrors",
     value: function renderErrors() {
-      return react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("ul", null, this.props.errors.map(function (error, i) {
+      return react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("ul", {
+        className: "render-errors-ul"
+      }, this.props.errors.map(function (error, i) {
         return react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("li", {
-          key: "error-".concat(i)
+          key: "error-".concat(i),
+          className: "render-errors"
         }, error);
       }));
+    }
+  }, {
+    key: "displayHeader",
+    value: function displayHeader() {
+      var formtype = this.props.formType;
+
+      if (formtype === 'login') {
+        return "Sign in to continue";
+      } else if (formtype === 'signup') {
+        return "Create your account";
+      }
     }
   }, {
     key: "render",
@@ -884,37 +898,40 @@ function (_React$Component) {
       }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("form", {
         onSubmit: this.handleSubmit,
         className: "login-form-box"
-      }, this.renderErrors(), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
-        onClick: this.props.closeModal,
-        className: "close-x"
-      }, "X"), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
+      }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("h1", {
+        className: "text-title"
+      }, this.displayHeader()), this.renderErrors(), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
         className: "login-form"
       }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("br", null), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("label", {
         className: "sesion-labels"
-      }, "Email:", react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("input", {
+      }, "Email address:"), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("input", {
         type: "email",
         value: this.state.email,
         onChange: this.update('email'),
         className: "login-input"
-      })), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("label", {
+      }), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("label", {
         className: "sesion-labels"
-      }, "Username:", react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("input", {
+      }, "Username:"), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("input", {
         type: "text",
         value: this.state.username,
         onChange: this.update('username'),
         className: "login-input"
-      })), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("br", null), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("label", {
+      }), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("br", null), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("label", {
         className: "sesion-labels"
-      }, "Password:", react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("input", {
+      }, "Password: "), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("input", {
         type: "password",
         value: this.state.password,
         onChange: this.update('password'),
         className: "login-input"
-      })), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("br", null), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("input", {
+      }), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("br", null), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("input", {
         className: "session-submit",
         type: "submit",
         value: this.props.formType
-      }))));
+      })), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("button", {
+        className: "extra-login"
+      }, "Continue with Google"), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("button", {
+        className: "extra-login"
+      }, "Continue with Facebook")));
     }
   }]);
 

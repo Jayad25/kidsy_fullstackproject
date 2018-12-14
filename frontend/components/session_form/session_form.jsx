@@ -28,55 +28,67 @@ class SessionForm extends React.Component{
       }
       renderErrors() {
         return(
-          <ul>
+          <ul className="render-errors-ul">
             {this.props.errors.map((error, i) => (
-              <li key={`error-${i}`}>
+              <li key={`error-${i}`} className="render-errors">
                 {error}
               </li>
             ))}
           </ul>
         );
       }
+      displayHeader(){
+        let formtype = this.props.formType
+          if(formtype === 'login'){
+            return "Sign in to continue"
+          }else if(formtype === 'signup'){
+            return "Create your account"
+          }
+      }
     
     
     render(){
+      
         return (
+          
             <div className="login-form-container">
+           
             <form onSubmit={this.handleSubmit} className="login-form-box">
-              
+            <h1 className="text-title">{this.displayHeader()}</h1>
               {this.renderErrors()}
-              {/* Please {this.props.formType} or {this.props.otherForm} */}
-              <div onClick={this.props.closeModal} className="close-x">X</div>
               <div className="login-form">
                 <br/>
-                <label className="sesion-labels">Email:
+                <label className="sesion-labels">Email address:</label>
                   <input type="email"
                     value={this.state.email}
                     onChange={this.update('email')}
                     className="login-input"
                   />
-                </label>
-                <label className="sesion-labels">Username:
+                
+                <label className="sesion-labels">Username:</label>
 
                   <input type="text"
                     value={this.state.username}
                     onChange={this.update('username')}
                     className="login-input"
                   />
-                </label>
+                
                 <br/>
-                <label className="sesion-labels">Password:
+                <label className="sesion-labels">Password: </label>
                   <input type="password"
                     value={this.state.password}
                     onChange={this.update('password')}
                     className="login-input"
                   />
-                </label>
+               
                 
                 <br/>
                 <input className="session-submit" type="submit" value={this.props.formType} />
               </div>
+              <button className="extra-login">Continue with Google</button>
+              <button className="extra-login">Continue with Facebook</button>
             </form>
+            
           </div>
         );
     
