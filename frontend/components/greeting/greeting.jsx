@@ -34,7 +34,7 @@ class Greeting extends React.Component{
       <Link className="sell" to="/" className="Register">
           Sell on Eatsy
         </Link>
-      <h2 className="username">Hi, {this.props.currentUser.username}!</h2>
+      <h2 className="username">Hi, {this.props.currentUser.username.slice(0,6)}!</h2>
       <button className="logout-button" onClick={this.props.logout}><div className="logout-div">Log out</div></button>
     </div>
   );

@@ -4,6 +4,7 @@ import {login,clearErrors} from '../../actions/session_actions'
 import SessionForm from './session_form';
 import {Link} from 'react-router-dom';
 import React from 'react';
+import {openModal,closeModal} from '../../actions/modal_actions';
 
 
 const mapStateToProps = ({ errors }) => {
@@ -18,7 +19,7 @@ const mapDispatchToProps = dispatch => {
       processForm: (user) => dispatch(login(user)),
       otherForm:(
         <button onClick={() => dispatch(openModal("signup"))}>
-          Register
+          Signup
           </button>
       ),
       closeModal: () => dispatch(closeModal()),

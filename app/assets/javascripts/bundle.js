@@ -358,7 +358,9 @@ function (_React$Component) {
         className: "middle"
       }, "Toys are put on this Earth to be played with by a child"), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("h3", {
         className: "bottom"
-      }, "Buy Now")), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
+      }, "Buy Now", react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("i", {
+        class: "fas fa-greater-than"
+      }))), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
         className: "inner-right"
       }))), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("a", {
         href: "/"
@@ -372,7 +374,10 @@ function (_React$Component) {
         className: "right-bottom"
       }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
         className: "right-bottom-text"
-      }, "Shop ready-to-ship-funds")))));
+      }, "Shop ready-to-ship-funds ", react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("i", {
+        className: "fas fa-greater-than",
+        id: "right-symbol"
+      }))))));
     }
   }]);
 
@@ -477,7 +482,7 @@ function (_React$Component) {
         to: "/"
       }, "className", "Register"), "Sell on Eatsy"), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("h2", {
         className: "username"
-      }, "Hi, ", this.props.currentUser.username, "!"), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("button", {
+      }, "Hi, ", this.props.currentUser.username.slice(0, 6), "!"), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("button", {
         className: "logout-button",
         onClick: this.props.logout
       }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
@@ -758,6 +763,8 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var react_router_dom__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! react-router-dom */ "./node_modules/react-router-dom/es/index.js");
 /* harmony import */ var react__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! react */ "./node_modules/react/index.js");
 /* harmony import */ var react__WEBPACK_IMPORTED_MODULE_4___default = /*#__PURE__*/__webpack_require__.n(react__WEBPACK_IMPORTED_MODULE_4__);
+/* harmony import */ var _actions_modal_actions__WEBPACK_IMPORTED_MODULE_5__ = __webpack_require__(/*! ../../actions/modal_actions */ "./frontend/actions/modal_actions.js");
+
 
 
 
@@ -779,22 +786,12 @@ var mapDispatchToProps = function mapDispatchToProps(dispatch) {
     },
     otherForm: react__WEBPACK_IMPORTED_MODULE_4___default.a.createElement("button", {
       onClick: function onClick() {
-        return dispatch(openModal("signup"));
+        return dispatch(Object(_actions_modal_actions__WEBPACK_IMPORTED_MODULE_5__["openModal"])("signup"));
       }
-    }, "Register"),
-    closeModal: function (_closeModal) {
-      function closeModal() {
-        return _closeModal.apply(this, arguments);
-      }
-
-      closeModal.toString = function () {
-        return _closeModal.toString();
-      };
-
-      return closeModal;
-    }(function () {
-      return dispatch(closeModal());
-    }),
+    }, "Signup"),
+    closeModal: function closeModal() {
+      return dispatch(Object(_actions_modal_actions__WEBPACK_IMPORTED_MODULE_5__["closeModal"])());
+    },
     clearErrors: function clearErrors() {
       return dispatch(Object(_actions_session_actions__WEBPACK_IMPORTED_MODULE_1__["clearErrors"])());
     }
@@ -907,6 +904,33 @@ function (_React$Component) {
       this.props.clearErrors();
     }
   }, {
+    key: "displayEmail",
+    value: function displayEmail() {
+      var formtype = this.props.formType;
+
+      if (formtype === 'signup') {
+        return react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(react__WEBPACK_IMPORTED_MODULE_0___default.a.Fragment, null, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("label", {
+          className: "sesion-labels"
+        }, "Email address:"), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("input", {
+          type: "email",
+          value: this.state.email,
+          onChange: this.update('email'),
+          className: "login-input"
+        }));
+      }
+    }
+  }, {
+    key: "displayInsted",
+    value: function displayInsted(x) {
+      var formtype = this.props.formType; // let x= this.props.otherForm
+
+      if (formtype === 'signup') {
+        return "Already have an acoount?" + x + "Now";
+      } else {
+        return "New to Kidsy? ".concat(this.props.otherForm, " now");
+      }
+    }
+  }, {
     key: "render",
     value: function render() {
       return react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
@@ -918,14 +942,7 @@ function (_React$Component) {
         className: "text-title"
       }, this.displayHeader()), this.renderErrors(), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
         className: "login-form"
-      }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("br", null), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("label", {
-        className: "sesion-labels"
-      }, "Email address:"), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("input", {
-        type: "email",
-        value: this.state.email,
-        onChange: this.update('email'),
-        className: "login-input"
-      }), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("label", {
+      }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("br", null), this.displayEmail(), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("label", {
         className: "sesion-labels"
       }, "Username:"), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("input", {
         type: "text",
@@ -943,11 +960,11 @@ function (_React$Component) {
         className: "session-submit",
         type: "submit",
         value: this.props.formType
-      })), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("button", {
-        className: "extra-login"
-      }, "Continue with Google"), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("button", {
-        className: "extra-login"
-      }, "Continue with Facebook")));
+      })), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("p", {
+        className: "conditions"
+      }, "By clicking ", this.props.formType, ", you agree to Kidsy's Terms of Use and Privacy Policy. Kidsy may send you communications; you may change your preferences in your account settings. We'll never post without your permission."), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("p", {
+        className: "change-form"
+      }, this.displayInsted(this.props.otherForm))));
     }
   }]);
 

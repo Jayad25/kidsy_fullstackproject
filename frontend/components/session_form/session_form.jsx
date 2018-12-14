@@ -48,6 +48,31 @@ class SessionForm extends React.Component{
       componentWillUnmount(){
         this.props.clearErrors();
       }
+
+      displayEmail(){
+        let formtype = this.props.formType
+          if(formtype === 'signup'){
+            return (<>
+              <label className="sesion-labels">Email address:</label>
+                  <input type="email"
+                    value={this.state.email}
+                    onChange={this.update('email')}
+                    className="login-input"
+                  />
+                  </>
+            );
+          }
+      }
+
+      displayInsted(x){
+        let formtype = this.props.formType
+        // let x= this.props.otherForm
+          if(formtype === 'signup'){
+            return "Already have an acoount?"+ x +"Now"
+          }else{
+            return `New to Kidsy? ${this.props.otherForm} now`
+          }
+      }
     
     
     render(){
@@ -61,12 +86,7 @@ class SessionForm extends React.Component{
               {this.renderErrors()}
               <div className="login-form">
                 <br/>
-                <label className="sesion-labels">Email address:</label>
-                  <input type="email"
-                    value={this.state.email}
-                    onChange={this.update('email')}
-                    className="login-input"
-                  />
+                {this.displayEmail()}
                 
                 <label className="sesion-labels">Username:</label>
 
@@ -88,8 +108,11 @@ class SessionForm extends React.Component{
                 <br/>
                 <input className="session-submit" type="submit" value={this.props.formType} />
               </div>
-              <button className="extra-login">Continue with Google</button>
-              <button className="extra-login">Continue with Facebook</button>
+              {/* <button className="extra-login">Continue with Google</button>
+              <button className="extra-login">Continue with Facebook</button> */}
+              <p className
+              ="conditions">By clicking {this.props.formType}, you agree to Kidsy's Terms of Use and Privacy Policy. Kidsy may send you communications; you may change your preferences in your account settings. We'll never post without your permission.</p>
+              <p className="change-form">{this.displayInsted(this.props.otherForm)}</p>
             </form>
             
           </div>
