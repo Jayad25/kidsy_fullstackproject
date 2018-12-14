@@ -1,13 +1,11 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
-import {login,logout,signup} from './actions/session_actions' 
+import {fetchProduct} from './actions/product_actions' 
 import configureStore from './store/store'
 import Root from './components/root'
 
 document.addEventListener("DOMContentLoaded",()=>{
-    window.login=login
-    window.signup=signup
-    window.logout=logout
+    window.fetchProduct=fetchProduct;
     const root = document.getElementById("root");
     let store;
     if (window.currentUser) {
