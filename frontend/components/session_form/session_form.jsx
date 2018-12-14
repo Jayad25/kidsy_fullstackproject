@@ -11,6 +11,7 @@ class SessionForm extends React.Component{
         }
         this.handleSubmit=this.handleSubmit.bind(this)
         this.update=this.update.bind(this)
+        this.displayInsted=this.displayInsted.bind(this);
     }
 
     handleSubmit(e) {
@@ -64,26 +65,37 @@ class SessionForm extends React.Component{
           }
       }
 
-      displayInsted(x){
+      displayInsted(){
         let formtype = this.props.formType
-        // let x= this.props.otherForm
+        let x= this.props.otherForm
+        console.log(this.props.otherForm)
           if(formtype === 'signup'){
-            return "Already have an acoount?"+ x +"Now"
+            return(<>
+            <p className="p-left">Already have an acoount?</p>
+            <div className="form-underline">{this.props.otherForm} </div>
+            <p className="p-right">Now</p>
+            </>
+            )
           }else{
-            return `New to Kidsy? ${this.props.otherForm} now`
+            return(<>
+            <p className="p-left">New to Kidsy?</p>
+            <div className="form-underline">{this.props.otherForm}</div>
+            <p className="p-right">Now</p>
+            </>
+            )
           }
       }
     
     
     render(){
-      
+
         return (
           
             <div className="login-form-container">
            
             <form onSubmit={this.handleSubmit} className="login-form-box">
             <h1 className="text-title">{this.displayHeader()}</h1>
-              {this.renderErrors()}
+            
               <div className="login-form">
                 <br/>
                 {this.displayEmail()}
@@ -104,15 +116,17 @@ class SessionForm extends React.Component{
                     className="login-input"
                   />
                
-                
+              
                 <br/>
                 <input className="session-submit" type="submit" value={this.props.formType} />
               </div>
+              {this.renderErrors()}
               {/* <button className="extra-login">Continue with Google</button>
               <button className="extra-login">Continue with Facebook</button> */}
               <p className
-              ="conditions">By clicking {this.props.formType}, you agree to Kidsy's Terms of Use and Privacy Policy. Kidsy may send you communications; you may change your preferences in your account settings. We'll never post without your permission.</p>
-              <p className="change-form">{this.displayInsted(this.props.otherForm)}</p>
+              ="conditions">By clicking {this.props.formType}, you agree to Kidsy's <span className="terms">Terms of Use</span> and <span className="terms">Privacy Policy</span>. Kidsy may send you communications; you may change your preferences in your account settings. We'll never post without your permission.</p>
+              <div className="alternative-form">{this.displayInsted()}</div>
+              {/* {this.props.otherForm} */}
             </form>
             
           </div>

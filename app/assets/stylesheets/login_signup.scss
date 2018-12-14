@@ -91,21 +91,49 @@ form {
 .render-errors-ul{
     display: flex;
     flex-direction: column;
+    padding-top: 14px;
 }
 .render-errors{
     color: #f56416;
-    font-size: 22px;
+    font-size: 16px;
 }
 .conditions{
-    font-size: 18px;
+    font-size: 16px;
     font-family: inherit;
     padding-top:35px;
-    color:black;
+    color:#0000009e;
 }
 .change-form{
     margin-top: 23px;
     font-size: 23px;
     font-style: italic;
-    color: black;
+    color:#0a0a0a;
     font-family: inherit;
+}
+.terms{
+    text-decoration: underline;
+}
+
+.alternative-form{
+    padding-top:25px;
+    display: flex;
+    flex-direction: row;
+    font-size: 18px;
+    font-family: "Graphik Webfont",-apple-system,BlinkMacSystemFont,"Roboto","Droid Sans","Segoe UI","Helvetica",Arial,sans-serif;
+    color:black;
+}
+.form-underline{
+    font-style: italic;
+    color:#db6d45;
+    padding-left: 2px;
+    // background-color: #db6d45;
+}
+.p-left{
+    padding-right: 3px;
+}
+.p-right{
+    padding-left: 3px;
+}
+.form-underline:hover{
+    text-decoration: underline;
 }

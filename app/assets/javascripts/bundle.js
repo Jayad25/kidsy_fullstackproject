@@ -210,8 +210,10 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var _search__WEBPACK_IMPORTED_MODULE_5__ = __webpack_require__(/*! ./search */ "./frontend/components/search.jsx");
 /* harmony import */ var _util_route_util__WEBPACK_IMPORTED_MODULE_6__ = __webpack_require__(/*! ../util/route_util */ "./frontend/util/route_util.jsx");
 /* harmony import */ var _center_display__WEBPACK_IMPORTED_MODULE_7__ = __webpack_require__(/*! ./center_display */ "./frontend/components/center_display.jsx");
-/* harmony import */ var _modal_modal__WEBPACK_IMPORTED_MODULE_8__ = __webpack_require__(/*! ./modal/modal */ "./frontend/components/modal/modal.jsx");
-/* harmony import */ var react_router_dom__WEBPACK_IMPORTED_MODULE_9__ = __webpack_require__(/*! react-router-dom */ "./node_modules/react-router-dom/es/index.js");
+/* harmony import */ var _middle_display__WEBPACK_IMPORTED_MODULE_8__ = __webpack_require__(/*! ./middle_display */ "./frontend/components/middle_display.jsx");
+/* harmony import */ var _modal_modal__WEBPACK_IMPORTED_MODULE_9__ = __webpack_require__(/*! ./modal/modal */ "./frontend/components/modal/modal.jsx");
+/* harmony import */ var react_router_dom__WEBPACK_IMPORTED_MODULE_10__ = __webpack_require__(/*! react-router-dom */ "./node_modules/react-router-dom/es/index.js");
+
 
 
 
@@ -226,7 +228,7 @@ __webpack_require__.r(__webpack_exports__);
 var App = function App() {
   return react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
     className: "page"
-  }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(_modal_modal__WEBPACK_IMPORTED_MODULE_8__["default"], null), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(_greeting_greeting_container__WEBPACK_IMPORTED_MODULE_2__["default"], null), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
+  }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(_modal_modal__WEBPACK_IMPORTED_MODULE_9__["default"], null), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(_greeting_greeting_container__WEBPACK_IMPORTED_MODULE_2__["default"], null), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
     className: "search-head-title-wrap"
   }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("h1", {
     className: "center-header"
@@ -578,6 +580,66 @@ var mapDispatchToProps = function mapDispatchToProps(dispatch) {
 
 /***/ }),
 
+/***/ "./frontend/components/middle_display.jsx":
+/*!************************************************!*\
+  !*** ./frontend/components/middle_display.jsx ***!
+  \************************************************/
+/*! exports provided: default */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony import */ var react__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! react */ "./node_modules/react/index.js");
+/* harmony import */ var react__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(react__WEBPACK_IMPORTED_MODULE_0__);
+/* harmony import */ var react_router_dom__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! react-router-dom */ "./node_modules/react-router-dom/es/index.js");
+function _typeof(obj) { if (typeof Symbol === "function" && typeof Symbol.iterator === "symbol") { _typeof = function _typeof(obj) { return typeof obj; }; } else { _typeof = function _typeof(obj) { return obj && typeof Symbol === "function" && obj.constructor === Symbol && obj !== Symbol.prototype ? "symbol" : typeof obj; }; } return _typeof(obj); }
+
+function _classCallCheck(instance, Constructor) { if (!(instance instanceof Constructor)) { throw new TypeError("Cannot call a class as a function"); } }
+
+function _defineProperties(target, props) { for (var i = 0; i < props.length; i++) { var descriptor = props[i]; descriptor.enumerable = descriptor.enumerable || false; descriptor.configurable = true; if ("value" in descriptor) descriptor.writable = true; Object.defineProperty(target, descriptor.key, descriptor); } }
+
+function _createClass(Constructor, protoProps, staticProps) { if (protoProps) _defineProperties(Constructor.prototype, protoProps); if (staticProps) _defineProperties(Constructor, staticProps); return Constructor; }
+
+function _possibleConstructorReturn(self, call) { if (call && (_typeof(call) === "object" || typeof call === "function")) { return call; } return _assertThisInitialized(self); }
+
+function _assertThisInitialized(self) { if (self === void 0) { throw new ReferenceError("this hasn't been initialised - super() hasn't been called"); } return self; }
+
+function _getPrototypeOf(o) { _getPrototypeOf = Object.setPrototypeOf ? Object.getPrototypeOf : function _getPrototypeOf(o) { return o.__proto__ || Object.getPrototypeOf(o); }; return _getPrototypeOf(o); }
+
+function _inherits(subClass, superClass) { if (typeof superClass !== "function" && superClass !== null) { throw new TypeError("Super expression must either be null or a function"); } subClass.prototype = Object.create(superClass && superClass.prototype, { constructor: { value: subClass, writable: true, configurable: true } }); if (superClass) _setPrototypeOf(subClass, superClass); }
+
+function _setPrototypeOf(o, p) { _setPrototypeOf = Object.setPrototypeOf || function _setPrototypeOf(o, p) { o.__proto__ = p; return o; }; return _setPrototypeOf(o, p); }
+
+
+
+
+var MiddleDisplay =
+/*#__PURE__*/
+function (_React$Component) {
+  _inherits(MiddleDisplay, _React$Component);
+
+  function MiddleDisplay() {
+    _classCallCheck(this, MiddleDisplay);
+
+    return _possibleConstructorReturn(this, _getPrototypeOf(MiddleDisplay).apply(this, arguments));
+  }
+
+  _createClass(MiddleDisplay, [{
+    key: "render",
+    value: function render() {
+      return react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
+        className: "middle-display"
+      }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", null, "Unique everything We have millions of one-of-a-kind items, so you can find whatever you need (or really, really want)."));
+    }
+  }]);
+
+  return MiddleDisplay;
+}(react__WEBPACK_IMPORTED_MODULE_0___default.a.Component);
+
+/* harmony default export */ __webpack_exports__["default"] = (MiddleDisplay);
+
+/***/ }),
+
 /***/ "./frontend/components/modal/modal.jsx":
 /*!*********************************************!*\
   !*** ./frontend/components/modal/modal.jsx ***!
@@ -853,6 +915,7 @@ function (_React$Component) {
     };
     _this.handleSubmit = _this.handleSubmit.bind(_assertThisInitialized(_assertThisInitialized(_this)));
     _this.update = _this.update.bind(_assertThisInitialized(_assertThisInitialized(_this)));
+    _this.displayInsted = _this.displayInsted.bind(_assertThisInitialized(_assertThisInitialized(_this)));
     return _this;
   }
 
@@ -921,13 +984,27 @@ function (_React$Component) {
     }
   }, {
     key: "displayInsted",
-    value: function displayInsted(x) {
-      var formtype = this.props.formType; // let x= this.props.otherForm
+    value: function displayInsted() {
+      var formtype = this.props.formType;
+      var x = this.props.otherForm;
+      console.log(this.props.otherForm);
 
       if (formtype === 'signup') {
-        return "Already have an acoount?" + x + "Now";
+        return react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(react__WEBPACK_IMPORTED_MODULE_0___default.a.Fragment, null, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("p", {
+          className: "p-left"
+        }, "Already have an acoount?"), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
+          className: "form-underline"
+        }, this.props.otherForm, " "), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("p", {
+          className: "p-right"
+        }, "Now"));
       } else {
-        return "New to Kidsy? ".concat(this.props.otherForm, " now");
+        return react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(react__WEBPACK_IMPORTED_MODULE_0___default.a.Fragment, null, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("p", {
+          className: "p-left"
+        }, "New to Kidsy?"), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
+          className: "form-underline"
+        }, this.props.otherForm), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("p", {
+          className: "p-right"
+        }, "Now"));
       }
     }
   }, {
@@ -940,7 +1017,7 @@ function (_React$Component) {
         className: "login-form-box"
       }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("h1", {
         className: "text-title"
-      }, this.displayHeader()), this.renderErrors(), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
+      }, this.displayHeader()), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
         className: "login-form"
       }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("br", null), this.displayEmail(), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("label", {
         className: "sesion-labels"
@@ -960,11 +1037,15 @@ function (_React$Component) {
         className: "session-submit",
         type: "submit",
         value: this.props.formType
-      })), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("p", {
+      })), this.renderErrors(), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("p", {
         className: "conditions"
-      }, "By clicking ", this.props.formType, ", you agree to Kidsy's Terms of Use and Privacy Policy. Kidsy may send you communications; you may change your preferences in your account settings. We'll never post without your permission."), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("p", {
-        className: "change-form"
-      }, this.displayInsted(this.props.otherForm))));
+      }, "By clicking ", this.props.formType, ", you agree to Kidsy's ", react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("span", {
+        className: "terms"
+      }, "Terms of Use"), " and ", react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("span", {
+        className: "terms"
+      }, "Privacy Policy"), ". Kidsy may send you communications; you may change your preferences in your account settings. We'll never post without your permission."), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
+        className: "alternative-form"
+      }, this.displayInsted())));
     }
   }]);
 
