@@ -20,7 +20,7 @@ class Greeting extends React.Component{
     
         <nav className="headerright">
           <Link className="sell-link" to="/" className="Register">
-          Sell on Eatsy
+          Sell on Kidsy
         </Link>
         <button onClick={()=>this.props.openModal('signup')} className="Register">Register</button>
       <button onClick={()=>this.props.openModal('login')} className="login">sign in</button>
@@ -32,7 +32,7 @@ class Greeting extends React.Component{
      return(
     <div className="right-after-signin">
       <Link className="sell" to="/" className="Register">
-          Sell on Eatsy
+          Sell on Kidsy
         </Link>
       <h2 className="username">Hi, {this.props.currentUser.username.slice(0,6)}!</h2>
       <button className="logout-button" onClick={this.props.logout}><div className="logout-div">Log out</div></button>

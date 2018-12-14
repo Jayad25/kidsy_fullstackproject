@@ -1,11 +1,11 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
-import {fetchProduct} from './actions/product_actions' 
+import {fetchProducts} from './actions/product_actions' 
 import configureStore from './store/store'
 import Root from './components/root'
 
 document.addEventListener("DOMContentLoaded",()=>{
-    window.fetchProduct=fetchProduct;
+    window.fetchProducts=fetchProducts;
     const root = document.getElementById("root");
     let store;
     if (window.currentUser) {
