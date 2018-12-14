@@ -55,7 +55,7 @@ class Greeting extends React.Component{
      
      <div className="NavbarRight"> 
      {this.welcome()}
-     </div>
+      <i className="fas fa-shopping-cart"></i></div>
      </nav>
      <CategorieForm />
    </div>

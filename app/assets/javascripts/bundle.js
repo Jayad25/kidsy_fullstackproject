@@ -505,7 +505,9 @@ function (_React$Component) {
         className: "logo"
       }, "Kidsy")), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(_search__WEBPACK_IMPORTED_MODULE_2__["default"], null)), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
         className: "NavbarRight"
-      }, this.welcome())), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(_categories__WEBPACK_IMPORTED_MODULE_3__["default"], null));
+      }, this.welcome(), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("i", {
+        className: "fas fa-shopping-cart"
+      }))), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(_categories__WEBPACK_IMPORTED_MODULE_3__["default"], null));
     }
   }]);
 
