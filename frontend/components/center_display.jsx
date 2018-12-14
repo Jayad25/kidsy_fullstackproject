@@ -11,7 +11,7 @@ class CenterDisplay extends React.Component {
             <div className="inner-left">
               <h2 className="top">Toys</h2>
               <h2 className="middle">Toys are put on this Earth to be played with by a child</h2>
-              <h3 className="bottom">Buy Now<i class="fas fa-greater-than"></i></h3>
+              <h3 className="bottom">Buy Now<i className="fas fa-greater-than"></i></h3>
             </div>
             <div className="inner-right">
             </div>

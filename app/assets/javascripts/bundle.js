@@ -361,7 +361,7 @@ function (_React$Component) {
       }, "Toys are put on this Earth to be played with by a child"), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("h3", {
         className: "bottom"
       }, "Buy Now", react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("i", {
-        class: "fas fa-greater-than"
+        className: "fas fa-greater-than"
       }))), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
         className: "inner-right"
       }))), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("a", {
@@ -550,8 +550,6 @@ __webpack_require__.r(__webpack_exports__);
 var mapStateToProps = function mapStateToProps(_ref) {
   var session = _ref.session,
       users = _ref.entities.users;
-  // console.log("session" + session);
-  // console.log("user"+users)
   return {
     currentUser: users[session.id]
   };
@@ -684,7 +682,6 @@ function Modal(_ref) {
       return null;
   }
 
-  console.log("".concat(component));
   return react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
     className: "modal-background",
     onClick: closeModal
@@ -925,8 +922,7 @@ function (_React$Component) {
       e.preventDefault();
       var user = {
         user: Object.assign({}, this.state)
-      }; // console.log("sdmvnkjsbv"+{user})
-
+      };
       this.props.processForm(user).then(this.props.closeModal);
     }
   }, {
@@ -987,7 +983,6 @@ function (_React$Component) {
     value: function displayInsted() {
       var formtype = this.props.formType;
       var x = this.props.otherForm;
-      console.log(this.props.otherForm);
 
       if (formtype === 'signup') {
         return react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(react__WEBPACK_IMPORTED_MODULE_0___default.a.Fragment, null, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("p", {
@@ -1219,7 +1214,6 @@ __webpack_require__.r(__webpack_exports__);
 function modalReducer() {
   var state = arguments.length > 0 && arguments[0] !== undefined ? arguments[0] : null;
   var action = arguments.length > 1 ? arguments[1] : undefined;
-  console.log("reduce" + action.type);
 
   switch (action.type) {
     case _actions_modal_actions__WEBPACK_IMPORTED_MODULE_0__["OPEN_MODAL"]:
@@ -1409,7 +1403,7 @@ __webpack_require__.r(__webpack_exports__);
 
 var configureStore = function configureStore() {
   var preloadedState = arguments.length > 0 && arguments[0] !== undefined ? arguments[0] : {};
-  return Object(redux__WEBPACK_IMPORTED_MODULE_0__["createStore"])(_reducers_root_reducer__WEBPACK_IMPORTED_MODULE_3__["default"], preloadedState, Object(redux__WEBPACK_IMPORTED_MODULE_0__["applyMiddleware"])(redux_thunk__WEBPACK_IMPORTED_MODULE_2__["default"], redux_logger__WEBPACK_IMPORTED_MODULE_1___default.a));
+  return Object(redux__WEBPACK_IMPORTED_MODULE_0__["createStore"])(_reducers_root_reducer__WEBPACK_IMPORTED_MODULE_3__["default"], preloadedState, Object(redux__WEBPACK_IMPORTED_MODULE_0__["applyMiddleware"])(redux_thunk__WEBPACK_IMPORTED_MODULE_2__["default"]));
 };
 
 /* harmony default export */ __webpack_exports__["default"] = (configureStore);

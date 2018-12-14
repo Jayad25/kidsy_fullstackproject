@@ -18,7 +18,6 @@ class SessionForm extends React.Component{
         
         e.preventDefault();
         const user = {user:Object.assign({}, this.state)};
-        // console.log("sdmvnkjsbv"+{user})
         this.props.processForm(user).then(this.props.closeModal);
       }
     
@@ -68,7 +67,6 @@ class SessionForm extends React.Component{
       displayInsted(){
         let formtype = this.props.formType
         let x= this.props.otherForm
-        console.log(this.props.otherForm)
           if(formtype === 'signup'){
             return(<>
             <p className="p-left">Already have an acoount?</p>

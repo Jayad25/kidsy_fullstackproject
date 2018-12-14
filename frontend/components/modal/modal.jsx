@@ -19,7 +19,6 @@ function Modal({modal, closeModal}) {
     default:
       return null;
   }
-  console.log(`${component}`);
   return (
     
     <div className="modal-background" onClick={closeModal}>
