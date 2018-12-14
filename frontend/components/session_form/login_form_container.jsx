@@ -1,5 +1,5 @@
 import { connect } from 'react-redux';
-import {login} from '../../actions/session_actions'
+import {login,clearErrors} from '../../actions/session_actions'
 
 import SessionForm from './session_form';
 import {Link} from 'react-router-dom';
@@ -21,7 +21,8 @@ const mapDispatchToProps = dispatch => {
           Register
           </button>
       ),
-      closeModal: () => dispatch(closeModal())
+      closeModal: () => dispatch(closeModal()),
+      clearErrors:()=>dispatch(clearErrors())
     };
   };
 

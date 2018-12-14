@@ -32,3 +32,7 @@ export const logout = () => dispatch => (
     err=>dispatch(receiveErrors(err.responseJSON)))
 )
 
+export const clearErrors = () => dispatch => (
+    dispatch(receiveErrors([]))
+)
+
