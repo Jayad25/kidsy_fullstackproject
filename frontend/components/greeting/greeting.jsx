@@ -30,7 +30,7 @@ class Greeting extends React.Component{
   }
    personalGreeting(){
      return(
-    <div className="righit-after-signin">
+    <div className="right-after-signin">
       <Link className="sell" to="/" className="Register">
           Sell on Eatsy
         </Link>

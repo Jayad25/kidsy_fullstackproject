@@ -1,5 +1,6 @@
 .page{
   max-width: 1300px;
+  padding-left: 37px;
 }
 .headerright{
   height: 25px;
@@ -12,7 +13,7 @@
   width: 100%;
 //   display: flex;
 //   justify-content: space-between;
-  min-width: 1400px;
+  min-width: 1300px;
   font-family: "Graphik Webfont",-apple-system,BlinkMacSystemFont,"Roboto","Droid Sans","Segoe UI","Helvetica",Arial,sans-serif;
 }
 
@@ -44,9 +45,12 @@
 
 .right-after-signin {
   display: flex;
+  flex-direction: row;
   justify-content: flex-end;
   align-items: center;
   width: 348px;
+  font-family: inherit;
+  font-size: inherit;
 }
 
 .logo {
@@ -69,6 +73,7 @@
   margin-right: 20px;
   margin-left: 10px;
   padding-bottom: 3px;
+  font-size: 18px;
 }
 
 .Register:hover, .sell:hover {
@@ -100,38 +105,38 @@
   outline: none;
 }
 
-.logout-button {
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
-  align-items: center;
-  text-decoration: none;
-  width: 60px;
-  margin-right: 10px;
-  padding-bottom: 3px;
+.logout-div {
+  padding-top: 3px;
+  border: 1px solid #f56416;
+  height: 25px;
+  font-size: 18px;
+  font-family: inherit;
+  background-color: #f56416;
+  color: white;
+  width: 80px;
+  right: 5px;
+  position: relative;
+  border-radius: 5px;
 }
 
-.logout-button:hover {
+.logout-div:hover {
   cursor: pointer;
 }
-
-
-
 .username {
   color: #f56416;
   margin-top: 2px;
-  font-size: 14px;
+  font-size: 18px;
   font-family: inherit;
   text-decoration: none;
 }
 
- logout-div {
-  color: #e5e4e2;
-  margin-top: 3px;
-  font-size: 14px;
-  font-family: inherit;
-  text-decoration: none;
-}
+//  logout-div {
+//   color: #e5e4e2;
+//   margin-top: 3px;
+//   font-size: 14px;
+//   font-family: inherit;
+//   text-decoration: none;
+// }
 
 
 .search-form {
@@ -153,7 +158,7 @@
     background-color: white;
   }
 
-  .search-button {
+  .search-button, .logout-div {
     padding-top: 3px;
     border: 1px solid #f56416;
     padding-bottom: 3px;
@@ -223,5 +228,5 @@
 
 .fa-shopping-cart{
   font-size: 27px;
-  margin-top: 11px;
+  margin-top: 5px;
 }
