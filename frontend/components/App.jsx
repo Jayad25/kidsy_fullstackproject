@@ -10,6 +10,7 @@ import {AuthRoute} from '../util/route_util';
 import CenterDisplay from './center_display';
 import MiddleDisplay from "./middle_display";
 import Modal from './modal/modal'
+import Homepage from './homepage'
 
 
 import {
@@ -24,19 +25,15 @@ const App = () => {
   return (<div className="page">
     
     <Modal />
-    <GreetingContainer />
+   
     {/* <ProductsContainer /> */}
     
   
-    <switch>
-      {/* <Route  path="/" component={GreetingContainer}/> */}
+    <Switch>
+      <Route  exact path="/" component={Homepage}/>
       <Redirect to="/" />
-    </switch>
-  <div className="search-head-title-wrap">
-  <h1 className="center-header">If it’s handcrafted, vintage, custom, or unique, it’s on Kidsy.</h1>
-  </div>
-  <CenterDisplay />
-  {/* <MiddleDisplay /> */}
+    </Switch>
+  
   </div>
   )
 }

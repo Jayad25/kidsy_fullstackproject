@@ -63,7 +63,7 @@
 
 .Register, .sell {
   font-size: 15px;
-  color: #f56416;
+  color:black;
   background-color: white;
   border: 0px;
   text-decoration: none;
@@ -79,27 +79,30 @@
 
 .Register:hover, .sell:hover {
   cursor: pointer;
+  // background-color: black;
   text-decoration: underline;
   margin-right: 12px;
+  opacity: 0.5;
 }
 
 .login {
   font-size: 15px;
   font-family: "Graphik Webfont",-apple-system,BlinkMacSystemFont,"Roboto","Droid Sans","Segoe UI","Helvetica",Arial,sans-serif;
-  color: #f56416;
+  color:black;
   padding-left: 10px;
   padding-right: 10px;
   padding-top: 7px;
   padding-bottom: 7px;
-  border: 1px solid #f56416;
+  border: 1px solid;
   border-radius: 5px;
   margin-right: 12px;
 }
 
 .login:hover{
-  background-color: #f56416;
+  background-color:black;
   cursor: pointer;
-  color: white
+  color: white;
+  opacity: 0.5;
 }
 
 .login:focus, .logout:focus {
@@ -108,12 +111,12 @@
 
 .logout-div {
   padding-top: 3px;
-  border: 1px solid #f56416;
+  border: 1px solid;
   height: 25px;
   font-size: 18px;
   font-family: inherit;
-  background-color: #f56416;
-  color: white;
+  // background-color: #f56416;
+  color: black;
   width: 80px;
   right: 5px;
   position: relative;
@@ -124,7 +127,7 @@
   cursor: pointer;
 }
 .username {
-  color: #f56416;
+  // color: #f56416;
   margin-top: 2px;
   font-size: 18px;
   font-family: inherit;
@@ -161,13 +164,13 @@
 
   .search-button, .logout-div {
     padding-top: 3px;
-    border: 1px solid #f56416;
+    border: 1px solid black;
     padding-bottom: 3px;
     height: 32px;
     font-size: 15px;
     font-family: inherit;
-    background-color: #f56416;
-    color: white;
+    background-color:black;
+    color:white;
     width: 80px;
     right: 5px;
     position: relative;
@@ -185,8 +188,10 @@
 }
 
 .category-div {
-  width: 100%;
+  width: 110%;
+  margin-left: -36px;
   border-top: 1px solid #e5e4e2;
+  border-bottom: 1px solid #e5e4e2;
   font-family: inherit;
 }
 .nav-category {
@@ -231,5 +236,5 @@
   font-size: 27px;
   margin-top: 5px;
   padding-left:3px;
-  color:#f56416;
+  // color:#f56416;
 }
