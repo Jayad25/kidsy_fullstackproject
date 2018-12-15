@@ -39,7 +39,7 @@
   display: flex;
   justify-content: flex-end;
   align-items: center;
-  min-height: 72px;
+  min-height: 66px;
   font-size: 16px;
   font-family: inherit;
 }
@@ -47,9 +47,9 @@
 .right-after-signin {
   display: flex;
   flex-direction: row;
-  justify-content: flex-end;
+  justify-content: space-between;
   align-items: center;
-  width: 348px;
+  width: 286px;
   font-family: inherit;
   font-size: inherit;
 }
@@ -71,10 +71,13 @@
 }
 
 .username {
-  margin-right: 20px;
-  margin-left: 10px;
-  padding-bottom: 3px;
-  font-size: 18px;
+  margin-right: 22px;
+  margin-left: 8px;
+  padding-bottom: 0;
+  font-size: 15px;
+  color:black;
+  font-family:Graphik Webfont",-apple-system,BlinkMacSystemFont,"Roboto","Droid Sans","Segoe UI","Helvetica",Arial,sans-serif";
+
 }
 
 .Register:hover, .sell:hover {
@@ -82,7 +85,7 @@
   // background-color: black;
   text-decoration: underline;
   margin-right: 12px;
-  opacity: 0.5;
+  opacity: 0.3;
 }
 
 .login {
@@ -99,10 +102,13 @@
 }
 
 .login:hover{
-  background-color:black;
+  
   cursor: pointer;
+  background-color: black;
+  text-decoration: underline;
   color: white;
-  opacity: 0.5;
+  margin-right: 12px;
+  // opacity: 0.3;
 }
 
 .login:focus, .logout:focus {
@@ -110,28 +116,28 @@
 }
 
 .logout-div {
-  padding-top: 3px;
-  border: 1px solid;
-  height: 25px;
-  font-size: 18px;
-  font-family: inherit;
-  // background-color: #f56416;
+  font-size: 15px;
+  font-family: "Graphik Webfont",-apple-system,BlinkMacSystemFont,"Roboto","Droid Sans","Segoe UI","Helvetica",Arial,sans-serif;
   color: black;
-  width: 80px;
-  right: 5px;
-  position: relative;
+  padding-left: 8px;
+  padding-right: 7px;
+  padding-top: 7px;
+  padding-bottom: 7px;
+  border: 1px solid;
   border-radius: 5px;
+  margin-right: 12px;
+  background-color: black;
+    color: white;
 }
+
 
 .logout-div:hover {
   cursor: pointer;
-}
-.username {
-  // color: #f56416;
-  margin-top: 2px;
-  font-size: 18px;
-  font-family: inherit;
-  text-decoration: none;
+  background-color: black;
+  text-decoration: underline;
+  color: white;
+  margin-right: 12px;
+  // opacity: 0.3;
 }
 
 //  logout-div {
@@ -182,7 +188,7 @@
   }
 
   .search-button:hover {
-    background-color: #f56416;
+    // background-color: #f56416;
     cursor: pointer;
   }
 }
@@ -233,8 +239,7 @@
 }
 
 .fa-shopping-cart{
-  font-size: 27px;
-  margin-top: 5px;
-  padding-left:3px;
-  // color:#f56416;
+  font-size: 19px;
+  margin-top: 2px;
+  padding-left: 0px;
 }
