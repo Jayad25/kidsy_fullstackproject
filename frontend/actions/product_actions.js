@@ -12,7 +12,7 @@ const receiveProducts = products => (
     }
 )
 
-const receiveProduct = product => (
+const receiveProduct = (product) => (
     {
         type:RECEIVE_PRODUCT,
         product
@@ -36,11 +36,16 @@ export const fetchProducts=()=> dispatch => (
     err => dispatch(receiveErrors(err.responseJSON)))
 )
 
-export const fetchProduct=(id)=> dispatch => (
-    ProductApiUtil.fetchProduct(id).
-    then(product=>dispatch(receiveProduct(product)),
-    err => dispatch(receiveErrors(err.responseJSON)))
-)
+// export const fetchProduct=(id)=> dispatch => (
+//     ProductApiUtil.fetchProduct(id).
+//     then(product=>dispatch(receiveProduct(product)),
+//     err => dispatch(receiveErrors(err.responseJSON)))
+// )
+
+export const fetchProduct = id => dispatch =>
+  ProductApiUtil.fetchProduct(id).then(product =>
+    dispatch(receiveProduct(product))
+  );
 
 export const createProduct=(product)=> dispatch => (
     ProductApiUtil.createProduct(product).

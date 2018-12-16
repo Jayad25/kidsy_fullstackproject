@@ -27,8 +27,10 @@ const App = () => {
     
     <Modal />
     <Homepage />
-    <ProductsContainer />
+    {/* <ProductsContainer /> */}
     {/* <ProductShowContainer /> */}
+    <Route path="/products/:productId" component={ProductShowContainer} />
+    <Route path="/products/" component={ProductsContainer} />
 {/*   
     <Switch>
       <Route  exact path="/" component={Homepage}/>

@@ -7,7 +7,8 @@ const productsReducer = (state = {},action) =>{
         case RECEIVE_ALL_PRODUCTS:
             return action.products
         case RECEIVE_PRODUCT:
-            return Object.assign({},state,{[action.product.id]:action.product})
+            // return Object.assign({},state,{action.product.product)
+            return {[action.product.id]:action.product}
         case REMOVE_PRODUCT:
             let newState = Object.assign({},state);
             delete newState[action.productId];

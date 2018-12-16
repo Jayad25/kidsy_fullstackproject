@@ -6,7 +6,7 @@ class Api::ProductsController < ApplicationController
     end
 
     def show
-        @product = Product.find(params[:id])
+        @product = Product.find_by(id: params[:id])
         # render "api/products/show"
     end
 
