@@ -5,6 +5,7 @@ import ProductsContainer from './products/product_index_container';
 import LoginFormContainer from './session_form/login_form_container';
 import SignupFormContainer from './session_form/signup_form_container';
 import SearchForm from './search';
+import ProductShowContainer from './products/product_show_container'
 
 import {AuthRoute} from '../util/route_util';
 import CenterDisplay from './center_display';
@@ -25,14 +26,14 @@ const App = () => {
   return (<div className="page">
     
     <Modal />
-   
-    {/* <ProductsContainer /> */}
-    
-  
+    <Homepage />
+    <ProductsContainer />
+    {/* <ProductShowContainer /> */}
+{/*   
     <Switch>
       <Route  exact path="/" component={Homepage}/>
       <Redirect to="/" />
-    </Switch>
+    </Switch> */}
   
   </div>
   )
