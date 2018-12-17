@@ -12,12 +12,12 @@ class Api::ProductsController < ApplicationController
     end
 
     def create
-        @product = Product.new(product_params);
-        debugger
-        # @product.seller_id = params[:user_id]
+        hello="wadsv"
+        # debugger
+        @product = Product.new(product_params)
         
         if @product.save
-            render "api/products/index"
+            render "api/products/show"
         else
             render json:@product.errors.full_messages
         end
@@ -35,7 +35,7 @@ class Api::ProductsController < ApplicationController
     def destroy
         @product = Product.find(params[:id])
         if @product.destroy
-            render "api/products"
+            render :show
         else
             render json:@product.errors.full_messages
         end
@@ -43,7 +43,7 @@ class Api::ProductsController < ApplicationController
 
 
     def product_params
-        debugger
+        # debugger
         params.require(:product).permit(:title,:seller_id, :description, :price, :quantity,:photo)
     end
 end

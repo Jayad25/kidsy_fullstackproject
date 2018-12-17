@@ -14,7 +14,7 @@ const receiveProducts = products => (
 
 const receiveProduct = product => (
     {
-        type:RECEIVE_PRODUCT,
+        type: RECEIVE_PRODUCT,
         product
     }
 )
@@ -34,32 +34,28 @@ export const fetchProducts=()=> dispatch => (
     ProductApiUtil.fetchProducts().
     then(products=>dispatch(receiveProducts(products)),
     err => dispatch(receiveErrors(err.responseJSON)))
-)
-
-// export const fetchProduct=(id)=> dispatch => (
-//     ProductApiUtil.fetchProduct(id).
-//     then(product=>dispatch(receiveProduct(product)),
-//     err => dispatch(receiveErrors(err.responseJSON)))
-// )
+);
 
 export const fetchProduct = id => dispatch =>
   ProductApiUtil.fetchProduct(id).then(product =>
     dispatch(receiveProduct(product))
   );
 
-export const createProduct=(product)=> dispatch => (
+export const createProduct = (product) => dispatch => (
     ProductApiUtil.createProduct(product).
-    then(product=>dispatch(receiveProduct(product)),
+    then( product => dispatch(receiveProduct(product)),
     err => dispatch(receiveErrors(err.responseJSON)))
-)
+);
+
+
 export const updateProduct=(product)=> dispatch => (
     ProductApiUtil.updateProduct(product).
     then(product=>dispatch(receiveProduct(product)),
     err => dispatch(receiveErrors(err.responseJSON)))
-)
+);
 
 export const deleteProduct=(productId)=> dispatch => (
     ProductApiUtil.deleteProduct(productId).
-    then(product=>dispatch(removeProduct(product.id)),
+    then(product=>dispatch(removeProduct(productId)),
     err => dispatch(receiveErrors(err.responseJSON)))
 )

@@ -1,12 +1,12 @@
 import { connect } from 'react-redux';
 import { fetchProduct, updateProduct } from '../../actions/product_actions';
 import React from 'react';
-import productUpdate from './product_edit';
+import productForm from './product_form';
 
 const mapStateToProps = (state, ownProps) => ({
-    currentUser: state.ui.session.currentUser,
+    currentUser: state.session.id,
+    formType: "Create A Product",
     product: state.entities.product[ownProps.match.params.id],
-    formType: "Update Product"
 });
 
 const mapDispatchToProps = dispatch => ({
@@ -15,4 +15,4 @@ const mapDispatchToProps = dispatch => ({
   clearError: () => dispatch(clearError()),
 });
 
-export default connect(mapStateToProps, mapDispatchToProps)(productUpdate);
+export default connect(mapStateToProps, mapDispatchToProps)(productForm);

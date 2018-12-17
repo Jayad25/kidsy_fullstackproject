@@ -176,12 +176,7 @@ var fetchProducts = function fetchProducts() {
       return dispatch(receiveErrors(err.responseJSON));
     });
   };
-}; // export const fetchProduct=(id)=> dispatch => (
-//     ProductApiUtil.fetchProduct(id).
-//     then(product=>dispatch(receiveProduct(product)),
-//     err => dispatch(receiveErrors(err.responseJSON)))
-// )
-
+};
 var fetchProduct = function fetchProduct(id) {
   return function (dispatch) {
     return _util_product_api_util__WEBPACK_IMPORTED_MODULE_0__["fetchProduct"](id).then(function (product) {
@@ -210,7 +205,7 @@ var updateProduct = function updateProduct(product) {
 var deleteProduct = function deleteProduct(productId) {
   return function (dispatch) {
     return _util_product_api_util__WEBPACK_IMPORTED_MODULE_0__["deleteProduct"](productId).then(function (product) {
-      return dispatch(removeProduct(product.id));
+      return dispatch(removeProduct(productId));
     }, function (err) {
       return dispatch(receiveErrors(err.responseJSON));
     });
@@ -946,10 +941,11 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var react__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(react__WEBPACK_IMPORTED_MODULE_0__);
 /* harmony import */ var react_router_dom__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! react-router-dom */ "./node_modules/react-router-dom/es/index.js");
 
-
+ // import { deleteProduct } from '../../util/product_api_util';
 
 var ProductIndexItem = function ProductIndexItem(_ref) {
-  var product = _ref.product;
+  var product = _ref.product,
+      deleteProduct = _ref.deleteProduct;
   // console.log(product)
   return react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("li", {
     className: "product items"
@@ -965,7 +961,11 @@ var ProductIndexItem = function ProductIndexItem(_ref) {
     className: "index productName"
   }, product.title)), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("li", {
     className: "index productCost"
-  }, "$", product.price)));
+  }, "$", product.price), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("button", {
+    onClick: function onClick() {
+      return deleteProduct(product.id);
+    }
+  }, "Delete")));
 };
 
 /* harmony default export */ __webpack_exports__["default"] = (ProductIndexItem);
@@ -1045,14 +1045,14 @@ function (_React$Component) {
   }, {
     key: "handleSubmit",
     value: function handleSubmit(e) {
+      var _this3 = this;
+
       e.preventDefault();
       var id = this.props.currentUser;
-      var formData = new FormData(); // let product = { };
+      var formData = new FormData();
 
       for (var key in this.state) {
         if (key === 'seller_id') {
-          // product[key] = this.props.currentUser;
-          // console.log(key+" :"+product[key])
           formData.append("product[".concat(key, "]"), this.props.currentUser);
         } else {
           formData.append("product[".concat(key, "]"), this.state[key]);
@@ -1061,9 +1061,11 @@ function (_React$Component) {
 
 
       formData.append('product[photo]', this.state.photoFile);
-      console.log(formData);
-      debugger;
-      this.props.action(formData);
+      console.log(formData); // debugger
+
+      this.props.action(formData).then(function (railsitem) {
+        _this3.props.history.push("/products/".concat(railsitem.product.id));
+      });
     }
   }, {
     key: "handleFile",
@@ -1173,10 +1175,13 @@ function (_React$Component) {
   }, {
     key: "render",
     value: function render() {
+      var _this = this;
+
       var products = this.props.products.map(function (product) {
         return react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(_product_index_item__WEBPACK_IMPORTED_MODULE_1__["default"], {
           key: "product-".concat(product.id),
-          product: product
+          product: product,
+          deleteProduct: _this.props.deleteProduct
         });
       });
       return react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
@@ -1220,6 +1225,9 @@ var mdp = function mdp(dispatch) {
   return {
     fetchProducts: function fetchProducts() {
       return dispatch(Object(_actions_product_actions__WEBPACK_IMPORTED_MODULE_2__["fetchProducts"])());
+    },
+    deleteProduct: function deleteProduct(id) {
+      return dispatch(Object(_actions_product_actions__WEBPACK_IMPORTED_MODULE_2__["deleteProduct"])(id));
     }
   };
 };
@@ -1239,6 +1247,7 @@ var mdp = function mdp(dispatch) {
 __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var react__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! react */ "./node_modules/react/index.js");
 /* harmony import */ var react__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(react__WEBPACK_IMPORTED_MODULE_0__);
+/* harmony import */ var react_router_dom__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! react-router-dom */ "./node_modules/react-router-dom/es/index.js");
 function _typeof(obj) { if (typeof Symbol === "function" && typeof Symbol.iterator === "symbol") { _typeof = function _typeof(obj) { return typeof obj; }; } else { _typeof = function _typeof(obj) { return obj && typeof Symbol === "function" && obj.constructor === Symbol && obj !== Symbol.prototype ? "symbol" : typeof obj; }; } return _typeof(obj); }
 
 function _classCallCheck(instance, Constructor) { if (!(instance instanceof Constructor)) { throw new TypeError("Cannot call a class as a function"); } }
@@ -1256,6 +1265,7 @@ function _getPrototypeOf(o) { _getPrototypeOf = Object.setPrototypeOf ? Object.g
 function _inherits(subClass, superClass) { if (typeof superClass !== "function" && superClass !== null) { throw new TypeError("Super expression must either be null or a function"); } subClass.prototype = Object.create(superClass && superClass.prototype, { constructor: { value: subClass, writable: true, configurable: true } }); if (superClass) _setPrototypeOf(subClass, superClass); }
 
 function _setPrototypeOf(o, p) { _setPrototypeOf = Object.setPrototypeOf || function _setPrototypeOf(o, p) { o.__proto__ = p; return o; }; return _setPrototypeOf(o, p); }
+
 
 
 
@@ -1293,7 +1303,9 @@ function (_React$Component) {
           className: "product-title-price"
         }, this.props.product.title, this.props.product.price), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
           className: "product-description"
-        }, this.props.product.description)));
+        }, this.props.product.description)), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(react_router_dom__WEBPACK_IMPORTED_MODULE_1__["Link"], {
+          to: "/products/".concat(this.props.product.id, "/edit")
+        }, "Edit"));
       } else {
         return react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(react__WEBPACK_IMPORTED_MODULE_0___default.a.Fragment, null);
       }
@@ -1753,7 +1765,9 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var _actions_product_actions__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ./actions/product_actions */ "./frontend/actions/product_actions.js");
 /* harmony import */ var _store_store__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! ./store/store */ "./frontend/store/store.js");
 /* harmony import */ var _components_root__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! ./components/root */ "./frontend/components/root.jsx");
+/* harmony import */ var _util_product_api_util__WEBPACK_IMPORTED_MODULE_5__ = __webpack_require__(/*! ./util/product_api_util */ "./frontend/util/product_api_util.js");
 function _defineProperty(obj, key, value) { if (key in obj) { Object.defineProperty(obj, key, { value: value, enumerable: true, configurable: true, writable: true }); } else { obj[key] = value; } return obj; }
+
 
 
 
@@ -1764,6 +1778,7 @@ document.addEventListener("DOMContentLoaded", function () {
   window.fetchProducts = _actions_product_actions__WEBPACK_IMPORTED_MODULE_2__["fetchProducts"];
   var root = document.getElementById("root");
   var store;
+  window.createProduct = _util_product_api_util__WEBPACK_IMPORTED_MODULE_5__["createProduct"];
 
   if (window.currentUser) {
     var preloadedState = {
@@ -1926,7 +1941,8 @@ var productsReducer = function productsReducer() {
     // return {[action.product.id]:action.product}
 
     case _actions_product_actions__WEBPACK_IMPORTED_MODULE_0__["REMOVE_PRODUCT"]:
-      var newState = Object.assign({}, state);
+      var newState = Object.assign({}, state); // console.log(action.productId)
+
       delete newState[action.productId];
       return newState;
 

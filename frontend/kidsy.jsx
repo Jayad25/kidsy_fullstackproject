@@ -3,11 +3,13 @@ import ReactDOM from 'react-dom';
 import {fetchProducts} from './actions/product_actions' 
 import configureStore from './store/store'
 import Root from './components/root'
+import {createProduct} from './util/product_api_util'
 
 document.addEventListener("DOMContentLoaded",()=>{
     window.fetchProducts=fetchProducts;
     const root = document.getElementById("root");
     let store;
+    window.createProduct=createProduct;
     if (window.currentUser) {
     const preloadedState = {
         entities: {

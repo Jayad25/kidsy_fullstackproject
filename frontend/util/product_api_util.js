@@ -3,7 +3,7 @@ export const fetchProducts=() => (
         method:"GET",
         url:"api/products"
     })
-)
+);
 
 export const fetchProduct = id =>(
   $.ajax({
@@ -16,11 +16,11 @@ export const createProduct = product => (
     $.ajax({
         method:"POST",
         url:`api/products`,
-        data:product,
+        data: product,
         contentType: false,
         processData: false
     })
-)
+);
 
 export const updateProduct = product => (
     $.ajax({
@@ -28,11 +28,11 @@ export const updateProduct = product => (
         url:`api/products/${product.id}`,
         data:product
     })
-)
+);
 
 export const deleteProduct = productId => (
     $.ajax({
         method:"DELETE",
         url:`api/products/${productId}`,
     })
-)
+);

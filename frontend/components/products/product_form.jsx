@@ -33,24 +33,22 @@ class productForm extends React.Component {
     e.preventDefault();
     const id = this.props.currentUser;
     const formData = new FormData();
-    // let product = { };
     for (let key in this.state) {
       if (key === 'seller_id') {
-        // product[key] = this.props.currentUser;
-        // console.log(key+" :"+product[key])
         formData.append(`product[${key}]`,this.props.currentUser)
       }else{
         formData.append(`product[${key}]`,this.state[key])
-
     }
   }
     // formData.append('product',this.state)
     formData.append('product[photo]',this.state.photoFile);
     console.log(formData)
-    debugger
+    // debugger
 
 
      this.props.action(formData)
+     .then((railsitem)=>{
+       this.props.history.push(`/products/${railsitem.product.id}`)})
   }
   handleFile(e){
     this.setState({photoFile: e.currentTarget.files[0]})

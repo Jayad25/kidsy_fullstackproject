@@ -1,4 +1,5 @@
 import React from 'react';
+import { Link } from 'react-router-dom';
 
 class ProductShow extends React.Component{
    
@@ -22,7 +23,7 @@ class ProductShow extends React.Component{
                         </div>
                         <div className="product-description">{this.props.product.description}</div>
                     </div>
-                
+                <Link to={`/products/${this.props.product.id}/edit`}>Edit</Link>
             </div>
             )
         }else{

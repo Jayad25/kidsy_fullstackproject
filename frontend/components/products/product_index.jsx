@@ -10,7 +10,8 @@ class ProductIndex extends React.Component {
       return (
         <ProductIndexItem
           key={`product-${product.id}`}
-          product={product} />
+          product={product} 
+          deleteProduct={this.props.deleteProduct}/>
       );
     });
     return (

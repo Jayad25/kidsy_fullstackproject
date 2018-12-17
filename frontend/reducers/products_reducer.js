@@ -11,6 +11,7 @@ const productsReducer = (state = {},action) =>{
             // return {[action.product.id]:action.product}
         case REMOVE_PRODUCT:
             let newState = Object.assign({},state);
+            // console.log(action.productId)
             delete newState[action.productId];
             return newState;    
         default:
