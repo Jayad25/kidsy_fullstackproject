@@ -19,11 +19,11 @@ class Greeting extends React.Component{
   return(
     
         <nav className="headerright">
-          <Link className="sell-link" to="/" className="Register">
+          <Link className="sell-link" to={"/products/new"} className="Register">
           Sell on Kidsy
         </Link>
         <button onClick={()=>this.props.openModal('signup')} className="Register">Register</button>
-      <button onClick={()=>this.props.openModal('login')} className="login">sign in</button>
+      <button onClick={()=>this.props.openModal('login')} className="login">Sign in</button>
       <button onClick={() => this.props.demoLogin()} className="login">Demo User</button>
     </nav>
     )
@@ -31,7 +31,7 @@ class Greeting extends React.Component{
    personalGreeting(){
      return(
     <div className="right-after-signin">
-      <Link className="sell" to="/" className="Register">
+      <Link className="sell" to={"/products/new"} className="Register">
           Sell on Kidsy
         </Link>
       <h2 className="username">Hi, {this.props.currentUser.username.slice(0,6)}!</h2>

@@ -12,7 +12,7 @@ const receiveProducts = products => (
     }
 )
 
-const receiveProduct = (product) => (
+const receiveProduct = product => (
     {
         type:RECEIVE_PRODUCT,
         product

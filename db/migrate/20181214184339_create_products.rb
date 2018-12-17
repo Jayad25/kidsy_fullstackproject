@@ -6,7 +6,6 @@ class CreateProducts < ActiveRecord::Migration[5.2]
       t.string :description,null:false
       t.float :price,null:false
       t.integer :quantity,null:false
-      t.string :img_url
       t.timestamps
     end
     add_index :products, :seller_id

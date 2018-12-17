@@ -7,14 +7,17 @@ class Api::ProductsController < ApplicationController
 
     def show
         @product = Product.find_by(id: params[:id])
-        # render "api/products/show"
+        # debugger
+        render "api/products/show"
     end
 
     def create
         @product = Product.new(product_params);
-        @product.seller_id = params[:user_id]
+        debugger
+        # @product.seller_id = params[:user_id]
+        
         if @product.save
-            render "api/products/show"
+            render "api/products/index"
         else
             render json:@product.errors.full_messages
         end
@@ -40,6 +43,7 @@ class Api::ProductsController < ApplicationController
 
 
     def product_params
-        params.require(:product).permit(:title,:description,:price)
+        debugger
+        params.require(:product).permit(:title,:seller_id, :description, :price, :quantity,:photo)
     end
 end

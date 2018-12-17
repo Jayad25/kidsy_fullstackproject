@@ -42,7 +42,6 @@ ActiveRecord::Schema.define(version: 2018_12_14_230326) do
     t.string "description", null: false
     t.float "price", null: false
     t.integer "quantity", null: false
-    t.string "img_url"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
     t.index ["seller_id"], name: "index_products_on_seller_id"

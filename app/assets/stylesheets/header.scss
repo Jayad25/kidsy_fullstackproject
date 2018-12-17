@@ -26,6 +26,7 @@
   margin-right: 4%;
   padding-top: 4px;
   padding-bottom: 6px;
+  
 }
 
 .NavBarLeft {
@@ -42,6 +43,7 @@
   min-height: 66px;
   font-size: 16px;
   font-family: inherit;
+  font-weight: 250;
 }
 
 .right-after-signin {
@@ -49,7 +51,7 @@
   flex-direction: row;
   justify-content: space-between;
   align-items: center;
-  width: 286px;
+  width: 294px;
   font-family: inherit;
   font-size: inherit;
 }
@@ -116,28 +118,44 @@
 }
 
 .logout-div {
-  font-size: 15px;
+//   font-size: 15px;
+//   font-family: "Graphik Webfont",-apple-system,BlinkMacSystemFont,"Roboto","Droid Sans","Segoe UI","Helvetica",Arial,sans-serif;
+//   color: black;
+//   padding-left: 8px;
+//   padding-right: 7px;
+//   padding-top: 7px;
+//   padding-bottom: 7px;
+//   border: 1px solid;
+//   border-radius: 5px;
+//   margin-right: 12px;
+//   background-color: black;
+//     color: white;
+// }
+font-size: 15px;
   font-family: "Graphik Webfont",-apple-system,BlinkMacSystemFont,"Roboto","Droid Sans","Segoe UI","Helvetica",Arial,sans-serif;
-  color: black;
-  padding-left: 8px;
-  padding-right: 7px;
+  color:black;
+  padding-left: 10px;
+  padding-right: 10px;
   padding-top: 7px;
   padding-bottom: 7px;
   border: 1px solid;
   border-radius: 5px;
   margin-right: 12px;
-  background-color: black;
-    color: white;
 }
 
 
 .logout-div:hover {
+  // cursor: pointer;
+  // background-color: black;
+  // text-decoration: underline;
+  // color: white;
+  // margin-right: 12px;
+  // opacity: 0.3;
   cursor: pointer;
   background-color: black;
   text-decoration: underline;
   color: white;
   margin-right: 12px;
-  // opacity: 0.3;
 }
 
 //  logout-div {

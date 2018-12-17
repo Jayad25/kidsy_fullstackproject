@@ -5,7 +5,7 @@ import CenterDisplay from './center_display';
 class Homepage extends React.Component{
     render(){
        return( <>
-         <GreetingContainer />
+         
         <div className="search-head-title-wrap">
   <h1 className="center-header">If it’s handcrafted, vintage, custom, or unique, it’s on Kidsy.</h1>
   </div>
