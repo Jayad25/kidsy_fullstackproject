@@ -1055,13 +1055,14 @@ function (_React$Component) {
           // console.log(key+" :"+product[key])
           formData.append("product[".concat(key, "]"), this.props.currentUser);
         } else {
-          formData.append(key, this.state[key]);
+          formData.append("product[".concat(key, "]"), this.state[key]);
         }
       } // formData.append('product',this.state)
 
 
       formData.append('product[photo]', this.state.photoFile);
       console.log(formData);
+      debugger;
       this.props.action(formData);
     }
   }, {
@@ -2149,9 +2150,7 @@ var createProduct = function createProduct(product) {
   return $.ajax({
     method: "POST",
     url: "api/products",
-    data: {
-      product: product
-    },
+    data: product,
     contentType: false,
     processData: false
   });

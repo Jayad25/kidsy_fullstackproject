@@ -40,13 +40,17 @@ class productForm extends React.Component {
         // console.log(key+" :"+product[key])
         formData.append(`product[${key}]`,this.props.currentUser)
       }else{
-        formData.append(key,this.state[key])
-      }
+        formData.append(`product[${key}]`,this.state[key])
+
     }
+  }
     // formData.append('product',this.state)
     formData.append('product[photo]',this.state.photoFile);
     console.log(formData)
-    this.props.action(formData)
+    debugger
+
+
+     this.props.action(formData)
   }
   handleFile(e){
     this.setState({photoFile: e.currentTarget.files[0]})
