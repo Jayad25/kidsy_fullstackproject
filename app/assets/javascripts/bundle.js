@@ -1200,7 +1200,7 @@ function (_React$Component) {
         className: "product-form"
       }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("h2", {
         className: "form-title"
-      }, "Create New Product"), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
+      }, "Add a new listing"), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
         className: "total-form"
       }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
         className: "with-out-image"
@@ -1783,6 +1783,17 @@ function (_React$Component) {
       }
     }
   }, {
+    key: "formdisplay",
+    value: function formdisplay() {
+      var formtype = this.props.formType;
+
+      if (formtype === 'signup') {
+        return "Register";
+      } else {
+        return "Sign in";
+      }
+    }
+  }, {
     key: "render",
     value: function render() {
       return react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
@@ -1811,7 +1822,7 @@ function (_React$Component) {
       }), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("br", null), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("input", {
         className: "session-submit",
         type: "submit",
-        value: this.props.formType
+        value: this.formdisplay()
       })), this.renderErrors(), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("p", {
         className: "conditions"
       }, "By clicking ", this.props.formType, ", you agree to Kidsy's ", react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("span", {

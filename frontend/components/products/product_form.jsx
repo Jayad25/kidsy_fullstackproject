@@ -52,7 +52,7 @@ class productForm extends React.Component {
     return(
       <div>
         <form onSubmit={this.handleSubmit} className="product-form" >
-          <h2 className="form-title">Create New Product</h2>
+          <h2 className="form-title">Add a new listing</h2>
             <div className="total-form">
               <div className="with-out-image">
             <label className="form-label">

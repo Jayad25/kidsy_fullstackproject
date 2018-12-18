@@ -83,7 +83,15 @@ class SessionForm extends React.Component{
             )
           }
       }
-    
+      
+      formdisplay(){
+        let formtype = this.props.formType
+          if(formtype === 'signup'){
+            return "Register"
+          }else{
+            return "Sign in"
+          }
+      }
     
     render(){
 
@@ -116,7 +124,7 @@ class SessionForm extends React.Component{
                
               
                 <br/>
-                <input className="session-submit" type="submit" value={this.props.formType} />
+                <input className="session-submit" type="submit" value={this.formdisplay()} />
               </div>
               {this.renderErrors()}
               {/* <button className="extra-login">Continue with Google</button>
