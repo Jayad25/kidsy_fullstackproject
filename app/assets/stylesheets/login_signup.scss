@@ -1,7 +1,4 @@
-.login-form-container{
-    // height:100px;
-    // width:324px;
-}
+
 
 .login-form-box{
     height: 600px;
@@ -31,13 +28,14 @@ form {
 }
 
 .sesion-labels{
-    font-size: 18px;
+    font-size: 15px;
     font-family: "Graphik Webfont",-apple-system,BlinkMacSystemFont,"Roboto","Droid Sans","Segoe UI","Helvetica",Arial,sans-serif;
     padding-top: 6px;
     color: black;
-    padding-bottom: 7px;
+    padding-bottom: 10px;
+    font-weight: 500;
     text-align: left;
-    font-style:oblique;
+    // font-style:oblique;
 }
 
 .login-input{
@@ -50,6 +48,7 @@ form {
     border-top-left-radius: 5px;
     border-bottom-left-radius: 5px;
     margin-bottom: 8px;
+    margin-top:3px;
 }
 .session-submit{
     padding-top: 2px;
@@ -66,9 +65,12 @@ form {
     border-radius: 5px
 }
 .text-title{
-    margin-top:8px;
+    color: black;
+    font-weight: 400;
+    margin-top:19px;
     font-size: 26px;
-    font-style: oblique;
+    // font-style: oblique;
+    font-family: "Graphik Webfont",-apple-system,BlinkMacSystemFont,"Roboto","Droid Sans","Segoe UI","Helvetica",Arial,sans-serif;
 
 }
 .extra-login{
