@@ -4,7 +4,16 @@ import { createProduct,fetchProduct } from "../../actions/product_actions";
 
 const mapStateToProps = (state, ownProps) => ({
   currentUser: state.session.id,
-  formType: "Create A Product"
+  formType: "Create A Product",
+  product:{
+    seller_id: null,
+    title: "",
+    description: "",
+    quantity: 1,
+    price: 0,
+    photoFile: null,
+    photoUrl: null
+  }
 });
 
 const mapDispatchToProps = dispatch => ({

@@ -1,26 +1,83 @@
 .product_show{
-    height: 100%;
-    width: 1300px;
+    margin-left: 10%;
+    margin-right: 10%;
+    margin-top: 55px;
+    // box-shadow: 0px 0px 5px grey;
     display: flex;
-    padding-left: 77px;
     flex-direction: row;
 }
-
 .product_img{
-    height:inherit;
-    
+    width:500px;
+    height:400px;
 }
-.product_details{
-    padding-top: 59px;
-    padding-left: 77px;
+.image-description{
     display: flex;
     flex-direction: column;
-    justify-content: space-around;
+}
+.product-description{
+    display: block;
+    line-height: 1.71429;
+    color: #222;
+    margin-top: 15px;
+    word-break: break-word;
+    overflow-wrap: break-word;
+    font-size: 18px;
+    margin-right:-19%
+}
+.desc{
+    margin-top: 12px;
+    font-weight: 500;
+    color:#222;
+    font-size: 24px;
+    font-family: "Graphik Webfont",-apple-system,BlinkMacSystemFont,"Roboto","Droid Sans","Segoe UI","Helvetica",Arial,sans-serif;
+    line-height: 1.6
+}
+.product-details{
+    font-size: 36px;
+    font-weight: 300;
+    line-height: 26px;
+    margin-left: -220%;
+    margin-top: 14px;
+    font-family: "Guardian-EgypTT",Arial,sans-serif;
 }
 
-.product_items{
-    height: 1200px;
-    width:1304px;
-    display: flex;
-    // flex-direction: row;
+.product-price,.product-title{
+    // font-size: 26px;
+    // font-weight: inherit;
+    // line-height: 26px;
+    // margin-left: inherit;
+    // margin-top: inherit;
+    // font-family: inherit;
 }
+// .quantity-label{
+//     font-size: 16px;
+//     font-weight: 00;
+//     line-height: 26px;
+//     margin-left: -60%;
+//     margin-top: 20px;
+//     font-family: "Guardian-EgypTT",Arial,sans-serif;
+// }
+// .quantity-input{
+//     border: 1px solid black;
+//     width: 16px;
+//     margin-left: 8px;
+//     border-radius: 0.5px
+// }
+// .add-to-cart-button{
+//     padding-top: 2px;
+//     border: 1px solid ;
+//     padding-bottom: 3px;
+//     height: 42px;
+//     font-size: 18px;
+//     font-family: "Graphik Webfont",-apple-system,BlinkMacSystemFont,"Roboto","Droid Sans","Segoe UI","Helvetica",Arial,sans-serif;
+//     background-color:black;
+//     color: white;
+//     width: 322px;
+//     // right: 5px;
+//     position: relative;
+//     border-radius: 5px
+// }
+// .cart-div{
+//     margin-top:23px
+// }
+

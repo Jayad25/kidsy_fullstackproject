@@ -1,6 +1,7 @@
 .page{
   max-width: 1300px;
-  padding-left: 37px;
+  padding-left: 10%;
+  // padding-right: 10%;
   position:relative;
 }
 .headerright{
@@ -118,20 +119,7 @@
 }
 
 .logout-div {
-//   font-size: 15px;
-//   font-family: "Graphik Webfont",-apple-system,BlinkMacSystemFont,"Roboto","Droid Sans","Segoe UI","Helvetica",Arial,sans-serif;
-//   color: black;
-//   padding-left: 8px;
-//   padding-right: 7px;
-//   padding-top: 7px;
-//   padding-bottom: 7px;
-//   border: 1px solid;
-//   border-radius: 5px;
-//   margin-right: 12px;
-//   background-color: black;
-//     color: white;
-// }
-font-size: 15px;
+  font-size: 15px;
   font-family: "Graphik Webfont",-apple-system,BlinkMacSystemFont,"Roboto","Droid Sans","Segoe UI","Helvetica",Arial,sans-serif;
   color:black;
   padding-left: 10px;
@@ -145,15 +133,8 @@ font-size: 15px;
 
 
 .logout-div:hover {
-  // cursor: pointer;
-  // background-color: black;
-  // text-decoration: underline;
-  // color: white;
-  // margin-right: 12px;
-  // opacity: 0.3;
   cursor: pointer;
   background-color: black;
-  // text-decoration: underline;
   color: white;
   margin-right: 12px;
 }

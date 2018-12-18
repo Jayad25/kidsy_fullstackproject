@@ -48,11 +48,12 @@ export const createProduct = (product) => dispatch => (
 );
 
 
-export const updateProduct=(product)=> dispatch => (
-    ProductApiUtil.updateProduct(product).
-    then(product=>dispatch(receiveProduct(product)),
+export const updateProduct = ( product,productId ) => dispatch => {
+    // console.log(product)
+   return  ProductApiUtil.updateProduct( product,productId ).
+    then(product => dispatch(receiveProduct( product )),
     err => dispatch(receiveErrors(err.responseJSON)))
-);
+};
 
 export const deleteProduct=(productId)=> dispatch => (
     ProductApiUtil.deleteProduct(productId).

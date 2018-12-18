@@ -6,7 +6,8 @@ import LoginFormContainer from './session_form/login_form_container';
 import SignupFormContainer from './session_form/signup_form_container';
 import SearchForm from './search';
 import ProductShowContainer from './products/product_show_container';
-import CreateProductForm from "./products/create_product_container"
+import CreateProductForm from "./products/create_product_container";
+import EditProductContainer from "./products/edit_product_container";
 
 import {AuthRoute,ProtectedRoute} from '../util/route_util';
 import CenterDisplay from './center_display';
@@ -31,9 +32,10 @@ const App = () => {
 
   <Switch>
     <Route  exact path="/" component={Homepage}/>
-    <Route path="/products/new" component={CreateProductForm} />  
-    <Route  path="/products/:productId" component={ProductShowContainer} /> 
-    <Route path="/products/" component={ProductsContainer} />
+    <Route  exact path="/products/new" component={CreateProductForm} />  
+    <Route  exact path="/products/:productId" component={ProductShowContainer} /> 
+    <Route exact path="/products/" component={ProductsContainer} />
+    <Route  path="/products/:productId/edit" component={EditProductContainer} />
     
     <Redirect to="/" />
   </Switch>

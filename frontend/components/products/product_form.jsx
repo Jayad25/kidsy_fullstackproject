@@ -9,15 +9,7 @@ import {Link} from 'react-router-dom'
 class productForm extends React.Component {
   constructor(props){
     super(props);
-    this.state = {
-      seller_id: null,
-      title: "",
-      description: "",
-      quantity: 1,
-      price: 0,
-      photoFile: null,
-      photoUrl: null
-    };
+    this.state = this.props.product
     this.handleSubmit = this.handleSubmit.bind(this);
   }
 
@@ -39,9 +31,10 @@ class productForm extends React.Component {
     }
   }
     formData.append('product[photo]',this.state.photoFile);
-     this.props.action(formData)
-     .then((railsitem)=>{
-       this.props.history.push(`/products/${railsitem.product.id}`)})
+    debugger
+     this.props.action(formData,this.props.product.id)
+     .then(()=>{
+       this.props.history.push(`/`)})
   }
   handleFile(e){
     this.setState({photoFile: e.currentTarget.files[0]})
