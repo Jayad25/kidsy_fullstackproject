@@ -1,8 +1,9 @@
 .page{
   max-width: 1300px;
-  padding-left: 37px;
+  // padding-left: 37px;
   // padding-right: 10%;
   position:relative;
+  margin: 0 auto;
 }
 .headerright{
   height: 25px;
@@ -90,7 +91,7 @@
   // background-color: black;
   text-decoration: underline;
   margin-right: 12px;
-  opacity: 0.3;
+  opacity: 0.6;
 }
 
 .login {
