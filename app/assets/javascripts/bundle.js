@@ -946,7 +946,6 @@ __webpack_require__.r(__webpack_exports__);
 var ProductIndexItem = function ProductIndexItem(_ref) {
   var product = _ref.product,
       deleteProduct = _ref.deleteProduct;
-  // console.log(product)
   return react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("li", {
     className: "product items"
   }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("ul", null, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("li", null, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(react_router_dom__WEBPACK_IMPORTED_MODULE_1__["Link"], {
@@ -1057,12 +1056,9 @@ function (_React$Component) {
         } else {
           formData.append("product[".concat(key, "]"), this.state[key]);
         }
-      } // formData.append('product',this.state)
-
+      }
 
       formData.append('product[photo]', this.state.photoFile);
-      console.log(formData); // debugger
-
       this.props.action(formData).then(function (railsitem) {
         _this3.props.history.push("/products/".concat(railsitem.product.id));
       });
@@ -1283,7 +1279,6 @@ function (_React$Component) {
   _createClass(ProductShow, [{
     key: "componentDidMount",
     value: function componentDidMount() {
-      console.log(this.props.match.params.productId);
       this.props.fetchProduct(this.props.match.params.productId);
     }
   }, {
@@ -1337,7 +1332,6 @@ __webpack_require__.r(__webpack_exports__);
 
 var mapStateToProps = function mapStateToProps(state, ownProps) {
   var product = state.entities.products[ownProps.match.params.productId];
-  console.log(state);
   return {
     product: product
   };
@@ -1941,8 +1935,7 @@ var productsReducer = function productsReducer() {
     // return {[action.product.id]:action.product}
 
     case _actions_product_actions__WEBPACK_IMPORTED_MODULE_0__["REMOVE_PRODUCT"]:
-      var newState = Object.assign({}, state); // console.log(action.productId)
-
+      var newState = Object.assign({}, state);
       delete newState[action.productId];
       return newState;
 

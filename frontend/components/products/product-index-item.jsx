@@ -4,7 +4,7 @@ import { Link } from 'react-router-dom';
 
 
 const ProductIndexItem = ({ product,deleteProduct }) => {
-  // console.log(product)
+
   return (
     <li className="product items">
       <ul>

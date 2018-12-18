@@ -19,9 +19,7 @@ class productForm extends React.Component {
       photoUrl: null
     };
     this.handleSubmit = this.handleSubmit.bind(this);
-   
   }
- 
 
   update(field) {
     return e => this.setState({
@@ -40,12 +38,7 @@ class productForm extends React.Component {
         formData.append(`product[${key}]`,this.state[key])
     }
   }
-    // formData.append('product',this.state)
     formData.append('product[photo]',this.state.photoFile);
-    console.log(formData)
-    // debugger
-
-
      this.props.action(formData)
      .then((railsitem)=>{
        this.props.history.push(`/products/${railsitem.product.id}`)})

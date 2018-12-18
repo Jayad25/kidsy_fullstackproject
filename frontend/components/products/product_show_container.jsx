@@ -4,7 +4,6 @@ import ProductShow from './product_show';
 
 const mapStateToProps = (state, ownProps) => {
     let product = state.entities.products[ownProps.match.params.productId];
-    console.log(state)
     return {
       product: product
     };
