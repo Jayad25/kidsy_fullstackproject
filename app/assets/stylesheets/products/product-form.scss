@@ -2,6 +2,8 @@
     margin-left: 5%;
     margin-right: 5%;
     margin-top: 5%;
+    border-style: groove;
+    height: 600px;
 }
 
 .total-form{
@@ -23,4 +25,13 @@
     font-size:35px;
     margin-left: 38%
 }
+.title-input{
+    border:1px solid black;
+    padding-top:10px;
+}
 
+.form-label{
+font-family:"Graphik Webfont",-apple-system,BlinkMacSystemFont,"Roboto","Droid Sans","Segoe UI","Helvetica",Arial,sans-serif;
+font-size:18px;
+padding-bottom: 34px;
+}

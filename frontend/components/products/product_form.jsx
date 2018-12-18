@@ -55,24 +55,26 @@ class productForm extends React.Component {
           <h2 className="form-title">Create New Product</h2>
             <div className="total-form">
               <div className="with-out-image">
-            <label>
+            <label className="form-label">
               Title
-              <input type="text" value={this.state.title}
+              <br/>
+              <input className="title-input" type="text" value={this.state.title}
                 onChange={this.update('title')}
                 />
             </label>
-            <label>
+            <label className="form-label">
               Description 
+              <br />
               <textarea value={this.state.description}
                 onChange={this.update('description')}
                 className="product-input"/>
             </label>
-          <label>
+          <label className="form-label">
             Price
             <input value={this.state.price}
               onChange={this.update('price')}/>
           </label>
-          <label>
+          <label className="form-label">
            Quantity 
             <input value={this.state.quantity}
               onChange={this.update('quantity')}/>
