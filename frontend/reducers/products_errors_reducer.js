@@ -6,7 +6,7 @@ const productsErrorsReducer = (state = [],action) => {
         case RECEIVE_PRODUCT:
             return []
         case RECEIVE_PRODUCT_ERRORS:
-        return action.errors
+            return action.errors
         default:
             return state
     }

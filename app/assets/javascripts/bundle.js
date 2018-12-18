@@ -917,7 +917,7 @@ __webpack_require__.r(__webpack_exports__);
 
 
 
-var mapStateToProps = function mapStateToProps(state, ownProps) {
+var mapStateToProps = function mapStateToProps(state) {
   return {
     currentUser: state.session.id,
     formType: "Create A Product",
@@ -929,7 +929,8 @@ var mapStateToProps = function mapStateToProps(state, ownProps) {
       price: 0,
       photoFile: null,
       photoUrl: null
-    }
+    },
+    errors: state.errors.products
   };
 };
 
@@ -937,7 +938,20 @@ var mapDispatchToProps = function mapDispatchToProps(dispatch) {
   return {
     action: function action(product) {
       return dispatch(Object(_actions_product_actions__WEBPACK_IMPORTED_MODULE_2__["createProduct"])(product));
-    }
+    },
+    clearErrors: function (_clearErrors) {
+      function clearErrors() {
+        return _clearErrors.apply(this, arguments);
+      }
+
+      clearErrors.toString = function () {
+        return _clearErrors.toString();
+      };
+
+      return clearErrors;
+    }(function () {
+      return dispatch(clearErrors());
+    })
   };
 };
 
@@ -984,10 +998,12 @@ function _setPrototypeOf(o, p) { _setPrototypeOf = Object.setPrototypeOf || func
 
 var mapStateToProps = function mapStateToProps(state, ownProps) {
   var product = state.entities.products[ownProps.match.params.productId];
+  var errors = state.errors.products;
   console.log(product);
   var formType = 'Update product';
   return {
     product: product,
+    errors: errors,
     formType: formType
   };
 };
@@ -1168,10 +1184,10 @@ function (_React$Component) {
         }
       }
 
-      formData.append('product[photo]', this.state.photoFile);
-      debugger;
-      this.props.action(formData, this.props.product.id).then(function () {
-        _this3.props.history.push("/");
+      formData.append('product[photo]', this.state.photoFile); // debugger
+
+      this.props.action(formData, this.props.product.id).then(function (railsitem) {
+        _this3.props.history.push("/products/");
       });
     }
   }, {
@@ -1189,7 +1205,7 @@ function (_React$Component) {
       }, this.props.errors.map(function (error, i) {
         return react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("li", {
           key: "error-".concat(i)
-        }, error);
+        }, "console.log(`$", error, "`);", error);
       }));
     }
   }, {
@@ -1258,7 +1274,7 @@ function (_React$Component) {
       }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("label", null, "Photos", react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("input", {
         type: "file",
         onChange: this.handleFile.bind(this)
-      }))))));
+      }))))), this.renderErrors());
     }
   }]);
 
@@ -1463,7 +1479,9 @@ function (_React$Component) {
           className: "product-description"
         }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("h2", {
           className: "desc"
-        }, "Description:"), this.props.product.description));
+        }, "Description:"), this.props.product.description), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(react_router_dom__WEBPACK_IMPORTED_MODULE_1__["Link"], {
+          to: "/products/".concat(this.props.product.id, "/edit")
+        }, "Edit"));
       } else {
         return react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(react__WEBPACK_IMPORTED_MODULE_0___default.a.Fragment, null);
       }

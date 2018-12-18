@@ -1,5 +1,6 @@
 .product-form{
-    width:100%
+    width:100%;
+    font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
   }
   
   .total-form{
@@ -74,6 +75,8 @@
       padding-top:10px;
       padding-right: 32px;
       margin-left: 34px;
+      font-size:18px;
+      font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
   }
   .title{
       display: flex;
@@ -112,6 +115,8 @@
       width:100%;
       height:276px;
       padding-top:10px;
+      font-size: 18px;
+      font-family: inherit
   }
   
   .price-div{
@@ -142,6 +147,8 @@
     padding-top: 10px;
     padding-right: 32px;
     margin-left: -80px;
+    font-size: 18px;
+    font-family: inherit
   }
   .quantity-div{
     display: flex;
@@ -172,6 +179,8 @@
     padding-top: 10px;
     padding-right: 32px;
     margin-left: -80px;
+    font-size: 18px;
+    font-family: inherit
   }
 .buttons{
     display: flex;

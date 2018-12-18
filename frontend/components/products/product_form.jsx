@@ -27,10 +27,10 @@ class productForm extends React.Component {
     }
   }
     formData.append('product[photo]',this.state.photoFile);
-    debugger
+    // debugger
      this.props.action(formData,this.props.product.id)
-     .then(()=>{
-       this.props.history.push(`/`)})
+     .then((railsitem)=>{
+      this.props.history.push(`/products/`)})
   }
   handleFile(e){
     this.setState({photoFile: e.currentTarget.files[0]})
@@ -42,6 +42,8 @@ class productForm extends React.Component {
       <ul className="errors">
         {this.props.errors.map((error, i) => (
           <li key={`error-${i}`}>
+            console.log(`${error}`);
+            
             {error}
           </li>
         ))}
@@ -51,6 +53,7 @@ class productForm extends React.Component {
   render() {
     return(
       <div>
+         
         <form onSubmit={this.handleSubmit} className="product-form" >
           <h2 className="form-title">Add a new listing</h2>
             <div className="total-form">
@@ -114,7 +117,7 @@ Tell buyers a bit about your process or the story behind this item.</h6></div>
        
                 </div>
         </form>
-     
+        {this.renderErrors()}
   </div>
     )}
 }

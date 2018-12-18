@@ -13,13 +13,13 @@ class Api::ProductsController < ApplicationController
 
     def create
         hello="wadsv"
-        # debugger
+        debugger
         @product = Product.new(product_params)
         
         if @product.save
             render "api/products/show"
         else
-            render json:@product.errors.full_messages
+            render json:@product.errors.full_messages,status: 422
         end
     end
 

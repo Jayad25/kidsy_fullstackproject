@@ -5,10 +5,11 @@ import { fetchProduct, updateProduct } from '../../actions/product_actions';
 
 const mapStateToProps = (state, ownProps) => {
   const product = state.entities.products[ownProps.match.params.productId];
+  const errors=state.errors.products
   console.log(product)
   const formType = 'Update product';
 
-  return { product, formType };
+  return { product, errors,formType };
 };
 
 const mapDispatchToProps = dispatch => {
