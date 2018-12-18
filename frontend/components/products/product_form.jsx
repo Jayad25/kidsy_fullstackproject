@@ -55,20 +55,30 @@ class productForm extends React.Component {
           <h2 className="form-title">Add a new listing</h2>
             <div className="total-form">
               <div className="with-out-image">
-            <label className="form-label">
-              Title
-              <br/>
-              <input className="title-input" type="text" value={this.state.title}
-                onChange={this.update('title')}
-                />
-            </label>
-            <label className="form-label">
-              Description 
-              <br />
-              <textarea value={this.state.description}
-                onChange={this.update('description')}
-                className="product-input"/>
-            </label>
+              <label className="listing-details">Listing details</label>
+              <div className="title">
+                <div className="form-label">
+                  <h3 className="title-label">Title</h3>
+                  <h6 >Include Keywords that buyers would use to search for your item</h6>
+                  
+                </div>
+                <input className="title-input" type="text" value={this.state.title}
+                    onChange={this.update('title')}
+                    />
+            </div>
+            <div className="form-description">
+              <div className="desc-label">Description
+              <h6>Start with a brief overview that describes your item's finest features.
+
+List details like dimensions and key features in easy-to-read bullet points.
+
+Tell buyers a bit about your process or the story behind this item.</h6></div>
+                <div className="desc2">
+                  <textarea value={this.state.description}
+                    onChange={this.update('description')}
+                    className="textarea-desc"/>
+                </div>
+            </div>
           <label className="form-label">
             Price
             <input value={this.state.price}
@@ -84,7 +94,7 @@ class productForm extends React.Component {
                 value={this.props.formType}/>
           </div>
           <div className="image-one">
-          <label>
+          <label>Photos
             <input type="file" onChange={this.handleFile.bind(this)}/>
           </label>
           </div>

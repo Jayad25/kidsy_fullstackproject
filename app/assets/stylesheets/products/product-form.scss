@@ -1,38 +1,115 @@
 .product-form{
-    margin-left: 5%;
-    margin-right: 5%;
-    margin-top: 5%;
-    border-style: groove;
-    height: 600px;
+  width:100%
 }
 
 .total-form{
+    margin-left: 1px;
+    margin-right: 1px;
+    margin-top: 5%;
     display: flex;
-    flex-direction: column;
+    flex-direction:column-reverse;
+    justify-content: space-between;
     margin-top: 33px;
+    // border-style: groove
 }
+
+.image-one{
+    padding: 24px;
+    margin-bottom: 18px;
+    border-radius: 3px;
+    background-color: #FFF;
+    border:1px solid #e1E3DF;
+    border-bottom-color: #CBCCC9;
+    margin:0 0 12px;
+
+
+}
+
 .with-out-image{
     display: flex;
     flex-direction: column;
-    width: 50%
-}
-.image-one{
-    width:50%;
-    display: flex;
-    justify-content: center
+    padding:24px;
+    border-radius: 3px;
+    background-color: #FFF;
+    border:1px solid #e1E3DF;
+    border-bottom-color: #CBCCC9;
+    margin:0 0 12px;
 }
 .form-title{
-    font-size:35px;
-    margin-left: 38%
+    font-size:26px;
+    font-weight: 500;
+    line-height: 1.2;
+    box-sizing: border-box;
+    text-align: center;
+    font-family: "Graphik Webfont",-apple-system,BlinkMacSystemFont,"Roboto","Droid Sans","Segoe UI","Helvetica",Arial,sans-serif;
+    color:#222;
+    margin-top:30px;
 }
+.listing-details{
+    font-size: 20px;
+    font-weight: 500;
+    margin-bottom: 23px;
+    line-height: 1.2;
+    font-family: inherit;
+}
+
+ .form-label{
+    font-family:"Graphik Webfont",-apple-system,BlinkMacSystemFont,"Roboto","Droid Sans","Segoe UI","Helvetica",Arial,sans-serif;
+    font-size:18px;
+    padding-bottom: 34px;
+    width:33.3333%;
+    font-family: "Graphik Webfont",-apple-system,BlinkMacSystemFont,"Roboto","Droid Sans","Segoe UI","Helvetica",Arial,sans-serif;
+    h6{
+        font-size: small;
+        padding-top: 2px;
+        font-weight: 100;
+    }
+
+ }
 .title-input{
-    border:1px solid black;
+    border:1px solid;
+    border-color: #2222221a;
+    width:100%;
+    height:27px;
+    padding-top:10px;
+    padding-right: 32px;
+    margin-left: 34px;
+}
+.title{
+    display: flex;
+    flex-direction: row;
+}
+.title-label{
+    font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+    font-weight: 500
+}
+.form-description{
+    display: flex;
+    flex-direction: row;
+    width:100%;
+}
+.desc-label{
+    h6{
+        font-size: small;
+    font-weight: 100;
+    padding-top: 2px;
+    font-family: inherit;
+    line-height: 1.67;
+    padding-right: 2px;
+    }
+    font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+    font-weight: 500;
+    width: 33.333%;
+    padding-right: 32px;
+    
+}
+.desc2{
+    width:100%
+}
+.textarea-desc{
+    border:1px solid;
+    border-color: #2222221a;
+    width:100%;
+    height:276px;
     padding-top:10px;
 }
-
-.form-label{
-font-family:"Graphik Webfont",-apple-system,BlinkMacSystemFont,"Roboto","Droid Sans","Segoe UI","Helvetica",Arial,sans-serif;
-font-size:18px;
-padding-bottom: 34px;
-}
-

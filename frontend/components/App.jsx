@@ -32,7 +32,7 @@ const App = () => {
 
   <Switch>
     <Route  exact path="/" component={Homepage}/>
-    <ProtectedRoute  exact path="/products/new" component={CreateProductForm} />  
+    <Route  exact path="/products/new" component={CreateProductForm} />  
     <Route  exact path="/products/:productId" component={ProductShowContainer} /> 
     <Route exact path="/products/" component={ProductsContainer} />
     <Route  path="/products/:productId/edit" component={EditProductContainer} />

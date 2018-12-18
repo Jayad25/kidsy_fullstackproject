@@ -342,7 +342,7 @@ var App = function App() {
     exact: true,
     path: "/",
     component: _homepage__WEBPACK_IMPORTED_MODULE_14__["default"]
-  }), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(_util_route_util__WEBPACK_IMPORTED_MODULE_10__["ProtectedRoute"], {
+  }), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(react_router_dom__WEBPACK_IMPORTED_MODULE_15__["Route"], {
     exact: true,
     path: "/products/new",
     component: _products_create_product_container__WEBPACK_IMPORTED_MODULE_8__["default"]
@@ -1205,19 +1205,29 @@ function (_React$Component) {
       }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
         className: "with-out-image"
       }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("label", {
+        className: "listing-details"
+      }, "Listing details"), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
+        className: "title"
+      }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
         className: "form-label"
-      }, "Title", react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("br", null), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("input", {
+      }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("h3", {
+        className: "title-label"
+      }, "Title"), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("h6", null, "Include Keywords that buyers would use to search for your item")), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("input", {
         className: "title-input",
         type: "text",
         value: this.state.title,
         onChange: this.update('title')
-      })), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("label", {
-        className: "form-label"
-      }, "Description", react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("br", null), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("textarea", {
+      })), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
+        className: "form-description"
+      }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
+        className: "desc-label"
+      }, "Description", react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("h6", null, "Start with a brief overview that describes your item's finest features. List details like dimensions and key features in easy-to-read bullet points. Tell buyers a bit about your process or the story behind this item.")), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
+        className: "desc2"
+      }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("textarea", {
         value: this.state.description,
         onChange: this.update('description'),
-        className: "product-input"
-      })), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("label", {
+        className: "textarea-desc"
+      }))), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("label", {
         className: "form-label"
       }, "Price", react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("input", {
         value: this.state.price,
@@ -1234,7 +1244,7 @@ function (_React$Component) {
         value: this.props.formType
       })), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
         className: "image-one"
-      }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("label", null, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("input", {
+      }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("label", null, "Photos", react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("input", {
         type: "file",
         onChange: this.handleFile.bind(this)
       }))))));
