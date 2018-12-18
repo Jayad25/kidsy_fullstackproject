@@ -1402,23 +1402,19 @@ function (_React$Component) {
         return react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
           className: "product_show"
         }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
-          className: "image-description"
+          className: "top-dev"
         }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
           className: "product_img"
         }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("img", {
           className: "product_img",
           src: this.props.product.photoUrl
-        }), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("hr", null)), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
-          className: "product-description"
-        }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("h2", {
-          className: "desc"
-        }, "Description:"), this.props.product.description)), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
+        })), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
           className: "product_details"
         }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
           className: "product-title"
         }, this.props.product.title), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
           className: "product-price"
-        }, "$", this.props.product.price, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("h4", {
+        }, "$", this.props.product.price), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("h4", {
           className: "quantity-label"
         }, "Quantity", react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("input", {
           type: "text",
@@ -1427,7 +1423,11 @@ function (_React$Component) {
           className: "cart-div"
         }, " ", react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("button", {
           className: "add-to-cart-button"
-        }, "Add to Cart")))));
+        }, "Add to Cart")))), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
+          className: "product-description"
+        }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("h2", {
+          className: "desc"
+        }, "Description:"), this.props.product.description));
       } else {
         return react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(react__WEBPACK_IMPORTED_MODULE_0___default.a.Fragment, null);
       }

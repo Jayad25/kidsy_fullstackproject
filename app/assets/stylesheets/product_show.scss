@@ -4,15 +4,15 @@
     margin-top: 55px;
     // box-shadow: 0px 0px 5px grey;
     display: flex;
-    flex-direction: row;
+    flex-direction: column;
 }
 .product_img{
     width:500px;
     height:400px;
 }
-.image-description{
+.top-dev{
     display: flex;
-    flex-direction: column;
+    flex-direction: row
 }
 .product-description{
     display: block;
@@ -22,7 +22,7 @@
     word-break: break-word;
     overflow-wrap: break-word;
     font-size: 18px;
-    margin-right:-19%
+    margin-right:1%
 }
 .desc{
     margin-top: 12px;
@@ -42,42 +42,45 @@
 }
 
 .product-price,.product-title{
-    // font-size: 26px;
-    // font-weight: inherit;
-    // line-height: 26px;
-    // margin-left: inherit;
-    // margin-top: inherit;
-    // font-family: inherit;
+    font-size: 26px;
+    font-weight: inherit;
+    line-height: 26px;
+    margin-left: inherit;
+    margin-top: 23px;
+    font-family: inherit;
+    padding-left: 53px;
 }
-// .quantity-label{
-//     font-size: 16px;
-//     font-weight: 00;
-//     line-height: 26px;
-//     margin-left: -60%;
-//     margin-top: 20px;
-//     font-family: "Guardian-EgypTT",Arial,sans-serif;
-// }
-// .quantity-input{
-//     border: 1px solid black;
-//     width: 16px;
-//     margin-left: 8px;
-//     border-radius: 0.5px
-// }
-// .add-to-cart-button{
-//     padding-top: 2px;
-//     border: 1px solid ;
-//     padding-bottom: 3px;
-//     height: 42px;
-//     font-size: 18px;
-//     font-family: "Graphik Webfont",-apple-system,BlinkMacSystemFont,"Roboto","Droid Sans","Segoe UI","Helvetica",Arial,sans-serif;
-//     background-color:black;
-//     color: white;
-//     width: 322px;
-//     // right: 5px;
-//     position: relative;
-//     border-radius: 5px
-// }
-// .cart-div{
-//     margin-top:23px
-// }
+.quantity-label{
+    font-size: 16px;
+    font-weight: 00;
+    line-height: 26px;
+    
+    margin-top: 20px;
+    padding-left: 53px;
+    font-family: inherit;
+}
+.quantity-input{
+    border: 1px solid black;
+    width: 16px;
+    margin-left: 8px;
+    border-radius: 0.5px
+}
+.add-to-cart-button{
+    padding-top: 2px;
+    border: 1px solid ;
+    padding-bottom: 3px;
+    height: 42px;
+    font-size: 18px;
+    font-family: "Graphik Webfont",-apple-system,BlinkMacSystemFont,"Roboto","Droid Sans","Segoe UI","Helvetica",Arial,sans-serif;
+    background-color:black;
+    color: white;
+    width: 322px;
+    // right: 5px;
+    position: relative;
+    border-radius: 5px
+}
+.cart-div{
+    margin-top:23px;
+    padding-left:53px;
+}
 
