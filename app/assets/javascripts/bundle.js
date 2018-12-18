@@ -1227,22 +1227,33 @@ function (_React$Component) {
         value: this.state.description,
         onChange: this.update('description'),
         className: "textarea-desc"
-      }))), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("label", {
-        className: "form-label"
-      }, "Price", react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("input", {
+      }))), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
+        className: "price-div"
+      }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
+        className: "price"
+      }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("h3", null, "Price"), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("h6", null, "Factor in the costs of materials and labor, plus any related business expenses. Consider the total price buyers will pay too\u2014including shipping.")), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("input", {
         value: this.state.price,
-        onChange: this.update('price')
-      })), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("label", {
-        className: "form-label"
-      }, "Quantity", react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("input", {
-        value: this.state.quantity,
-        onChange: this.update('quantity')
-      })), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(react_router_dom__WEBPACK_IMPORTED_MODULE_1__["Link"], {
-        to: "/"
-      }, "Cancel"), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("input", {
-        type: "submit",
-        value: this.props.formType
+        onChange: this.update('price'),
+        className: "price-input"
       })), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
+        className: "quantity-div"
+      }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
+        className: "quantity"
+      }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("h3", null, "Quantity "), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("h6", null, "For quantities greater than one, this listing will renew automatically until it sells out. You\u2019ll be charged a $0.20 USD listing fee each time.")), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("input", {
+        value: this.state.quantity,
+        onChange: this.update('quantity'),
+        id: "quantity-input"
+      })), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
+        className: "buttons"
+      }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("input", {
+        type: "submit",
+        className: "button",
+        value: this.props.formType
+      }), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(react_router_dom__WEBPACK_IMPORTED_MODULE_1__["Link"], {
+        to: "/"
+      }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("button", {
+        className: "button"
+      }, "Cancel")))), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
         className: "image-one"
       }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("label", null, "Photos", react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("input", {
         type: "file",

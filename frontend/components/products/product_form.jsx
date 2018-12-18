@@ -79,19 +79,32 @@ Tell buyers a bit about your process or the story behind this item.</h6></div>
                     className="textarea-desc"/>
                 </div>
             </div>
-          <label className="form-label">
-            Price
+            <div className="price-div">
+          <div className="price">
+            <h3>Price</h3>
+            <h6>Factor in the costs of materials and labor, plus any related business expenses. Consider the total price buyers will pay too—including shipping.</h6>
+            </div>
             <input value={this.state.price}
-              onChange={this.update('price')}/>
-          </label>
-          <label className="form-label">
-           Quantity 
+              onChange={this.update('price')} className="price-input"/>
+          
+          </div>
+          <div className="quantity-div">
+          <div className="quantity">
+           <h3>Quantity </h3>
+           <h6>For quantities greater than one, this listing will renew automatically until it sells out. You’ll be charged a $0.20 USD listing fee each time.</h6>
+           </div>
+           
             <input value={this.state.quantity}
-              onChange={this.update('quantity')}/>
-          </label>
-          <Link to="/">Cancel</Link>
-              <input  type="submit"
-                value={this.props.formType}/>
+              onChange={this.update('quantity')} id="quantity-input"/>
+        
+          
+          </div>
+          <div className="buttons">
+          <input  type="submit" className="button"
+                  value={this.props.formType}/>
+            <Link to="/" ><button className="button">Cancel</button></Link>
+               
+           </div>
           </div>
           <div className="image-one">
           <label>Photos
