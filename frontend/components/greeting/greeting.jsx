@@ -13,8 +13,7 @@ class Greeting extends React.Component{
     this.personalGreeting=this.personalGreeting.bind(this);
     this.sessionLinks=this.sessionLinks.bind(this);
     this.welcome=this.welcome.bind(this);
-    }
-//  ({ currentUser, logout,demoLogin }) => {
+  }
   sessionLinks(){
   return(
     

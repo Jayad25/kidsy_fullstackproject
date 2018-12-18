@@ -1,8 +1,4 @@
-
-
-
 import React from 'react';
-import Dropzone from 'react-dropzone';
 import {Link} from 'react-router-dom'
 
 
@@ -55,8 +51,10 @@ class productForm extends React.Component {
   render() {
     return(
       <div>
-        <form onSubmit={this.handleSubmit}  >
-          <h2>Create New details</h2>
+        <form onSubmit={this.handleSubmit} className="product-form" >
+          <h2 className="form-title">Create New Product</h2>
+            <div className="total-form">
+              <div className="with-out-image">
             <label>
               Title
               <input type="text" value={this.state.title}
@@ -79,12 +77,17 @@ class productForm extends React.Component {
             <input value={this.state.quantity}
               onChange={this.update('quantity')}/>
           </label>
-          <label>Image:
-            <input type="file" onChange={this.handleFile.bind(this)}/>
-          </label>
-       <Link to="/">Cancel</Link>
+          <Link to="/">Cancel</Link>
               <input  type="submit"
                 value={this.props.formType}/>
+          </div>
+          <div className="image-one">
+          <label>
+            <input type="file" onChange={this.handleFile.bind(this)}/>
+          </label>
+          </div>
+       
+                </div>
         </form>
      
   </div>

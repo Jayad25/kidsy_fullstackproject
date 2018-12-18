@@ -1,0 +1,26 @@
+.product-form{
+    margin-left: 5%;
+    margin-right: 5%;
+    margin-top: 5%;
+}
+
+.total-form{
+    display: flex;
+    flex-direction: row-reverse;
+    margin-top: 33px;
+}
+.with-out-image{
+    display: flex;
+    flex-direction: column;
+    width: 50%
+}
+.image-one{
+    width:50%;
+    display: flex;
+    justify-content: center
+}
+.form-title{
+    font-size:35px;
+    margin-left: 38%
+}
+

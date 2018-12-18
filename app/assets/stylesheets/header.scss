@@ -65,12 +65,13 @@
 }
 
 .Register, .sell {
-  font-size: 15px;
+  font-size: 14px;
   color:black;
   background-color: white;
   border: 0px;
   text-decoration: none;
   margin-right: 12px;
+  font-weight: 400;
 }
 
 .username {
@@ -79,6 +80,7 @@
   padding-bottom: 0;
   font-size: 15px;
   color:black;
+  font-weight: 400;
   font-family:Graphik Webfont",-apple-system,BlinkMacSystemFont,"Roboto","Droid Sans","Segoe UI","Helvetica",Arial,sans-serif";
 
 }
@@ -102,6 +104,7 @@
   border: 1px solid;
   border-radius: 5px;
   margin-right: 12px;
+  font-weight: 400;
 }
 
 .login:hover{
