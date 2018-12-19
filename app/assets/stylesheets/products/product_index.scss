@@ -1,17 +1,21 @@
+.product_items{
+    margin-top:23px;
+}
 .product_index_img{
     width:200px;
     height: 200px;
 }
-.product_list{
-    display:flex;
-    flex-direction: column;
-    margin: 10px;
-}
-.index-productName:hover{
-    text-decoration: underline;
+.product-list{
+    display: flex;
+    flex-wrap: wrap;
 }
 .index-productName{
-    overflow: hidden;
-    text-overflow: ellipsis;
-    white-space: nowrap;
+    width: 200px;
+    white-space: nowrap; 
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+.index-productName:hover{
+    width: 200px;
+    overflow: visible;
 }

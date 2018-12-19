@@ -7,13 +7,10 @@ class Api::ProductsController < ApplicationController
 
     def show
         @product = Product.find_by(id: params[:id])
-        # debugger
         render "api/products/show"
     end
 
     def create
-        hello="wadsv"
-        debugger
         @product = Product.new(product_params)
         
         if @product.save
@@ -25,11 +22,11 @@ class Api::ProductsController < ApplicationController
 
     def update
         @product = Product.find(params[:id])
-        debugger
+       
         if @product.update(product_params)
             render "api/products/show"
         else
-            render json:@product.errors.full_messages
+            render json:@product.errors.full_messages,status: 422
         end
     end
 
@@ -38,13 +35,13 @@ class Api::ProductsController < ApplicationController
         if @product.destroy
             render :show
         else
-            render json:@product.errors.full_messages
+            render json:@product.errors.full_messages,status: 422
         end
     end
 
 
     def product_params
-        # debugger
+       
         params.require(:product).permit(:title,:seller_id, :description, :price, :quantity,:photo)
     end
 end

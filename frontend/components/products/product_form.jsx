@@ -19,7 +19,7 @@ class productForm extends React.Component {
     e.preventDefault();
     if (!this.state.photoFile) { 
       console.log("handle this better later");
-      return;
+      alert("please upload file")
     }
     const id = this.props.currentUser;
     const formData = new FormData();
@@ -31,7 +31,7 @@ class productForm extends React.Component {
     }
   }
     formData.append('product[photo]',this.state.photoFile);
-    // debugger
+
      this.props.action(formData,this.props.product.id)
      .then((railsitem)=>{
       this.props.history.push(`/products/`)})
@@ -43,18 +43,22 @@ class productForm extends React.Component {
   
   renderErrors() {
     return(
-      <ul className="errors">
+      <ul className="render-errors-ul product-errors">
         {this.props.errors.map((error, i) => (
-          <li key={`error-${i}`}>
-            console.log(`${error}`);
-            
+          <li key={`error-${i}`} className="render-errors">
             {error}
           </li>
         ))}
       </ul>
     );
   }
+
+
   render() {
+    let result= "";
+    if(this.props.product.photoUrl){
+       result= <img src={this.props.product.photoUrl} />
+    }
     return(
       <div>
          
@@ -106,6 +110,7 @@ Tell buyers a bit about your process or the story behind this item.</h6></div>
         
           
           </div>
+          {this.renderErrors()}
           <div className="buttons">
           <input  type="submit" className="button"
                   value={this.props.formType}/>
@@ -115,13 +120,14 @@ Tell buyers a bit about your process or the story behind this item.</h6></div>
           </div>
           <div className="image-one">
           <label>Photos
-            <input type="file" onChange={this.handleFile.bind(this)}/>
+            {result}
+            <input type="file" onChange={this.handleFile.bind(this)} />
           </label>
           </div>
        
                 </div>
         </form>
-        {this.renderErrors()}
+        
   </div>
     )}
 }

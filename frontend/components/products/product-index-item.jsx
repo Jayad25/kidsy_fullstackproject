@@ -7,12 +7,12 @@ const ProductIndexItem = ({ product,deleteProduct }) => {
 
   return (
     <li className="product items">
-      <ul className="product_list">
+    
         <li><Link to={`/products/${product.id}`}><img className='product_index_img' src={product.photoUrl}/></Link></li>
-        <li className='index-productName'><Link to={`/products/${product.id}`} className="index productName">{product.title}</Link></li>
+        <li className='index-productName'><Link to={`/products/${product.id}`} className="index-productName">{product.title}</Link></li>
         <li className='index productCost'>${(product.price)}</li>
-        {/* <button onClick={()=>deleteProduct(product.id)}>Delete</button> */}
-      </ul>
+        <button onClick={()=>deleteProduct(product.id)}>Delete</button>
+      
     </li>);
 };
 

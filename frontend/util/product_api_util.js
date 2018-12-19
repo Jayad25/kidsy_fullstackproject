@@ -23,7 +23,7 @@ export const createProduct = product => (
 );
 
 export const updateProduct = (formData,productId) => {
-    debugger
+ 
     return $.ajax({
         method:"PATCH",
         url:`api/products/${productId}`,
