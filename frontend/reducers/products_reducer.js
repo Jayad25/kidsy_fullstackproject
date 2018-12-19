@@ -1,5 +1,5 @@
 import {RECEIVE_ALL_PRODUCTS,REMOVE_PRODUCT, RECEIVE_PRODUCT} from '../actions/product_actions';
-
+import { RECEIVE_USER } from "../actions/user_actions";
 
 const productsReducer = (state = {},action) =>{
     Object.freeze(state);
@@ -13,6 +13,8 @@ const productsReducer = (state = {},action) =>{
             let newState = Object.assign({},state);
             delete newState[action.productId];
             return newState;    
+        case RECEIVE_USER:
+            return Object.assign({}, state, action.payload.products);
         default:
             return state;
     }

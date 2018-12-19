@@ -15,12 +15,12 @@ class ProductIndex extends React.Component {
       );
     });
     return (
+      
       <div className="product_items">
-        Products Lists
+        <p>All Products</p>
         <ul className="product-list">
           {products}
         </ul>
-
       </div>
     );
   }

@@ -20,4 +20,10 @@ class Product < ApplicationRecord
     foreign_key: :seller_id,
     primary_key: :id,
     class_name: 'User'
+
+    has_many :shopping_cart_items,
+    foreign_key: :product_id,
+    primary_key: :id,
+    class_name: 'CartItem'
+
 end

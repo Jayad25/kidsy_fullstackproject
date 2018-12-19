@@ -29,7 +29,7 @@ class ProductShow extends React.Component{
             </div>
                 
             <div className="product-description"><h2 className="desc">Description:</h2>{this.props.product.description}</div>
-            <Link to={`/products/${this.props.product.id}/edit`}>Edit</Link>
+            
         </div>
             )
         }else{

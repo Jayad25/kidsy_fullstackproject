@@ -5,7 +5,8 @@ import {Link, withRouter} from 'react-router-dom'
 class productForm extends React.Component {
   constructor(props){
     super(props);
-    this.state = this.props.product
+    this.state = this.props.product;
+    console.log(this.props.product)
     this.handleSubmit = this.handleSubmit.bind(this);
   }
 
@@ -55,6 +56,7 @@ class productForm extends React.Component {
 
 
   render() {
+    console.log(this.props.product)
     let result= "";
     if(this.props.product.photoUrl){
        result= <img src={this.props.product.photoUrl} />
@@ -105,7 +107,7 @@ Tell buyers a bit about your process or the story behind this item.</h6></div>
            <h6>For quantities greater than one, this listing will renew automatically until it sells out. You’ll be charged a $0.20 USD listing fee each time.</h6>
            </div>
            
-            <input value={this.state.quantity}
+            <input value={this.props.product.quantity}
               onChange={this.update('quantity')} id="quantity-input"/>
         
           
