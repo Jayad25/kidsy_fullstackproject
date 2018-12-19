@@ -25,7 +25,8 @@ class Api::ProductsController < ApplicationController
 
     def update
         @product = Product.find(params[:id])
-        if @product.update
+        debugger
+        if @product.update(product_params)
             render "api/products/show"
         else
             render json:@product.errors.full_messages

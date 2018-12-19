@@ -1,5 +1,5 @@
 import React from 'react';
-import {Link} from 'react-router-dom'
+import {Link, withRouter} from 'react-router-dom'
 
 
 class productForm extends React.Component {
@@ -17,6 +17,10 @@ class productForm extends React.Component {
 
   handleSubmit(e){
     e.preventDefault();
+    if (!this.state.photoFile) { 
+      console.log("handle this better later");
+      return;
+    }
     const id = this.props.currentUser;
     const formData = new FormData();
     for (let key in this.state) {
@@ -122,4 +126,4 @@ Tell buyers a bit about your process or the story behind this item.</h6></div>
     )}
 }
 
-export default productForm;
+export default withRouter(productForm);

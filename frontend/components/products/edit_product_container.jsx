@@ -6,10 +6,11 @@ import { fetchProduct, updateProduct } from '../../actions/product_actions';
 const mapStateToProps = (state, ownProps) => {
   const product = state.entities.products[ownProps.match.params.productId];
   const errors=state.errors.products
+  const currentUser = state.session.id
   console.log(product)
   const formType = 'Update product';
 
-  return { product, errors,formType };
+  return { product, errors,formType,currentUser };
 };
 
 const mapDispatchToProps = dispatch => {
@@ -32,12 +33,14 @@ class EditProductForm extends React.Component {
   }
 
   render() {
-    const { action, formType, product } = this.props;
+    const { action, formType, product, errors,currentUser } = this.props;
     return (
       <ProductForm
         action={action}
         formType={formType}
-        product={product} />
+        product={product}
+        errors={errors} 
+        currentUser={currentUser}/>
     );
   }
 }

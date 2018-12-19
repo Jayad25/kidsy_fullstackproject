@@ -342,7 +342,7 @@ var App = function App() {
     exact: true,
     path: "/",
     component: _homepage__WEBPACK_IMPORTED_MODULE_14__["default"]
-  }), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(react_router_dom__WEBPACK_IMPORTED_MODULE_15__["Route"], {
+  }), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(_util_route_util__WEBPACK_IMPORTED_MODULE_10__["ProtectedRoute"], {
     exact: true,
     path: "/products/new",
     component: _products_create_product_container__WEBPACK_IMPORTED_MODULE_8__["default"]
@@ -608,9 +608,11 @@ function (_React$Component) {
       }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(react_router_dom__WEBPACK_IMPORTED_MODULE_1__["Link"], _defineProperty({
         className: "sell",
         to: "/products/new"
-      }, "className", "Register"), "Sell on Kidsy"), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("h2", {
+      }, "className", "Register"), "Sell on Kidsy"), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(react_router_dom__WEBPACK_IMPORTED_MODULE_1__["Link"], {
+        to: "/user/".concat(this.props.currentUser.id)
+      }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("h2", {
         className: "username"
-      }, "Hi, ", this.props.currentUser.username.slice(0, 6), "!"), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("button", {
+      }, "Hi, ", this.props.currentUser.username.slice(0, 6), "!")), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("button", {
         className: "logout-button",
         onClick: this.props.logout
       }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
@@ -999,12 +1001,14 @@ function _setPrototypeOf(o, p) { _setPrototypeOf = Object.setPrototypeOf || func
 var mapStateToProps = function mapStateToProps(state, ownProps) {
   var product = state.entities.products[ownProps.match.params.productId];
   var errors = state.errors.products;
+  var currentUser = state.session.id;
   console.log(product);
   var formType = 'Update product';
   return {
     product: product,
     errors: errors,
-    formType: formType
+    formType: formType,
+    currentUser: currentUser
   };
 };
 
@@ -1048,11 +1052,15 @@ function (_React$Component) {
       var _this$props = this.props,
           action = _this$props.action,
           formType = _this$props.formType,
-          product = _this$props.product;
+          product = _this$props.product,
+          errors = _this$props.errors,
+          currentUser = _this$props.currentUser;
       return react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(_product_form__WEBPACK_IMPORTED_MODULE_2__["default"], {
         action: action,
         formType: formType,
-        product: product
+        product: product,
+        errors: errors,
+        currentUser: currentUser
       });
     }
   }]);
@@ -1084,23 +1092,21 @@ var ProductIndexItem = function ProductIndexItem(_ref) {
       deleteProduct = _ref.deleteProduct;
   return react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("li", {
     className: "product items"
-  }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("ul", null, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("li", null, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(react_router_dom__WEBPACK_IMPORTED_MODULE_1__["Link"], {
+  }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("ul", {
+    className: "product_list"
+  }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("li", null, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(react_router_dom__WEBPACK_IMPORTED_MODULE_1__["Link"], {
     to: "/products/".concat(product.id)
   }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("img", {
-    className: "product_img",
+    className: "product_index_img",
     src: product.photoUrl
   }))), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("li", {
-    className: "index productName"
+    className: "index-productName"
   }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(react_router_dom__WEBPACK_IMPORTED_MODULE_1__["Link"], {
     to: "/products/".concat(product.id),
     className: "index productName"
   }, product.title)), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("li", {
     className: "index productCost"
-  }, "$", product.price), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("button", {
-    onClick: function onClick() {
-      return deleteProduct(product.id);
-    }
-  }, "Delete")));
+  }, "$", product.price)));
 };
 
 /* harmony default export */ __webpack_exports__["default"] = (ProductIndexItem);
@@ -1173,6 +1179,12 @@ function (_React$Component) {
       var _this3 = this;
 
       e.preventDefault();
+
+      if (!this.state.photoFile) {
+        console.log("handle this better later");
+        return;
+      }
+
       var id = this.props.currentUser;
       var formData = new FormData();
 
@@ -1281,7 +1293,7 @@ function (_React$Component) {
   return productForm;
 }(react__WEBPACK_IMPORTED_MODULE_0___default.a.Component);
 
-/* harmony default export */ __webpack_exports__["default"] = (productForm);
+/* harmony default export */ __webpack_exports__["default"] = (Object(react_router_dom__WEBPACK_IMPORTED_MODULE_1__["withRouter"])(productForm));
 
 /***/ }),
 
@@ -1348,7 +1360,9 @@ function (_React$Component) {
       });
       return react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
         className: "product_items"
-      }, "All Products", react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("ul", null, products));
+      }, "Products Lists", react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("ul", {
+        className: "product-list"
+      }, products));
     }
   }]);
 
@@ -2414,17 +2428,25 @@ var Auth = function Auth(_ref) {
   });
 };
 
-var Protected = function Protected(_ref2) {
-  var Component = _ref2.component,
-      path = _ref2.path,
-      loggedIn = _ref2.loggedIn,
-      exact = _ref2.exact,
-      redirectToModal = _ref2.redirectToModal;
+var Test = function Test(_ref2) {
+  var redirectToModal = _ref2.redirectToModal;
+  redirectToModal();
+  return react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", null);
+};
+
+var Protected = function Protected(_ref3) {
+  var Component = _ref3.component,
+      path = _ref3.path,
+      loggedIn = _ref3.loggedIn,
+      exact = _ref3.exact,
+      redirectToModal = _ref3.redirectToModal;
   return react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(react_router_dom__WEBPACK_IMPORTED_MODULE_2__["Route"], {
     path: path,
     exact: exact,
     render: function render(props) {
-      return loggedIn ? react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(Component, props) : redirectToModal();
+      return loggedIn ? react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(Component, props) : react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(Test, {
+        redirectToModal: redirectToModal
+      });
     }
   });
 };

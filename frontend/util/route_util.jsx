@@ -14,12 +14,17 @@ const Auth = ({component: Component, path, loggedIn, exact}) => (
     )}/>
   );
 
-  const Protected = ({ component: Component, path, loggedIn, exact,redirectToModal }) => (
+  const Test = ({ redirectToModal }) => {
+    redirectToModal();
+    return <div />;
+  }
+
+  const Protected = ({ component: Component, path, loggedIn, exact, redirectToModal }) => (
     <Route path={path} exact={exact} render={(props) => (
         loggedIn ? (
-            <Component {...props} />
+          <Component {...props} />
         ) : (
-          redirectToModal()
+          <Test redirectToModal={redirectToModal} />
             )
     )} />
 );

@@ -33,7 +33,7 @@ class Greeting extends React.Component{
       <Link className="sell" to={"/products/new"} className="Register">
           Sell on Kidsy
         </Link>
-      <h2 className="username">Hi, {this.props.currentUser.username.slice(0,6)}!</h2>
+      <Link to={`/user/${this.props.currentUser.id}`}><h2 className="username">Hi, {this.props.currentUser.username.slice(0,6)}!</h2></Link>
       <button className="logout-button" onClick={this.props.logout}><div className="logout-div">Log out</div></button>
     </div>
   );
