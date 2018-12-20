@@ -96,24 +96,6 @@ l1=Product.create(
     quantity:24)
 l1.photo.attach(io: File.open("./app/assets/images/image1.jpg"),filename:"image1.jpg")
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 p3=Product.create(
     seller_id:user2.id,
     title:"Philips Avent Fast Baby Bottle Warmer, SCF355/00",

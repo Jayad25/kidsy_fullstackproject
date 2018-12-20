@@ -6,6 +6,8 @@ Rails.application.routes.draw do
     resources :users,only:[:create,:show] 
     resources :products,except: [:new, :edit]
     resource :session,only:[:create,:destroy,:show]
+    resources :carts,only:[:create]
+    resources :cart_items,only:[:create,:index,:update,:show,:destroy]
   end
   root "static_pages#root"
 end
