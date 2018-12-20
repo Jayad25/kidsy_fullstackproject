@@ -127,7 +127,7 @@ class productForm extends React.Component {
                   <h3>Price</h3>
                   <h6>Factor in the costs of materials and labor, plus any related business expenses. Consider the total price buyers will pay too—including shipping.</h6>
                 </div>
-                <input value={this.state.price}
+                <input value={this.state.price} type="number"
                 onChange={this.update('price')} className="price-input"/>
               </div>
 
@@ -136,7 +136,7 @@ class productForm extends React.Component {
                   <h3>Quantity </h3>
                   <h6>For quantities greater than one, this listing will renew automatically until it sells out. You’ll be charged a $0.20 USD listing fee each time.</h6>
                 </div>
-                <input value={this.props.product.quantity}
+                <input value={this.state.quantity} type="number"
                  onChange={this.update('quantity')} id="quantity-input"/>
               </div>
 

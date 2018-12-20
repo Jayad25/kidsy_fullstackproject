@@ -1366,6 +1366,7 @@ function (_React$Component) {
         className: "price"
       }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("h3", null, "Price"), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("h6", null, "Factor in the costs of materials and labor, plus any related business expenses. Consider the total price buyers will pay too\u2014including shipping.")), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("input", {
         value: this.state.price,
+        type: "number",
         onChange: this.update('price'),
         className: "price-input"
       })), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
@@ -1373,7 +1374,8 @@ function (_React$Component) {
       }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
         className: "quantity"
       }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("h3", null, "Quantity "), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("h6", null, "For quantities greater than one, this listing will renew automatically until it sells out. You\u2019ll be charged a $0.20 USD listing fee each time.")), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("input", {
-        value: this.props.product.quantity,
+        value: this.state.quantity,
+        type: "number",
         onChange: this.update('quantity'),
         id: "quantity-input"
       })), this.renderErrors(), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
