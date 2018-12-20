@@ -1,5 +1,4 @@
-import { RECEIVE_ALL_CART_ITEMS, RECEIVE_CART_ITEM, DELETE_CART_ITEM} from
-'../actions/shopping_cart_item_actions';
+import { RECEIVE_CART_ITEMS, REMOVE_CART_ITEM } from '../actions/cart_item_actions'
 
 import { RECEIVE_CURRENT_USER } from '../actions/session_actions';
 
@@ -11,11 +10,11 @@ import { RECEIVE_CURRENT_USER } from '../actions/session_actions';
   const shoppingCartReducer = (oldState = initialState, action) => {
     Object.freeze(oldState);
     switch (action.type) {
-      case RECEIVE_ALL_CART_ITEMS:
-        return action.items;
+      case RECEIVE_CART_ITEMS:
+        return action.payload.cart_items;
       case RECEIVE_CART_ITEM:
         return Object.assign({},oldState, {[action.item.product_id]: action.item});
-      case DELETE_CART_ITEM:
+      case REMOVE_CART_ITEM:
         let newState = Object.assign({}, oldState);
         delete newState[action.id];
         return  newState;

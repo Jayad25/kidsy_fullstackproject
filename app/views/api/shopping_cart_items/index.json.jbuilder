@@ -1,17 +1,14 @@
-json.cart do
-  @items.each do |item|
-    json.set! item.id do
-      json.extract! item, :product_id, :quantity, :id
-      json.price item.price
+@cart_items.each do |cart_item|
+  json.cart_items do
+    json.set! cart_item.id do
+      json.extract! cart_item, :id, :shopping_cart_id, :product_id, :quantity, :updated_at
     end
   end
-end
 
-json.products do
-  @items.each do |item|
-    json.set! item.product_id do
-      json.extract! item.product,
-      :id, :seller_id, :title, :description, :price, :photo
+  json.products do
+    json.set! cart_item.product_id do
+      json.extract! cart_item.product, :id, :seller_id, :product_name, :description, :price
+      json.photoUrl url_for(cart_item.product.photo)
     end
   end
 end

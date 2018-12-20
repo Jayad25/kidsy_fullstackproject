@@ -1,36 +1,22 @@
-export const fetchShoppingCartItems = () => (
-    $.ajax({
-        method: "GET",
-        url: "api/shopping_cart_items"
-    })
-  );
-  
-  export const fetchShoppingCartItem = id => (
-    $.ajax({
-        method: "GET",
-        url: `api/shopping_cart_items/${id}`
-    })
-  );
-  
-  export const createShoppingCartItem = item => (
-    $.ajax({
-        method: "POST",
-        url: 'api/shopping_cart_items',
-        data: { item }
-    })
-  );
-  
-  export const updateShoppingCartItem = item => (
-    $.ajax({
-      method: "PATCH",
-      url: `api/shopping_cart_items/${item.id}`,
-      data: { item }
-    })
-  );
-  
-  export const deleteShoppingCartItem = id => (
-    $.ajax({
-      method: "DELETE",
-      url: `api/shopping_cart_items/${id}`,
-    })
-  );
+export const fetchShoppingCartItems = (cart_item) => (
+  $.ajax({
+    method: 'get',
+    url: "api/shopping_cart_items",
+    data: {cart_item}
+  })
+)
+
+export const createShoppingCartItem = (cart_item) => (
+  $.ajax({
+    method: 'post',
+    url: 'api/shopping_cart_items',
+    data: {cart_item}
+  })
+);
+
+export const deleteShoppingCartItem = (itemId) => (
+  $.ajax({
+    method: 'delete',
+    url: `/api/shopping_cart_items/${itemId}`
+  })
+)

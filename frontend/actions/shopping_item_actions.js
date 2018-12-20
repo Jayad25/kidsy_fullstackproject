@@ -1,48 +1,31 @@
-import * as APIUtil from '../util/shopping_cart_items_api_util';
+import * as CartItemApiUtil from '../util/shopping_cart_api_util';
 
-export const RECEIVE_ALL_CART_ITEMS =  "RECEIVE_ALL_CART_ITEMS";
 export const RECEIVE_CART_ITEM = "RECEIVE_CART_ITEM";
-export const DELETE_CART_ITEM = "DELETE_CART_ITEM";
+export const REMOVE_CART_ITEM = "REMOVE_CART_ITEM";
+export const RECEIVE_CART_ITEMS = "RECEIVE_CART_ITEMS";
 
-export const receiveCartItem = item => (
-    {
-        type: RECEIVE_CART_ITEM,
-        item
-    }
-);
-export const receiveAllCartItems = items  => ({
-  type: RECEIVE_ALL_CART_ITEMS,
-  items
+const receiveCartItems = payload => ({
+  type: RECEIVE_CART_ITEMS,
+  payload
 });
 
-export const deleteCartItem = id => ({
-  type: DELETE_CART_ITEM,
-  id
-});
+const removeCartItem = (cartItem) => {
+  return ({
+    
+    type: REMOVE_CART_ITEM,
+    cartItemId: cartItem.id
+  })
+}
 
-
-export const fetchShoppingCartItems = () => dispatch => (
-  APIUtil.fetchShoppingCartItems().then(
-    items => dispatch(receiveAllCartItems(items)))
-);
-export const fetchShoppingCartItem = (id) => dispatch => (
-  APIUtil.fetchShoppingCartItem(id).then(
-    item => dispatch(receiveCartItem(item)))
+export const createCartItem = (cartItem) => (dispatch) => (
+  CartItemApiUtil.createCartItem(cartItem)
 );
 
-export const createShoppingCartItem = item => dispatch => (
-  APIUtil.createShoppingCartItem(item).then(
-    item => dispatch(receiveCartItem(item))
-  )
-);
+export const fetchCartItems = cartId => dispatch =>
+  CartItemApiUtil.fetchCartItems(cartId).then(payload =>
+    dispatch(receiveCartItems(payload))
+  );
 
-export const updateShoppingCartItem = item => dispatch => (
-  APIUtil.updateShoppingCartItem(item).then(
-    item => dispatch(receiveCartItem(item))
-  )
-);
-export const deleteShoppingCartItem = id => dispatch => (
-  APIUtil.deleteShoppingCartItem(id).then(
-    item => dispatch(deleteCartItem(item.id))
-  )
+export const deleteCartItem = (cartItemId) => (dispatch) => (
+  CartItemApiUtil.deleteCartItem(cartItemId).then(cartItem => dispatch(removeCartItem(cartItem)))
 );
