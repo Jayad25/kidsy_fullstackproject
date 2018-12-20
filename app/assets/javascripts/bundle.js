@@ -513,7 +513,7 @@ function (_React$Component) {
       return react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
         className: "center-advertisement"
       }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("a", {
-        href: "/"
+        href: "/#/products"
       }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
         className: "left"
       }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
@@ -649,7 +649,9 @@ function (_React$Component) {
         to: "/users/".concat(this.props.currentUser.id)
       }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("h2", {
         className: "username"
-      }, "Hi, ", this.props.currentUser.username.slice(0, 6), "!")), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("button", {
+      }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("i", {
+        className: "fas fa-user-circle"
+      }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("span", null, "you")))), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("button", {
         className: "logout-button",
         onClick: this.props.logout
       }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
@@ -1135,7 +1137,7 @@ var ProductIndexItem = function ProductIndexItem(_ref) {
   }
 
   return react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("li", {
-    className: "product items"
+    className: "productitems"
   }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("li", null, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(react_router_dom__WEBPACK_IMPORTED_MODULE_1__["Link"], {
     to: "/products/".concat(product.id)
   }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("img", {
@@ -1247,9 +1249,22 @@ function (_React$Component) {
   }, {
     key: "handleFile",
     value: function handleFile(e) {
-      this.setState({
-        photoFile: e.currentTarget.files[0]
-      });
+      var _this4 = this;
+
+      // this.setState({photoFile: e.currentTarget.files[0]})
+      var file = e.currentTarget.files[0];
+      var fileReader = new FileReader();
+
+      fileReader.onloadend = function () {
+        _this4.setState({
+          photoFile: file,
+          photoUrl: fileReader.result
+        });
+      };
+
+      if (file) {
+        fileReader.readAsDataURL(file);
+      }
     }
   }, {
     key: "renderErrors",
@@ -1264,13 +1279,47 @@ function (_React$Component) {
       }));
     }
   }, {
+    key: "formtitle",
+    value: function formtitle() {
+      if (this.props.formType === "Create A Product") {
+        return react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(react__WEBPACK_IMPORTED_MODULE_0___default.a.Fragment, null, "Add a new Lsiting");
+      } else {
+        return react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(react__WEBPACK_IMPORTED_MODULE_0___default.a.Fragment, null, "Update Product");
+      }
+    }
+  }, {
+    key: "imagefile",
+    value: function imagefile() {
+      var preview = this.state.photoUrl ? react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("img", {
+        className: "preview-image",
+        src: this.state.photoUrl
+      }) : null;
+
+      if (!preview) {
+        return react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
+          className: "image-box"
+        }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("input", {
+          type: "file",
+          onChange: this.handleFile.bind(this),
+          className: "image-file"
+        }));
+      }
+    }
+  }, {
     key: "render",
     value: function render() {
-      console.log(this.props.product);
+      console.log(this.props.formType); // if(this.props.formType==='Update product'){
+
+      var preview = this.state.photoUrl ? react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("img", {
+        className: "preview-image",
+        src: this.state.photoUrl
+      }) : null; // }
+
       var result = "";
 
       if (this.props.product.photoUrl) {
         result = react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("img", {
+          className: "preview-image",
           src: this.props.product.photoUrl
         });
       }
@@ -1280,7 +1329,7 @@ function (_React$Component) {
         className: "product-form"
       }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("h2", {
         className: "form-title"
-      }, "Add a new listing"), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
+      }, this.formtitle()), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
         className: "total-form"
       }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
         className: "with-out-image"
@@ -1301,7 +1350,7 @@ function (_React$Component) {
         className: "form-description"
       }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
         className: "desc-label"
-      }, "Description", react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("h6", null, "Start with a brief overview that describes your item's finest features. List details like dimensions and key features in easy-to-read bullet points. Tell buyers a bit about your process or the story behind this item.")), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
+      }, "Description", react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("h6", null, "Start with a brief overview that describes your item's finest features.List details like dimensions and key features in easy-to-read bullet points.Tell buyers a bit about your process or the story behind this item.")), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
         className: "desc2"
       }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("textarea", {
         value: this.state.description,
@@ -1335,10 +1384,13 @@ function (_React$Component) {
         className: "button"
       }, "Cancel")))), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
         className: "image-one"
-      }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("label", null, "Photos", result, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("input", {
-        type: "file",
-        onChange: this.handleFile.bind(this)
-      }))))));
+      }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
+        className: "image-left"
+      }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("h3", null, "Photos"), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("h6", null, "Tips:Use natural light and no flash. Include a common object for scale. Show the item being held, worn, or used. Shoot against a clean, simple background.")), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
+        className: "image-right"
+      }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
+        className: "preview-image"
+      }, preview, this.imagefile()))))));
     }
   }]);
 
@@ -1541,7 +1593,9 @@ function (_React$Component) {
           className: "cart-div"
         }, " ", react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("button", {
           className: "add-to-cart-button"
-        }, "Add to Cart")))), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
+        }, "Add to Cart")), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
+          className: "shipping"
+        }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("li", null, "Shipping"), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("li", null, "Get it fast! Ready to ship in 1\u20132 business days.")))), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
           className: "product-description"
         }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("h2", {
           className: "desc"

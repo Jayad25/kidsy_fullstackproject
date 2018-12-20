@@ -1,9 +1,12 @@
 .product-form{
     // width:100%;
     font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
-    margin: 0 auto;
+    // margin: 0 auto;
     max-width: 1300px;
   position: relative;
+  background-color: #E1E3DF;
+  padding-left: 15px;
+    padding-right: 15px;
 }
   
   .total-form{
@@ -25,6 +28,8 @@
       border:1px solid #e1E3DF;
       border-bottom-color: #CBCCC9;
       margin:0 0 12px;
+      display: flex;
+      flex-direction: row
   
   
   }
@@ -209,3 +214,69 @@
 .product-errors{
     align-items: center
 }
+.image-box{
+    height: 100px;
+    width: 100px;
+    // margin-left: -;
+    // margin-top: -59px;
+    border: 1px solid black;
+    
+
+}
+
+.image-box:hover{
+    cursor: pointer
+}
+.image-left{
+    font-size: 18px;
+    padding-bottom: 34px;
+    width: 33.3333%;
+    font-family: "Graphik Webfont",-apple-system,BlinkMacSystemFont,"Roboto","Droid Sans","Segoe UI","Helvetica",Arial,sans-serif;
+    h3{
+        font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+    font-weight: 500;
+    }
+h6{
+    margin-right: 120px;
+    font-size: small;
+    font-weight: 100;
+    padding-top: 2px;
+    font-family: inherit;
+    line-height: 1.67;
+    padding-right: 2px;
+}
+}
+
+
+.image-file{
+    height: 100px;
+    width: 100px;
+    position: absolute;
+    margin-left: -0;
+    font-size: 0;
+    text-indent: -999999px;
+    background-image: url("https://i.imgur.com/AVT8N0U.png");
+    background-repeat: no-repeat; 
+}
+.preview-image{
+    display: block;
+    height: 100px;
+    width: 100px;
+    // margin-top: 0px;
+    position: absolute;
+      
+}
+
+
+.fa-camera{
+    margin-top: 28px;
+    font-size: 29px;
+    margin-left: 38px;
+        p{
+            font-size: 12px;
+            margin-left: -16px;
+            margin-top: 7px;
+            font-weight: 600;
+        }
+}
+

@@ -25,6 +25,9 @@ class ProductShow extends React.Component{
                     </h4>
                    <div className="cart-div"> <button className="add-to-cart-button">Add to Cart</button>
                    </div>
+                   <div className="shipping">
+                   <li>Shipping</li>
+                  <li>Get it fast! Ready to ship in 1–2 business days.</li></div>
                 </div>
             </div>
                 

@@ -66,3 +66,25 @@ p6=Product.create(
     price:129.91,
     quantity:224)
 p6.photo.attach(io: File.open("/Users/swapnadammalapati/Desktop/Project/kidsy/app/assets/images/Manhattan-Winkel-Rattle-and-Sensory-Teether-Activity-Rings.jpg"),filename:"Manhattan-Winkel-Rattle-and-Sensory-Teether-Activity-Rings.jpg")
+
+
+p7=Product.create(
+    seller_id:user2.id,
+    title:"Maya Montero Toronto White and Red Little Girls Christmas Party Dress",
+    description:"Our unique and beautiful digitally printed Maple Leaf's on duchess satin little girls dress has been inspired by our love for the autumn season and the iconic Canadian Maple Leaves. This designer style dress has been made of 100% polyester satin main fabric with a full taffeta anti-scratch lining. The dress features are hand-sewn pearl appliqué around the neckline and sleeves with a YKK brand hidden back zipper. Our dresses are made for the runway priced to wear everyday. Perfect for special occasions, church, weddings, Christmas parties and birthday parties. Each dress is fit to size and appliqués are sewn by hand for a chic and unique look and a naturally comfortable fit.",
+    price:19.91,
+    quantity:224)
+p7.photo.attach(io: File.open("/Users/swapnadammalapati/Desktop/Project/kidsy/app/assets/images/dress1.jpg"),filename:"dress1.jpg")
+
+
+p8=Product.create(
+    seller_id:user1.id,
+    title:"READY TO SHIP: Girls Toddler Dress Shoes Mary Jane - Avery Slate (Grey)",
+    description:"-Real genuine patent leather and velvet material
+    -Single strap design with gold buckle
+    -Flexible rubber hard sole that is slip resistant and wear resistant 
+    -Inside lining and insole - PU Pig leather
+    -Vintage Colorway design contains stitched detailing with perforated design at the cap with ribbed cotton lining",
+    price:19.91,
+    quantity:224)
+p8.photo.attach(io: File.open("/Users/swapnadammalapati/Desktop/Project/kidsy/app/assets/images/shoes.jpg"),filename:"shoes.jpg")

@@ -6,7 +6,7 @@ class CenterDisplay extends React.Component {
   render(){
     return(
       <div className="center-advertisement">
-        <a href="/">
+        <a href="/#/products">
           <div className="left">
             <div className="inner-left">
               <h2 className="top">Toys</h2>
