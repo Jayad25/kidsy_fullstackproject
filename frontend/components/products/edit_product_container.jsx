@@ -26,14 +26,15 @@ class EditProductForm extends React.Component {
     this.props.fetchProduct(this.props.match.params.productId);
   }
 
-  componentDidUpdate(prevProps) {
-    if (prevProps.product.id != this.props.match.params.productId) {
-      this.props.fetchProduct(this.props.match.params.productId);
-    }
-  }
+  // componentDidUpdate(prevProps) {
+  //   if (prevProps.product.id != this.props.match.params.productId) {
+  //     this.props.fetchProduct(this.props.match.params.productId);
+  //   }
+  // }
 
   render() {
     const { action, formType, product, errors,currentUser } = this.props;
+    if(this.props.product){
     return (
       <ProductForm
         action={action}
@@ -42,6 +43,9 @@ class EditProductForm extends React.Component {
         errors={errors} 
         currentUser={currentUser}/>
     );
+    }else{
+      return <div />
+    }
   }
 }
 

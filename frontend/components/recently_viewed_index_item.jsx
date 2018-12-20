@@ -8,13 +8,17 @@ const RecentlyViewedIndexItem = ({ product }) => {
     //  return <div />     
     // }
   return (
-      
+     
     <li className="productitems">
-    
-        <li><Link to={`/products/${product.id}`}><img className='product_index_img' src={product.photoUrl}/></Link></li>
-        <li className='index-productName'><Link to={`/products/${product.id}`} className="index-productName">{product.title}</Link></li>
+         <ul>
+        <li>
+            <Link to={`/products/${product.id}`}><img className='product_index_img' src={product.photoUrl}/>
+            </Link>
+        </li>
+        <li className='index-productName'>
+            <Link to={`/products/${product.id}`} className="index-productName">{product.title}</Link></li>
         <li className='index-productCost'>${(product.price)}</li>
-      
+        </ul>
     </li>);
 };
 

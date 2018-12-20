@@ -21,7 +21,7 @@ class Product < ApplicationRecord
     primary_key: :id,
     class_name: 'User'
 
-    has_many :shopping_cart_items,
+    has_many :cart_items,
     foreign_key: :product_id,
     primary_key: :id,
     class_name: 'CartItem'

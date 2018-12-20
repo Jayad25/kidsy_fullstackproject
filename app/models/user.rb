@@ -28,11 +28,11 @@ class User < ApplicationRecord
     class_name: 'Product'
 
 
-    has_many :shopping_carts
+    has_many :carts
 
-    has_many :shopping_cart_items,
-    through: :shopping_carts,
-    source: :shopping_cart_items
+    has_many :cart_items,
+    through: :carts,
+    source: :cart_items
     
     def self.find_by_credentials(username, password)
         user = User.find_by(username: username)

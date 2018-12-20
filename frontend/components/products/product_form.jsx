@@ -6,11 +6,16 @@ class productForm extends React.Component {
   constructor(props){
     super(props);
     this.state = this.props.product;
+    debugger
     console.log(this.props.product)
     this.handleSubmit = this.handleSubmit.bind(this);
+    this.update=this.update.bind(this);
+    this.imagefile=this.imagefile.bind(this);
+    this.handleFile=this.handleFile.bind(this);
   }
 
   update(field) {
+    // debugger
     return e => this.setState({
       [field]: e.currentTarget.value
     });
@@ -18,7 +23,7 @@ class productForm extends React.Component {
 
   handleSubmit(e){
     e.preventDefault();
-    if (!this.state.photoFile) { 
+    if (!this.state.photoUrl) { 
       console.log("handle this better later");
       alert("please upload file")
     }
@@ -31,7 +36,9 @@ class productForm extends React.Component {
         formData.append(`product[${key}]`,this.state[key])
     }
   }
-    formData.append('product[photo]',this.state.photoFile);
+    if(this.state.photoFile){
+      formData.append('product[photo]',this.state.photoFile);
+    }
 
      this.props.action(formData,this.props.product.id)
      .then((railsitem)=>{
@@ -77,7 +84,7 @@ class productForm extends React.Component {
     if(!preview){
       return (<div className="image-box">
                 
-      <input type="file" onChange={this.handleFile.bind(this)} className="image-file"/>
+      <input type="file" onChange={this.handleFile()} className="image-file"/>
     </div>)
     }
   }
