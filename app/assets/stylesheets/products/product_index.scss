@@ -16,7 +16,7 @@
     // display: flex;
     // justify-content: space-between;
     // flex-wrap: wrap;
-    width: 85%;
+    width: 100%;
     margin-left: 57px;
     display: grid;
     grid-template-columns: 20% 20% 20% 20%;
@@ -36,4 +36,11 @@
 .index-productCost{
     font-weight: 500;
     font-family: "Graphik Webfont",-apple-system,BlinkMacSystemFont,"Roboto","Droid Sans","Segoe UI","Helvetica",Arial,sans-serif;
+}
+.recently_viewes_items{
+    display: grid;
+    grid-template-columns: 20% 20% 20% 20% 20% 20%;
+   grid-template-rows: 200px;
+   grid-row-gap: 34px;
+   margin-left: 54px;
 }

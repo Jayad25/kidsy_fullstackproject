@@ -253,3 +253,15 @@
     font-size: 16px;
     font-weight: 200;
 }
+
+.kidsy-banner{
+  background-image: url("https://i.imgur.com/J064qlu.png");
+  background-size: cover;
+  margin-top:100px;
+  height: 450px;
+  margin-left:54px;
+  margin-bottom: 100px;
+}
+.product_index_img:hover {
+  transform: scale(1.2); /* (150% zoom - Note: if the zoom is too large, it will go outside of the viewport) */
+}

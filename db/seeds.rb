@@ -19,9 +19,9 @@ Product.delete_all
 User.delete_all
  user1=User.create!(username: 'username',password: 'password',email:"chj@hm.com")
 user2=User.create!(username: 'sam',password: 'password',email:"sam@gmail.com")
+user3=User.create!(username: 'john',password: 'password',email:"john@gmail.com")
 
- p1=Product.create(seller_id:user1.id,title:"Maya Montero Toronto White and Red Little Girls Christmas Party Dress",description:"Our unique and beautiful digitally printed Maple Leaf's on duchess satin little girls dress has been inspired by our love for the autumn season and the iconic Canadian Maple Leaves. This designer style dress has been made of 100% polyester satin main fabric with a full taffeta anti-scratch lining. The dress features are hand-sewn pearl appliqué around the neckline and sleeves with a YKK brand hidden back zipper. Our dresses are made for the runway priced to wear everyday. Perfect for special occasions, church, weddings, Christmas parties and birthday parties. Each dress is fit to size and appliqués are sewn by hand for a chic and unique look and a naturally comfortable fit.",price:23,quantity:2)
-    p1.photo.attach(io: File.open("/Users/swapnadammalapati/Desktop/Project/kidsy/app/assets/images/doll2.jpg"),filename:"doll2.jpg")
+
 p2=Product.create(
     seller_id:user1.id,
     title:"Personalized Silicone Teething Ring | Silicone Teether ",
@@ -29,6 +29,87 @@ p2=Product.create(
     price:33,
     quantity:234)
 p2.photo.attach(io: File.open("/Users/swapnadammalapati/Desktop/Project/kidsy/app/assets/images/il_570xN.1569647871_o9oj.jpg"),filename:"doll3.jpg")
+
+
+# p3=Product.create(
+#     seller_id:user2.id,
+#     title:"",
+#     description:"",
+#     price:18.91,
+#     quantity:24)
+# p3.photo.attach(io: File.open("/Users/swapnadammalapati/Desktop/Project/kidsy/app/assets/images/bottle_warmer.jpeg"),filename:"bottle_warmer.jpeg")
+
+l7=Product.create(
+        seller_id:user3.id,
+        title:"Personalized Teddy Bear",
+        description:"A traditional keepsake, our personalized teddy bear offers friendship that will last well beyond baby’s first year. The silky, soft fur of this monogrammed teddy will lead to hours of hugs and cuddles with this plush bear. The comfy chenille overalls are embroidered and able to be removed from the bear. Moms will love the washable durability of each piece. This custom teddy bear will make a thoughtful gift for your next baby shower or birthday party, and a classic addition to any nursery.",
+        price:34.00,
+        quantity:24)
+    l7.photo.attach(io: File.open("/Users/swapnadammalapati/Desktop/Project/kidsy/app/assets/images/image4.jpg"),filename:"image4.jpg")
+
+
+    l6=Product.create(
+    seller_id:user2.id,
+    title:"Banjo Kazooie Jinjo -PreOrder-",
+    description:"Ever remember hunting down these creatures in the n64 world of Banjo Kazooie? Well now you can have one or more in real life!! Each of these guys are lost and want to come to a nice loving home.
+
+    This listing is for ONE jinjo! Each are handmade individually and details hand sewn on. They are two sizes! A regular is about 10 inches tall and large version about 14 inches tall.",
+    price:50,
+    quantity:24)
+l6.photo.attach(io: File.open("/Users/swapnadammalapati/Desktop/Project/kidsy/app/assets/images/image5.jpg"),filename:"image5.jpg")
+
+
+l2=Product.create(
+    seller_id:user3.id,
+    title:"Sale! Crochet pattern of cute deer, Amigurumi Pattern, Christmas Crochet pattern, INSTANT DOWNLOAD, PDF file in english",
+    description:"This is a PDF CROCHET PATTERN only! 
+    The finished Deer here - 
+    
+    
+    Includes Photos, Instructions and Pattern. Written in English.
+    
+    Finished Deer is approx tall 12 сm (5 in). This may vary depending on the yarn and the size of crochet hook used.",
+    price:2.80,
+    quantity:24)
+l2.photo.attach(io: File.open("/Users/swapnadammalapati/Desktop/Project/kidsy/app/assets/images/image2.jpg"),filename:"image2.jpg")
+
+
+
+
+
+
+
+
+
+
+
+
+l1=Product.create(
+    seller_id:user2.id,
+    title:"Digital Pattern: Princess Felt Finger Puppets",
+    description:"This listing is only for purchase of PDF patterns of the finger puppets featured in the picture. 
+
+    No actual finger puppets will be sent to your address.
+    
+    From the patterns you can make five princesses finger puppets:",
+    price:5.91,
+    quantity:24)
+l1.photo.attach(io: File.open("/Users/swapnadammalapati/Desktop/Project/kidsy/app/assets/images/image1.jpg"),filename:"image1.jpg")
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 
 
@@ -88,3 +169,6 @@ p8=Product.create(
     price:19.91,
     quantity:224)
 p8.photo.attach(io: File.open("/Users/swapnadammalapati/Desktop/Project/kidsy/app/assets/images/shoes.jpg"),filename:"shoes.jpg")
+
+p1=Product.create(seller_id:user1.id,title:"Maya Montero Toronto White and Red Little Girls Christmas Party Dress",description:"Our unique and beautiful digitally printed Maple Leaf's on duchess satin little girls dress has been inspired by our love for the autumn season and the iconic Canadian Maple Leaves. This designer style dress has been made of 100% polyester satin main fabric with a full taffeta anti-scratch lining. The dress features are hand-sewn pearl appliqué around the neckline and sleeves with a YKK brand hidden back zipper. Our dresses are made for the runway priced to wear everyday. Perfect for special occasions, church, weddings, Christmas parties and birthday parties. Each dress is fit to size and appliqués are sewn by hand for a chic and unique look and a naturally comfortable fit.",price:23,quantity:2)
+p1.photo.attach(io: File.open("/Users/swapnadammalapati/Desktop/Project/kidsy/app/assets/images/doll2.jpg"),filename:"doll2.jpg")
