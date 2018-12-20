@@ -86,6 +86,20 @@
 /************************************************************************/
 /******/ ({
 
+/***/ "./frontend/actions/cart_actions.js":
+/*!******************************************!*\
+  !*** ./frontend/actions/cart_actions.js ***!
+  \******************************************/
+/*! no exports provided */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony import */ var _util_cart_api_util__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ../util/cart_api_util */ "./frontend/util/cart_api_util.js");
+
+
+/***/ }),
+
 /***/ "./frontend/actions/modal_actions.js":
 /*!*******************************************!*\
   !*** ./frontend/actions/modal_actions.js ***!
@@ -1315,7 +1329,7 @@ function (_React$Component) {
           className: "image-box"
         }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("input", {
           type: "file",
-          onChange: this.handleFile(),
+          onChange: this.handleFile,
           className: "image-file"
         }));
       }
@@ -1808,7 +1822,7 @@ var RecentlyViewedIndexItem = function RecentlyViewedIndexItem(_ref) {
   // }
   return react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("li", {
     className: "productitems"
-  }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("ul", null, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("li", null, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(react_router_dom__WEBPACK_IMPORTED_MODULE_1__["Link"], {
+  }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("li", null, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(react_router_dom__WEBPACK_IMPORTED_MODULE_1__["Link"], {
     to: "/products/".concat(product.id)
   }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("img", {
     className: "product_index_img",
@@ -1820,7 +1834,7 @@ var RecentlyViewedIndexItem = function RecentlyViewedIndexItem(_ref) {
     className: "index-productName"
   }, product.title)), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("li", {
     className: "index-productCost"
-  }, "$", product.price)));
+  }, "$", product.price));
 };
 
 /* harmony default export */ __webpack_exports__["default"] = (RecentlyViewedIndexItem);
@@ -2436,6 +2450,46 @@ document.addEventListener("DOMContentLoaded", function () {
 
 /***/ }),
 
+/***/ "./frontend/reducers/cart_item_reducer.js":
+/*!************************************************!*\
+  !*** ./frontend/reducers/cart_item_reducer.js ***!
+  \************************************************/
+/*! exports provided: default */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony import */ var _actions_cart_actions__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ../actions/cart_actions */ "./frontend/actions/cart_actions.js");
+function _defineProperty(obj, key, value) { if (key in obj) { Object.defineProperty(obj, key, { value: value, enumerable: true, configurable: true, writable: true }); } else { obj[key] = value; } return obj; }
+
+
+
+var cartItemReducer = function cartItemReducer() {
+  var state = arguments.length > 0 && arguments[0] !== undefined ? arguments[0] : {};
+  var action = arguments.length > 1 ? arguments[1] : undefined;
+  Object.freeze(state);
+
+  switch (action.type) {
+    case _actions_cart_actions__WEBPACK_IMPORTED_MODULE_0__["RECEIVE_ALL_CART_ITEMS"]:
+      return action.cart_items;
+
+    case _actions_cart_actions__WEBPACK_IMPORTED_MODULE_0__["RECEIVE_CART_ITEM"]:
+      return Object.assign({}, state, _defineProperty({}, action.cart_item.id, action.cart_item));
+
+    case _actions_cart_actions__WEBPACK_IMPORTED_MODULE_0__["REMOVE_CART_ITEM"]:
+      var newState = Object.assign({}, state);
+      delete newState[action.cartItemId];
+      return newState;
+
+    default:
+      return newState;
+  }
+};
+
+/* harmony default export */ __webpack_exports__["default"] = (cartItemReducer);
+
+/***/ }),
+
 /***/ "./frontend/reducers/entities_reducer.js":
 /*!***********************************************!*\
   !*** ./frontend/reducers/entities_reducer.js ***!
@@ -2448,14 +2502,14 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var redux__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! redux */ "./node_modules/redux/es/redux.js");
 /* harmony import */ var _users_reducer__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ./users_reducer */ "./frontend/reducers/users_reducer.js");
 /* harmony import */ var _products_reducer__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ./products_reducer */ "./frontend/reducers/products_reducer.js");
+/* harmony import */ var _cart_item_reducer__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! ./cart_item_reducer */ "./frontend/reducers/cart_item_reducer.js");
 
 
- // import shoppingCart from './'
+
 
 var entitiesReducer = Object(redux__WEBPACK_IMPORTED_MODULE_0__["combineReducers"])({
   users: _users_reducer__WEBPACK_IMPORTED_MODULE_1__["default"],
-  products: _products_reducer__WEBPACK_IMPORTED_MODULE_2__["default"] // seller:seller
-  // shoppingCart:shoppingCart
+  products: _products_reducer__WEBPACK_IMPORTED_MODULE_2__["default"] // cartItem:cartItemReducer
 
 });
 /* harmony default export */ __webpack_exports__["default"] = (entitiesReducer);
@@ -2786,6 +2840,26 @@ var configureStore = function configureStore() {
 };
 
 /* harmony default export */ __webpack_exports__["default"] = (configureStore);
+
+/***/ }),
+
+/***/ "./frontend/util/cart_api_util.js":
+/*!****************************************!*\
+  !*** ./frontend/util/cart_api_util.js ***!
+  \****************************************/
+/*! exports provided: createCart */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "createCart", function() { return createCart; });
+var createCart = function createCart(cart) {
+  return $.ajax({
+    method: "GET",
+    url: "api/carts",
+    data: cart
+  });
+};
 
 /***/ }),
 

@@ -84,7 +84,7 @@ class productForm extends React.Component {
     if(!preview){
       return (<div className="image-box">
                 
-      <input type="file" onChange={this.handleFile()} className="image-file"/>
+      <input type="file" onChange={this.handleFile} className="image-file"/>
     </div>)
     }
   }
