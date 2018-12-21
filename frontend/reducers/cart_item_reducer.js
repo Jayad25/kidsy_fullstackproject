@@ -11,8 +11,9 @@ import { merge } from 'lodash';
 const cartItemReducer = (state = {},action) => {
     Object.freeze(state)
     switch (action.type) {
-        case RECEIVE_CURRENT_USER:
-            return action.payload.user.cart;
+        // case RECEIVE_CURRENT_USER:
+        // debugger
+        //     return action.payload.user.user.cart;
         case RECEIVE_ALL_CART_ITEMS:
             let newState = Object.assign({}, state);
             let mergeState = merge({}, newState.cartItems, action.cart_items);

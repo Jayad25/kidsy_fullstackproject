@@ -6,7 +6,7 @@ class productForm extends React.Component {
   constructor(props){
     super(props);
     this.state = this.props.product;
-    // debugger
+    
     console.log(this.props.product)
     this.handleSubmit = this.handleSubmit.bind(this);
     this.update=this.update.bind(this);
@@ -15,7 +15,7 @@ class productForm extends React.Component {
   }
 
   update(field) {
-    // debugger
+   
     return e => this.setState({
       [field]: e.currentTarget.value
     });

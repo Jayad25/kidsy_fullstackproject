@@ -350,8 +350,8 @@ var receiveErrors = function receiveErrors(errors) {
 
 var login = function login(user) {
   return function (dispatch) {
-    return _util_session_api_util__WEBPACK_IMPORTED_MODULE_0__["login"](user).then(function (user) {
-      return dispatch(receiveCurrentUser(user));
+    return _util_session_api_util__WEBPACK_IMPORTED_MODULE_0__["login"](user).then(function (payload) {
+      return dispatch(receiveCurrentUser(payload));
     }, function (err) {
       return dispatch(receiveErrors(err.responseJSON));
     });
@@ -406,6 +406,7 @@ var fetchUser = function fetchUser(id) {
 };
 
 var receiveUser = function receiveUser(payload) {
+  debugger;
   return {
     type: RECEIVE_USER,
     payload: payload
@@ -752,7 +753,6 @@ function (_React$Component) {
   }, {
     key: "welcome",
     value: function welcome() {
-      //  debugger
       return this.props.currentUser ? this.personalGreeting() : this.sessionLinks();
     }
   }, {
@@ -826,7 +826,9 @@ var mapDispatchToProps = function mapDispatchToProps(dispatch) {
     openModal: function openModal(modal) {
       return dispatch(Object(_actions_modal_actions__WEBPACK_IMPORTED_MODULE_3__["openModal"])(modal));
     },
-    // searchProducts: (title) => dispatch(searchProducts(title)),
+    searchProducts: function searchProducts(title) {
+      return dispatch(Object(_actions_product_actions__WEBPACK_IMPORTED_MODULE_5__["searchProducts"])(title));
+    },
     demoLogin: function demoLogin() {
       return dispatch(Object(_actions_session_actions__WEBPACK_IMPORTED_MODULE_2__["login"])({
         user: {
@@ -1307,8 +1309,7 @@ function (_React$Component) {
     _classCallCheck(this, productForm);
 
     _this = _possibleConstructorReturn(this, _getPrototypeOf(productForm).call(this, props));
-    _this.state = _this.props.product; // debugger
-
+    _this.state = _this.props.product;
     console.log(_this.props.product);
     _this.handleSubmit = _this.handleSubmit.bind(_assertThisInitialized(_assertThisInitialized(_this)));
     _this.update = _this.update.bind(_assertThisInitialized(_assertThisInitialized(_this)));
@@ -1322,7 +1323,6 @@ function (_React$Component) {
     value: function update(field) {
       var _this2 = this;
 
-      // debugger
       return function (e) {
         return _this2.setState(_defineProperty({}, field, e.currentTarget.value));
       };
@@ -1562,7 +1562,11 @@ function (_React$Component) {
   _createClass(ProductIndex, [{
     key: "componentDidMount",
     value: function componentDidMount() {
-      this.props.fetchProducts();
+      if (this.props.location.search === "") {
+        this.props.fetchProducts();
+      } else {
+        this.props.search(this.props.location.search.slice(7));
+      }
     }
   }, {
     key: "render",
@@ -1619,6 +1623,9 @@ var mdp = function mdp(dispatch) {
   return {
     fetchProducts: function fetchProducts() {
       return dispatch(Object(_actions_product_actions__WEBPACK_IMPORTED_MODULE_2__["fetchProducts"])());
+    },
+    search: function search(title) {
+      return dispatch(Object(_actions_product_actions__WEBPACK_IMPORTED_MODULE_2__["searchProducts"])(title));
     },
     deleteProduct: function deleteProduct(id) {
       return dispatch(Object(_actions_product_actions__WEBPACK_IMPORTED_MODULE_2__["deleteProduct"])(id));
@@ -1696,12 +1703,10 @@ function (_React$Component) {
     key: "addcart",
     value: function addcart(e) {
       e.preventDefault();
-      debugger;
 
       if (this.props.cartId) {
         if (this.state.quantity) {
-          this.state.cart_id = this.props.cartId; //   debugger
-
+          this.state.cart_id = this.props.cartId;
           this.props.createCartItem(this.state);
           window.alert("".concat(this.props.product.title, "'s added to your cart!"));
         } else {
@@ -1709,8 +1714,7 @@ function (_React$Component) {
         }
       } else {
         if (this.state.quantity) {
-          this.state.cart_id = this.props.cartId; //   debugger
-
+          this.state.cart_id = this.props.cartId;
           this.props.createCartItem(this.state);
           window.alert("".concat(this.props.product.title, "'s added to your cart!"));
         } else {
@@ -1798,8 +1802,7 @@ __webpack_require__.r(__webpack_exports__);
 
 
 var mapStateToProps = function mapStateToProps(state, ownProps) {
-  var product = state.entities.products[ownProps.match.params.productId]; // debugger
-
+  var product = state.entities.products[ownProps.match.params.productId];
   var currentUser = state.entities.users[state.session.id];
   var cartId = state.entities.cart.id;
   return {
@@ -2087,10 +2090,9 @@ function (_React$Component) {
     value: function handleSubmit(e) {
       var _this3 = this;
 
-      e.preventDefault(); // debugger
-
+      e.preventDefault();
       this.props.search(this.state.title).then(function (products) {
-        _this3.props.history.push("/search");
+        _this3.props.history.push("/products?title=" + _this3.state.title);
 
         _this3.setState({
           title: ""
@@ -2480,7 +2482,6 @@ function (_React$Component) {
   _createClass(UserShow, [{
     key: "componentDidMount",
     value: function componentDidMount() {
-      // debugger
       this.props.fetchUser(this.props.match.params.userId);
     }
   }, {
@@ -2491,7 +2492,6 @@ function (_React$Component) {
       var deleteProduct = this.props.deleteProduct;
 
       var allUserProducts = function allUserProducts() {
-        // debugger
         return products.map(function (prod) {
           return react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
             key: prod.id
@@ -2550,7 +2550,6 @@ __webpack_require__.r(__webpack_exports__);
 
 
 var mapStateToProps = function mapStateToProps(state, ownProps) {
-  // debugger
   var products = Object.values(state.entities.products);
   var userId = state.session.id;
   var user = state.entities.users[userId];
@@ -2614,7 +2613,6 @@ document.addEventListener("DOMContentLoaded", function () {
   window.createProduct = _util_product_api_util__WEBPACK_IMPORTED_MODULE_5__["createProduct"];
 
   if (window.currentUser) {
-    // debugger
     var preloadedState = {
       entities: {
         users: _defineProperty({}, window.currentUser.id, window.currentUser)
@@ -2663,9 +2661,9 @@ var cartItemReducer = function cartItemReducer() {
   Object.freeze(state);
 
   switch (action.type) {
-    case _actions_session_actions__WEBPACK_IMPORTED_MODULE_1__["RECEIVE_CURRENT_USER"]:
-      return action.payload.user.cart;
-
+    // case RECEIVE_CURRENT_USER:
+    // debugger
+    //     return action.payload.user.user.cart;
     case _actions_cart_item_actions__WEBPACK_IMPORTED_MODULE_0__["RECEIVE_ALL_CART_ITEMS"]:
       var newState = Object.assign({}, state);
       var mergeState = Object(lodash__WEBPACK_IMPORTED_MODULE_2__["merge"])({}, newState.cartItems, action.cart_items);
@@ -2940,7 +2938,6 @@ var sessionReducer = function sessionReducer() {
   switch (action.type) {
     case _actions_session_actions__WEBPACK_IMPORTED_MODULE_0__["RECEIVE_CURRENT_USER"]:
       // return action.currentUser
-      // debugger
       return {
         id: action.payload.user.id
       };
@@ -2999,9 +2996,11 @@ var usersReducer = function usersReducer() {
 
   switch (action.type) {
     case _actions_session_actions__WEBPACK_IMPORTED_MODULE_0__["RECEIVE_CURRENT_USER"]:
-      return Object.assign({}, state, action.user);
+      debugger;
+      return Object.assign({}, state, action.payload.user);
 
     case _actions_user_actions__WEBPACK_IMPORTED_MODULE_1__["RECEIVE_USER"]:
+      debugger;
       return Object.assign({}, state, action.payload.user);
 
     case _actions_product_actions__WEBPACK_IMPORTED_MODULE_2__["RECEIVE_ALL_PRODUCTS"]:
@@ -3164,7 +3163,6 @@ var deleteProduct = function deleteProduct(productId) {
   });
 };
 var productSearch = function productSearch(title) {
-  // debugger
   return $.ajax({
     method: 'GET',
     url: 'api/search',
@@ -3272,6 +3270,7 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "login", function() { return login; });
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "logout", function() { return logout; });
 var signup = function signup(user) {
+  debugger;
   return $.ajax({
     method: "POST",
     url: "/api/users",

@@ -10,8 +10,7 @@ class Api::CartItemsController < ApplicationController
     end
 
     def create
-        sdv="sbf"
-        debugger
+        
 
         if(current_user.cart)
             cart_id=current_user.cart.id
@@ -40,8 +39,7 @@ class Api::CartItemsController < ApplicationController
 
 
     def cart_item_params
-        wgs="aerdfgv"
-        # debugger
+        
         params.require(:cart_item).permit(:product_id,:quantity)
     end
 end

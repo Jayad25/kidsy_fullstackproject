@@ -1,6 +1,7 @@
 import { connect } from 'react-redux';
 import ProductIndex from './product_index';
-import { fetchProducts,deleteProduct } from '../../actions/product_actions';
+
+import { fetchProducts,deleteProduct,searchProducts } from '../../actions/product_actions';
 
 
 const msp = state => ({
@@ -10,6 +11,7 @@ const msp = state => ({
 
 const mdp = dispatch =>({
     fetchProducts:()=>dispatch(fetchProducts()),
+    search:(title)=>dispatch(searchProducts(title)),
     deleteProduct:id=>dispatch(deleteProduct(id))
 })
 

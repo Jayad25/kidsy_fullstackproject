@@ -18,7 +18,7 @@ const receiveErrors = errors => ({
 })
 
 export const login = user => dispatch => (
-    SessionUtil.login(user).then(user=>dispatch(receiveCurrentUser(user)),
+    SessionUtil.login(user).then(payload=>dispatch(receiveCurrentUser(payload)),
     err => dispatch(receiveErrors(err.responseJSON)))
 )
 

@@ -45,7 +45,7 @@ class Greeting extends React.Component{
  }
 
  welcome(){
-  //  debugger
+
   return this.props.currentUser ? this.personalGreeting() : this.sessionLinks()
  }
  render(){

@@ -20,12 +20,12 @@ class ProductShow extends React.Component{
 
     addcart(e){
         e.preventDefault();
-        debugger
+        
         if(this.props.cartId)
         {
             if (this.state.quantity) {
                 this.state.cart_id = this.props.cartId
-        //   debugger
+           
                 this.props.createCartItem(this.state)
                 window.alert(`${this.props.product.title}'s added to your cart!`)
             } else {
@@ -34,7 +34,7 @@ class ProductShow extends React.Component{
         }else{
             if (this.state.quantity) {
                 this.state.cart_id = this.props.cartId
-        //   debugger
+        
                 this.props.createCartItem(this.state)
                 window.alert(`${this.props.product.title}'s added to your cart!`)
             } else {

@@ -3,7 +3,7 @@ import { Link } from "react-router-dom";
 
 class UserShow extends React.Component {
   componentDidMount() {
-    // debugger
+    
     this.props.fetchUser(this.props.match.params.userId);
   }
 
@@ -13,7 +13,7 @@ class UserShow extends React.Component {
     const deleteProduct = this.props.deleteProduct;
 
     const allUserProducts = () => {
-      // debugger
+    
       return products.map(prod => (
         <div key={prod.id} >
           <Link

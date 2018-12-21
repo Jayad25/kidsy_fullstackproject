@@ -42,7 +42,7 @@ export const deleteProduct = productId => (
 
 
 export const productSearch = (title) => {
-    // debugger
+
     return $.ajax({
       method: 'GET',
       url: 'api/search',

@@ -6,7 +6,7 @@ import {createCart} from '../../actions/cart_actions'
 
 const mapStateToProps = (state, ownProps) => {
     let product = state.entities.products[ownProps.match.params.productId];
-    // debugger
+   
     let currentUser= state.entities.users[state.session.id]
     let cartId=state.entities.cart.id
     return {
