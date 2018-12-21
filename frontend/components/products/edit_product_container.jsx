@@ -7,7 +7,7 @@ const mapStateToProps = (state, ownProps) => {
   const product = state.entities.products[ownProps.match.params.productId];
   const errors=state.errors.products
   const currentUser = state.session.id
-  console.log(product)
+  // console.log(product)
   const formType = 'Update product';
 
   return { product, errors,formType,currentUser };

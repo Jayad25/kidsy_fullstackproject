@@ -8,7 +8,7 @@ const mapStateToProps = (state, ownProps) => {
   let products = Object.values(state.entities.products);
   let userId = state.session.id
   let user= state.entities.users[userId]
-  console.log("users"+user)
+  // console.log("users"+user)
   let userProducts = [];
   products.forEach(prod => {
     if (prod.seller_id === userId) {

@@ -23,16 +23,23 @@ export const login = user => dispatch => (
 )
 
 export const signup = user => dispatch => (
-    SessionUtil.signup(user).then(user => dispatch(receiveCurrentUser(user)),
-    err=>dispatch(receiveErrors(err.responseJSON)))
+    SessionUtil.signup(user).then(user =>{
+        // debugger
+        return  dispatch(receiveCurrentUser(user))},
+    err=>{
+            // debugger
+        return dispatch(receiveErrors(err.responseJSON))})
 )
 
 export const logout = () => dispatch => (
-    SessionUtil.logout().then(user=>dispatch(logoutCurrentUser()),
+    SessionUtil.logout().then(
+        
+        user=>dispatch(logoutCurrentUser()),
     err=>dispatch(receiveErrors(err.responseJSON)))
 )
 
-export const clearErrors = () => dispatch => (
+export const clearErrors = () => dispatch => {
+    // debugger
     dispatch(receiveErrors([]))
-)
+}
 

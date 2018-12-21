@@ -360,8 +360,10 @@ var login = function login(user) {
 var signup = function signup(user) {
   return function (dispatch) {
     return _util_session_api_util__WEBPACK_IMPORTED_MODULE_0__["signup"](user).then(function (user) {
+      // debugger
       return dispatch(receiveCurrentUser(user));
     }, function (err) {
+      // debugger
       return dispatch(receiveErrors(err.responseJSON));
     });
   };
@@ -377,7 +379,8 @@ var logout = function logout() {
 };
 var clearErrors = function clearErrors() {
   return function (dispatch) {
-    return dispatch(receiveErrors([]));
+    // debugger
+    dispatch(receiveErrors([]));
   };
 };
 
@@ -406,7 +409,7 @@ var fetchUser = function fetchUser(id) {
 };
 
 var receiveUser = function receiveUser(payload) {
-  debugger;
+  // debugger
   return {
     type: RECEIVE_USER,
     payload: payload
@@ -1145,8 +1148,8 @@ function _setPrototypeOf(o, p) { _setPrototypeOf = Object.setPrototypeOf || func
 var mapStateToProps = function mapStateToProps(state, ownProps) {
   var product = state.entities.products[ownProps.match.params.productId];
   var errors = state.errors.products;
-  var currentUser = state.session.id;
-  console.log(product);
+  var currentUser = state.session.id; // console.log(product)
+
   var formType = 'Update product';
   return {
     product: product,
@@ -1309,8 +1312,8 @@ function (_React$Component) {
     _classCallCheck(this, productForm);
 
     _this = _possibleConstructorReturn(this, _getPrototypeOf(productForm).call(this, props));
-    _this.state = _this.props.product;
-    console.log(_this.props.product);
+    _this.state = _this.props.product; // console.log(this.props.product)
+
     _this.handleSubmit = _this.handleSubmit.bind(_assertThisInitialized(_assertThisInitialized(_this)));
     _this.update = _this.update.bind(_assertThisInitialized(_assertThisInitialized(_this)));
     _this.imagefile = _this.imagefile.bind(_assertThisInitialized(_assertThisInitialized(_this)));
@@ -1335,7 +1338,7 @@ function (_React$Component) {
       e.preventDefault();
 
       if (!this.state.photoUrl) {
-        console.log("handle this better later");
+        // console.log("handle this better later");
         alert("please upload file");
       }
 
@@ -1420,8 +1423,8 @@ function (_React$Component) {
   }, {
     key: "render",
     value: function render() {
-      console.log(this.props.formType); // if(this.props.formType==='Update product'){
-
+      // console.log(this.props.formType)
+      // if(this.props.formType==='Update product'){
       var preview = this.state.photoUrl ? react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("img", {
         className: "preview-image",
         src: this.state.photoUrl
@@ -2552,8 +2555,8 @@ __webpack_require__.r(__webpack_exports__);
 var mapStateToProps = function mapStateToProps(state, ownProps) {
   var products = Object.values(state.entities.products);
   var userId = state.session.id;
-  var user = state.entities.users[userId];
-  console.log("users" + user);
+  var user = state.entities.users[userId]; // console.log("users"+user)
+
   var userProducts = [];
   products.forEach(function (prod) {
     if (prod.seller_id === userId) {
@@ -2841,6 +2844,7 @@ var productsReducer = function productsReducer() {
       return newState;
 
     case _actions_user_actions__WEBPACK_IMPORTED_MODULE_1__["RECEIVE_USER"]:
+      // debugger
       return Object(lodash__WEBPACK_IMPORTED_MODULE_2__["merge"])({}, state, action.payload.products);
 
     default:
@@ -2937,10 +2941,11 @@ var sessionReducer = function sessionReducer() {
 
   switch (action.type) {
     case _actions_session_actions__WEBPACK_IMPORTED_MODULE_0__["RECEIVE_CURRENT_USER"]:
-      // return action.currentUser
-      return {
+      // debugger
+      // return action.payload.user
+      return Object.assign({}, state, {
         id: action.payload.user.id
-      };
+      });
 
     case _actions_session_actions__WEBPACK_IMPORTED_MODULE_0__["LOGOUT_CURRENT_USER"]:
       return _nullUser;
@@ -2998,15 +3003,17 @@ var usersReducer = function usersReducer() {
 
   switch (action.type) {
     case _actions_session_actions__WEBPACK_IMPORTED_MODULE_0__["RECEIVE_CURRENT_USER"]:
-      debugger;
+      // debugger
       return Object.assign({}, state, _defineProperty({}, action.payload.user.id, action.payload.user));
 
     case _actions_user_actions__WEBPACK_IMPORTED_MODULE_1__["RECEIVE_USER"]:
-      debugger;
-      return Object.assign({}, state, action.payload.user);
+      // debugger
+      return action.payload.user;
+    // return Object.assign({}, state, {[action.payload.user.id]:action.payload.user});
 
     case _actions_product_actions__WEBPACK_IMPORTED_MODULE_2__["RECEIVE_ALL_PRODUCTS"]:
-      return action.products.sellers;
+      // return action.products.sellers;
+      return Object.assign({}, state, action.products.sellers);
 
     case _actions_product_actions__WEBPACK_IMPORTED_MODULE_2__["RECEIVE_PRODUCT"]:
       return Object.assign({}, state, action.product.seller);
@@ -3041,7 +3048,7 @@ __webpack_require__.r(__webpack_exports__);
 
 var configureStore = function configureStore() {
   var preloadedState = arguments.length > 0 && arguments[0] !== undefined ? arguments[0] : {};
-  return Object(redux__WEBPACK_IMPORTED_MODULE_0__["createStore"])(_reducers_root_reducer__WEBPACK_IMPORTED_MODULE_3__["default"], preloadedState, Object(redux__WEBPACK_IMPORTED_MODULE_0__["applyMiddleware"])(redux_thunk__WEBPACK_IMPORTED_MODULE_2__["default"], redux_logger__WEBPACK_IMPORTED_MODULE_1___default.a));
+  return Object(redux__WEBPACK_IMPORTED_MODULE_0__["createStore"])(_reducers_root_reducer__WEBPACK_IMPORTED_MODULE_3__["default"], preloadedState, Object(redux__WEBPACK_IMPORTED_MODULE_0__["applyMiddleware"])(redux_thunk__WEBPACK_IMPORTED_MODULE_2__["default"]));
 };
 
 /* harmony default export */ __webpack_exports__["default"] = (configureStore);
@@ -3272,7 +3279,7 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "login", function() { return login; });
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "logout", function() { return logout; });
 var signup = function signup(user) {
-  debugger;
+  // debugger
   return $.ajax({
     method: "POST",
     url: "/api/users",

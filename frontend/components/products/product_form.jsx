@@ -7,7 +7,7 @@ class productForm extends React.Component {
     super(props);
     this.state = this.props.product;
     
-    console.log(this.props.product)
+    // console.log(this.props.product)
     this.handleSubmit = this.handleSubmit.bind(this);
     this.update=this.update.bind(this);
     this.imagefile=this.imagefile.bind(this);
@@ -24,7 +24,7 @@ class productForm extends React.Component {
   handleSubmit(e){
     e.preventDefault();
     if (!this.state.photoUrl) { 
-      console.log("handle this better later");
+      // console.log("handle this better later");
       alert("please upload file")
     }
     const id = this.props.currentUser;
@@ -91,7 +91,7 @@ class productForm extends React.Component {
 
 
   render() {
-    console.log(this.props.formType)
+    // console.log(this.props.formType)
    
     // if(this.props.formType==='Update product'){
      const preview = this.state.photoUrl ? <img className="preview-image" src={this.state.photoUrl} /> : null;
