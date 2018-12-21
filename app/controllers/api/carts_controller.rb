@@ -6,6 +6,7 @@ class Api::CartsController < ApplicationController
             render "api/cart_items"
         else
             render @cart.errors.full_messages, status:402
+        end
     end
 
     def cart_params
