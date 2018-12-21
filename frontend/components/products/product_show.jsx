@@ -1,12 +1,19 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
+import {createCartItem} from '../../actions/cart_item_actions'
 
 class ProductShow extends React.Component{
    
     componentDidMount(){
-        this.props.fetchProduct(this.props.match.params.productId)
-        
+        this.props.fetchProduct(this.props.match.params.productId) 
     }
+
+    addcart(e){
+        e.preventDefault();
+        // if(  )
+        let cartItem = {product_id:this.props.product.id}
+    }
+
     render(){
         if(this.props.product){
             return(
@@ -23,7 +30,7 @@ class ProductShow extends React.Component{
                     <h4 className="quantity-label">Quantity
                         <input type="text" className="quantity-input"></input>
                     </h4>
-                   <div className="cart-div"> <button className="add-to-cart-button">Add to Cart</button>
+                   <div className="cart-div"> <button className="add-to-cart-button"  onClick={e=>addcart(e)}>Add to Cart</button>
                    </div>
                    <div className="shipping">
                    <li>Shipping</li>

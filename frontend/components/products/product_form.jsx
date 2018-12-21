@@ -73,7 +73,7 @@ class productForm extends React.Component {
   formtitle(){
     if(this.props.formType==="Create A Product"){
       return (
-        <>Add a new Lsiting</>)
+        <>Add a new Listing</>)
     }else{
       return <>Update Product</>
     }
