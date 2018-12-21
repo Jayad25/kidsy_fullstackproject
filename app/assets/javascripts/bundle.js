@@ -2071,8 +2071,8 @@ function (_React$Component) {
     value: function handleSubmit(e) {
       var _this3 = this;
 
-      e.preventDefault();
-      debugger;
+      e.preventDefault(); // debugger
+
       this.props.search(this.state.title).then(function (products) {
         _this3.props.history.push("/search");
 
@@ -3086,7 +3086,7 @@ var deleteProduct = function deleteProduct(productId) {
   });
 };
 var productSearch = function productSearch(title) {
-  debugger;
+  // debugger
   return $.ajax({
     method: 'GET',
     url: 'api/search',

@@ -2,7 +2,7 @@ class Api::SearchController < ApplicationController
 
     def index
         @products = Product.top_twelve_results(search_params[:title])
-        debugger
+        # debugger
         render "api/products/index"
       end
     
