@@ -2665,7 +2665,7 @@ var cartItemReducer = function cartItemReducer() {
 
   switch (action.type) {
     // case RECEIVE_CURRENT_USER:
-    // debugger
+    // // debugger
     //     return action.payload.user.user.cart;
     case _actions_cart_item_actions__WEBPACK_IMPORTED_MODULE_0__["RECEIVE_ALL_CART_ITEMS"]:
       var newState = Object.assign({}, state);
@@ -3008,8 +3008,8 @@ var usersReducer = function usersReducer() {
 
     case _actions_user_actions__WEBPACK_IMPORTED_MODULE_1__["RECEIVE_USER"]:
       // debugger
-      return action.payload.user;
-    // return Object.assign({}, state, {[action.payload.user.id]:action.payload.user});
+      // return {[action.payload.user
+      return Object.assign({}, state, _defineProperty({}, action.payload.user.id, action.payload.user));
 
     case _actions_product_actions__WEBPACK_IMPORTED_MODULE_2__["RECEIVE_ALL_PRODUCTS"]:
       // return action.products.sellers;

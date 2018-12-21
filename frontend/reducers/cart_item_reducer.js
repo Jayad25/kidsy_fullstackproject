@@ -12,7 +12,7 @@ const cartItemReducer = (state = {},action) => {
     Object.freeze(state)
     switch (action.type) {
         // case RECEIVE_CURRENT_USER:
-        // debugger
+        // // debugger
         //     return action.payload.user.user.cart;
         case RECEIVE_ALL_CART_ITEMS:
             let newState = Object.assign({}, state);

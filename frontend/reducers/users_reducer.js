@@ -10,8 +10,8 @@ const usersReducer = (state = {}, action) => {
       return Object.assign({}, state, {[action.payload.user.id]:action.payload.user});
     case RECEIVE_USER:
     // debugger
-    return action.payload.user
-      // return Object.assign({}, state, {[action.payload.user.id]:action.payload.user});
+    // return {[action.payload.user
+      return Object.assign({}, state, {[action.payload.user.id]:action.payload.user});
     case RECEIVE_ALL_PRODUCTS:
       // return action.products.sellers;
       return Object.assign({}, state, action.products.sellers)
