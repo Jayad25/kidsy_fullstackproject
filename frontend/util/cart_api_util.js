@@ -1,7 +1,7 @@
 export const createCart = cart => {
     return $.ajax({
-      method: "GET",
-      url: `api/carts`,
+      method: "POST",
+      url: `api/cart_items`,
       data:cart
     })
   }

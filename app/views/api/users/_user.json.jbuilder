@@ -1,6 +1,10 @@
-json.extract! user, :id, :username
-
-
+json.user do
+  json.extract! user, :id, :username, :email
+end
+  
+json.cart do 
+  json.extract! user.cart, :id
+end
 
 json.products do
   user.products.each do |product|

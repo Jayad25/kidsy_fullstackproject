@@ -60,3 +60,9 @@ export const deleteProduct=(productId)=> dispatch => (
     then(product=>dispatch(removeProduct(productId)),
     err => dispatch(receiveErrors(err.responseJSON)))
 )
+
+
+export const searchProducts = title => dispatch => (
+    ProductApiUtil.productSearch(title)
+      .then(products => dispatch(receiveProducts(products)))
+  );

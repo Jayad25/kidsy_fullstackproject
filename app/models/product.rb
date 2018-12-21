@@ -26,4 +26,13 @@ class Product < ApplicationRecord
     primary_key: :id,
     class_name: 'CartItem'
 
+
+    def self.top_twelve_results(query_params)
+        return Product.all if query_params == ""
+        # debugger
+        param = "%" + query_params.split("").join("%").downcase + '%'
+    
+        products = Product.where('lower(title) LIKE ?', param).to_a
+      end
+
 end

@@ -2,14 +2,17 @@ import {connect} from "react-redux";
 import {fetchProduct} from "../../actions/product_actions";
 import ProductShow from './product_show';
 import {createCartItem}  from '../../actions/cart_item_actions'
-// import {createCart} from '../../actions/cart_actions'
+import {createCart} from '../../actions/cart_actions'
 
 const mapStateToProps = (state, ownProps) => {
     let product = state.entities.products[ownProps.match.params.productId];
+    // debugger
     let currentUser= state.entities.users[state.session.id]
+    let cartId=state.entities.cart.id
     return {
       product: product,
-      currentUser: currentUser
+      currentUser: currentUser,
+      cartId:cartId
 
     };
   };

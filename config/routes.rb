@@ -8,6 +8,8 @@ Rails.application.routes.draw do
     resource :session,only:[:create,:destroy,:show]
     resources :carts,only:[:create]
     resources :cart_items,only:[:create,:index,:update,:show,:destroy]
+    resources :search, only: [:index]
   end
+ 
   root "static_pages#root"
 end

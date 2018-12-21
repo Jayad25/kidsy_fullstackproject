@@ -53,7 +53,7 @@ class Greeting extends React.Component{
      <Link to="/" className="header-link">
       <h1 className="logo">Kidsy</h1>
      </Link>
-     <SearchForm />
+     <SearchForm search={this.props.searchProducts} />
      </div>
      
      <div className="NavbarRight"> 

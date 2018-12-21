@@ -1,16 +1,19 @@
-import connect from 'react-redux';
-import {fetchCartItems,deletecartItems} from '../../actions/cart_item_actions'
-import cartItem from './cart_item'
+import Cart from './cart.jsx';
+import { connect } from 'react-redux';
+import { fetchCartItems, deleteCartItem } from '../../actions/cart_item_actions';
 
-
-const mapStateToProps = ({state,ownProps}) => {
-    product : state.entities.products[oenProps.match.params.ProductId]
-    cartItems:state.entites.cartItem
-}
+const mapStateToProps = ({entities}) => ({
+  cartItems: entities.cart.cartItems,
+  cartProducts: entities.products,
+  cartId: entities.cart.id
+});
 
 const mapDispatchToProps = dispatch => ({
-    fetchCartItems: ()=>dispatch(fetchCartItems),
-    deletecartItems: (id) => dispatch(deletecartItems(id))
-})
+  fetchCartItems: (cartId) => dispatch(fetchCartItems(cartId)),
+  deleteCartItem: (cartId) => dispatch(deleteCartItem(cartId))
+});
 
-export default connect(mapStateToProps,mapDispatchToProps)(cartItem)
+export default connect(
+  mapStateToProps,
+  mapDispatchToProps
+)(Cart);

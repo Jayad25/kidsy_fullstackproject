@@ -23,6 +23,7 @@ import {
     Switch,
     HashRouter
   } from 'react-router-dom';
+import ProducIndexContainer from './products/product_index_container';
 
 const App = () => {
   return (<div className="page">
@@ -32,6 +33,7 @@ const App = () => {
     
 
   <Switch>
+    {/* <Route  exact path="/products" component={ProducIndexContainer}/> */}
     <Route  exact path="/" component={Homepage}/>
     <Route exact path="/users/:userId" component={UserShowContainer} />
     <ProtectedRoute  exact path="/products/new" component={CreateProductForm} />  

@@ -31,8 +31,7 @@ export const fetchCartItem= (id) => dispatch => (
 );
 
 export const createCartItem = (cartItem) => dispatch => (
-    CartItemApiUtil.createCartItem(cartItem).
-    then(cartItem => dispatch(receiveCartItem(cartItem)))
+    CartItemApiUtil.createCartItem(cartItem)
 )
 
 export const deleteCartItem = cartItemId => dispatch => (

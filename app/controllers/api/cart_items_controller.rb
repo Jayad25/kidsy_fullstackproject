@@ -1,6 +1,6 @@
 class Api::CartItemsController < ApplicationController
     def index
-        @cart_items = CartItem.find_by(params[:cart_id])
+        @cart_items = CartItem.find_by(cart_id:params[:cart_id])
             render "api/cart_items/index"
     end
 
@@ -11,6 +11,7 @@ class Api::CartItemsController < ApplicationController
 
     def create
         @cart_item = CartItem.new(cart_item_params)
+        debugger
             if @cart_item.save
                 render "api/cart_items/show"
             else
@@ -30,6 +31,8 @@ class Api::CartItemsController < ApplicationController
 
 
     def cart_item_params
-        params.require(:cart_item).permit(:cart_id,:product_id)
+        wgs="aerdfgv"
+        debugger
+        params.require(:cart_item).permit(:cart_id,:product_id,:quantity)
     end
 end

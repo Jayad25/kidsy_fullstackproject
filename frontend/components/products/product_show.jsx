@@ -1,11 +1,16 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
-// import {createCartItem} from '../../actions/cart_item_actions'
+import {createCartItem} from '../../actions/cart_item_actions'
 import { LOGOUT_CURRENT_USER } from '../../actions/session_actions';
 
 class ProductShow extends React.Component{
     constructor(props){
         super(props)
+        this.state = {
+            quantity: null,
+            cart_id: null,
+            product_id: null
+        }
         this.addcart=this.addcart.bind(this)
     }
    
@@ -13,21 +18,21 @@ class ProductShow extends React.Component{
         this.props.fetchProduct(this.props.match.params.productId) 
     }
 
-    // addcart(e){
-    //     e.preventDefault();
-    //     let cartId=this.props.curretUser.cart.id
-    //     if(cartId){
-    //         let cartItem = {product_id:this.props.product.id,cart_id:cartId,quantity:2}
-    //         this.props.createCartItem(cartItem)
-    //     }else
-    //     {
-    //         cartId=this.props.createCart({user_id:this.props.curretUser.id})
-    //         let cartItem = {product_id:this.props.product.id,cart_id:cartId,quantity:2}
-    //         this.props.createCartItem(cartItem)
-            
-    //     }
-
-    // }
+    addcart(e){
+        e.preventDefault();
+        // debugger
+        if(cartId)
+        {
+            if (this.state.quantity) {
+                this.state.cart_id = this.props.cartId
+        //   debugger
+                this.props.createCartItem(this.state)
+                window.alert(`${this.props.product.title}'s added to your cart!`)
+            } else {
+            window.alert("Please Select A Quantity")
+            }
+        }
+    }
 
     render(){
         if(this.props.product){
@@ -43,10 +48,12 @@ class ProductShow extends React.Component{
                     <div className="product-price">${this.props.product.price}
                     </div>
                     <h4 className="quantity-label">Quantity
-                        <input type="text" className="quantity-input"></input>
+                        <input type="text" className="quantity-input"
+                        onChange={(e) => this.setState({quantity: parseInt(e.target.value), product_id: this.props.product.id})}
+                        ></input>
                     </h4>
                    <div className="cart-div"> <button className="add-to-cart-button"  
-                //    onClick={e=>addcart(e)}
+                   onClick={e=>this.addcart(e)}
                    >Add to Cart</button>
                    </div>
                    <div className="shipping">
