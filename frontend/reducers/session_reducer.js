@@ -10,7 +10,8 @@ const sessionReducer = (state = _nullUser,action) => {
         
         case RECEIVE_CURRENT_USER:
         // return action.currentUser
-            return {id : action.currentUser.id}
+        // debugger
+            return {id : action.payload.user.id}
         case LOGOUT_CURRENT_USER:
             return _nullUser
         default:

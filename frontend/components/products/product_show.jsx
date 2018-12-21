@@ -11,28 +11,28 @@ class ProductShow extends React.Component{
             cart_id: null,
             product_id: null
         }
-        this.addcart=this.addcart.bind(this)
+        // this.addcart=this.addcart.bind(this)
     }
    
     componentDidMount(){
         this.props.fetchProduct(this.props.match.params.productId) 
     }
 
-    addcart(e){
-        e.preventDefault();
-        // debugger
-        if(cartId)
-        {
-            if (this.state.quantity) {
-                this.state.cart_id = this.props.cartId
-        //   debugger
-                this.props.createCartItem(this.state)
-                window.alert(`${this.props.product.title}'s added to your cart!`)
-            } else {
-            window.alert("Please Select A Quantity")
-            }
-        }
-    }
+    // addcart(e){
+    //     e.preventDefault();
+    //     // debugger
+    //     if(cartId)
+    //     {
+    //         if (this.state.quantity) {
+    //             this.state.cart_id = this.props.cartId
+    //     //   debugger
+    //             this.props.createCartItem(this.state)
+    //             window.alert(`${this.props.product.title}'s added to your cart!`)
+    //         } else {
+    //         window.alert("Please Select A Quantity")
+    //         }
+    //     }
+    // }
 
     render(){
         if(this.props.product){

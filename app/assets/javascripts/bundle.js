@@ -328,10 +328,10 @@ var RECEIVE_CURRENT_USER = "RECEIVE_CURRENT_USER";
 var LOGOUT_CURRENT_USER = "LOGOUT_CURRENT_USER";
 var RECEIVE_SESSION_ERRORS = "RECEIVE_SESSION_ERRORS";
 
-var receiveCurrentUser = function receiveCurrentUser(currentUser) {
+var receiveCurrentUser = function receiveCurrentUser(payload) {
   return {
     type: RECEIVE_CURRENT_USER,
-    currentUser: currentUser
+    payload: payload
   };
 };
 
@@ -463,18 +463,23 @@ var App = function App() {
   return react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
     className: "page"
   }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(_modal_modal__WEBPACK_IMPORTED_MODULE_14__["default"], null), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(_greeting_greeting_container__WEBPACK_IMPORTED_MODULE_2__["default"], null), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(react_router_dom__WEBPACK_IMPORTED_MODULE_16__["Switch"], null, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(react_router_dom__WEBPACK_IMPORTED_MODULE_16__["Route"], {
+    exact: true,
     path: "/",
     component: _homepage__WEBPACK_IMPORTED_MODULE_15__["default"]
   }), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(react_router_dom__WEBPACK_IMPORTED_MODULE_16__["Route"], {
+    exact: true,
     path: "/users/:userId",
     component: _users_user_show_container__WEBPACK_IMPORTED_MODULE_10__["default"]
   }), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(_util_route_util__WEBPACK_IMPORTED_MODULE_11__["ProtectedRoute"], {
+    exact: true,
     path: "/products/new",
     component: _products_create_product_container__WEBPACK_IMPORTED_MODULE_8__["default"]
   }), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(react_router_dom__WEBPACK_IMPORTED_MODULE_16__["Route"], {
+    exact: true,
     path: "/products/:productId",
     component: _products_product_show_container__WEBPACK_IMPORTED_MODULE_7__["default"]
   }), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(react_router_dom__WEBPACK_IMPORTED_MODULE_16__["Route"], {
+    exact: true,
     path: "/products/",
     component: _products_product_index_container__WEBPACK_IMPORTED_MODULE_3__["default"]
   }), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(react_router_dom__WEBPACK_IMPORTED_MODULE_16__["Route"], {
@@ -747,6 +752,7 @@ function (_React$Component) {
   }, {
     key: "welcome",
     value: function welcome() {
+      //  debugger
       return this.props.currentUser ? this.personalGreeting() : this.sessionLinks();
     }
   }, {
@@ -820,9 +826,7 @@ var mapDispatchToProps = function mapDispatchToProps(dispatch) {
     openModal: function openModal(modal) {
       return dispatch(Object(_actions_modal_actions__WEBPACK_IMPORTED_MODULE_3__["openModal"])(modal));
     },
-    searchProducts: function searchProducts(title) {
-      return dispatch(Object(_actions_product_actions__WEBPACK_IMPORTED_MODULE_5__["searchProducts"])(title));
-    },
+    // searchProducts: (title) => dispatch(searchProducts(title)),
     demoLogin: function demoLogin() {
       return dispatch(Object(_actions_session_actions__WEBPACK_IMPORTED_MODULE_2__["login"])({
         user: {
@@ -1650,13 +1654,13 @@ function _createClass(Constructor, protoProps, staticProps) { if (protoProps) _d
 
 function _possibleConstructorReturn(self, call) { if (call && (_typeof(call) === "object" || typeof call === "function")) { return call; } return _assertThisInitialized(self); }
 
+function _assertThisInitialized(self) { if (self === void 0) { throw new ReferenceError("this hasn't been initialised - super() hasn't been called"); } return self; }
+
 function _getPrototypeOf(o) { _getPrototypeOf = Object.setPrototypeOf ? Object.getPrototypeOf : function _getPrototypeOf(o) { return o.__proto__ || Object.getPrototypeOf(o); }; return _getPrototypeOf(o); }
 
 function _inherits(subClass, superClass) { if (typeof superClass !== "function" && superClass !== null) { throw new TypeError("Super expression must either be null or a function"); } subClass.prototype = Object.create(superClass && superClass.prototype, { constructor: { value: subClass, writable: true, configurable: true } }); if (superClass) _setPrototypeOf(subClass, superClass); }
 
 function _setPrototypeOf(o, p) { _setPrototypeOf = Object.setPrototypeOf || function _setPrototypeOf(o, p) { o.__proto__ = p; return o; }; return _setPrototypeOf(o, p); }
-
-function _assertThisInitialized(self) { if (self === void 0) { throw new ReferenceError("this hasn't been initialised - super() hasn't been called"); } return self; }
 
 
 
@@ -1677,9 +1681,9 @@ function (_React$Component) {
     _this.state = {
       quantity: null,
       cart_id: null,
-      product_id: null
+      product_id: null // this.addcart=this.addcart.bind(this)
+
     };
-    _this.addcart = _this.addcart.bind(_assertThisInitialized(_assertThisInitialized(_this)));
     return _this;
   }
 
@@ -1687,23 +1691,22 @@ function (_React$Component) {
     key: "componentDidMount",
     value: function componentDidMount() {
       this.props.fetchProduct(this.props.match.params.productId);
-    }
-  }, {
-    key: "addcart",
-    value: function addcart(e) {
-      e.preventDefault(); // debugger
+    } // addcart(e){
+    //     e.preventDefault();
+    //     // debugger
+    //     if(cartId)
+    //     {
+    //         if (this.state.quantity) {
+    //             this.state.cart_id = this.props.cartId
+    //     //   debugger
+    //             this.props.createCartItem(this.state)
+    //             window.alert(`${this.props.product.title}'s added to your cart!`)
+    //         } else {
+    //         window.alert("Please Select A Quantity")
+    //         }
+    //     }
+    // }
 
-      if (cartId) {
-        if (this.state.quantity) {
-          this.state.cart_id = this.props.cartId; //   debugger
-
-          this.props.createCartItem(this.state);
-          window.alert("".concat(this.props.product.title, "'s added to your cart!"));
-        } else {
-          window.alert("Please Select A Quantity");
-        }
-      }
-    }
   }, {
     key: "render",
     value: function render() {
@@ -1783,13 +1786,13 @@ __webpack_require__.r(__webpack_exports__);
 
 var mapStateToProps = function mapStateToProps(state, ownProps) {
   var product = state.entities.products[ownProps.match.params.productId]; // debugger
+  // let currentUser= state.entities.users[state.session.id]
+  // let cartId=state.entities.cart.id
 
-  var currentUser = state.entities.users[state.session.id];
-  var cartId = state.entities.cart.id;
   return {
-    product: product,
-    currentUser: currentUser,
-    cartId: cartId
+    product: product // currentUser: currentUser,
+    // cartId:cartId
+
   };
 };
 
@@ -1797,13 +1800,9 @@ var mapDispatchToProps = function mapDispatchToProps(dispatch) {
   return {
     fetchProduct: function fetchProduct(id) {
       return dispatch(Object(_actions_product_actions__WEBPACK_IMPORTED_MODULE_1__["fetchProduct"])(id));
-    },
-    createCartItem: function createCartItem(cartItem) {
-      return dispatch(Object(_actions_cart_item_actions__WEBPACK_IMPORTED_MODULE_3__["createCartItem"])(cartItem));
-    },
-    createCart: function createCart(cart) {
-      return dispatch(Object(_actions_cart_actions__WEBPACK_IMPORTED_MODULE_4__["createCart"])(cart));
-    }
+    } //  createCartItem:(cartItem)=>dispatch(createCartItem(cartItem)),
+    // createCart:(cart)=>dispatch(createCart(cart))}
+
   };
 };
 
@@ -2085,7 +2084,6 @@ function (_React$Component) {
     key: "render",
     value: function render() {
       return react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", null, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("form", {
-        onSubmit: this.handleSubmit,
         className: "search-form"
       }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("input", {
         placeholder: "Search for Items",
@@ -2598,6 +2596,7 @@ document.addEventListener("DOMContentLoaded", function () {
   window.createProduct = _util_product_api_util__WEBPACK_IMPORTED_MODULE_5__["createProduct"];
 
   if (window.currentUser) {
+    // debugger
     var preloadedState = {
       entities: {
         users: _defineProperty({}, window.currentUser.id, window.currentUser)
@@ -2867,8 +2866,9 @@ var sessionReducer = function sessionReducer() {
   switch (action.type) {
     case _actions_session_actions__WEBPACK_IMPORTED_MODULE_0__["RECEIVE_CURRENT_USER"]:
       // return action.currentUser
+      // debugger
       return {
-        id: action.currentUser.id
+        id: action.payload.user.id
       };
 
     case _actions_session_actions__WEBPACK_IMPORTED_MODULE_0__["LOGOUT_CURRENT_USER"]:

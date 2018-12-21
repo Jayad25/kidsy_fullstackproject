@@ -4,15 +4,15 @@ import {
     REMOVE_CART_ITEM
 } from '../actions/cart_item_actions'
 
-import {RECEIVE_CURRENT_USER,LOGOUT_CURRENT_USER} from '../actions/session_actions';
+// import {RECEIVE_CURRENT_USER,LOGOUT_CURRENT_USER} from '../actions/session_actions';
 import { merge } from 'lodash';
 
 
 const cartItemReducer = (state = {},action) => {
     Object.freeze(state)
     switch (action.type) {
-        case RECEIVE_CURRENT_USER:
-            return action.currentUser.cart;
+        // case RECEIVE_CURRENT_USER:
+        //     return action.currentUser.cart;
         case RECEIVE_ALL_CART_ITEMS:
             let newState = Object.assign({}, state);
             let mergeState = merge({}, newState.cartItems, action.cart_items);
@@ -23,9 +23,9 @@ const cartItemReducer = (state = {},action) => {
             let newStat = Object.assign({},state);
             delete newStat.cartItems[action.cartItemId]
             return newStat
-        case LOGOUT_CURRENT_USER:
-            return {cartItems: {}};
-    
+        // case LOGOUT_CURRENT_USER:
+        //     return {cartItems: {}};
+                                                                                                                                                                    
         default:
             return state
     }

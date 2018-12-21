@@ -11,6 +11,7 @@ document.addEventListener("DOMContentLoaded",()=>{
     let store;
     window.createProduct=createProduct;
     if (window.currentUser) {
+        // debugger
     const preloadedState = {
         entities: {
             users:{[window.currentUser.id]:window.currentUser}},
