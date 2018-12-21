@@ -10,8 +10,17 @@ class Api::CartItemsController < ApplicationController
     end
 
     def create
+        sdv="sbf"
+        debugger
+
+        if(current_user.cart)
+            cart_id=current_user.cart.id
+        else
+            cart=Cart.create(user_id:current_user.id)
+            cart_id=cart.id
+        end
         @cart_item = CartItem.new(cart_item_params)
-        # debugger
+        @cart_item.cart_id=cart_id;
             if @cart_item.save
                 render "api/cart_items/show"
             else
@@ -33,6 +42,6 @@ class Api::CartItemsController < ApplicationController
     def cart_item_params
         wgs="aerdfgv"
         # debugger
-        params.require(:cart_item).permit(:cart_id,:product_id,:quantity)
+        params.require(:cart_item).permit(:product_id,:quantity)
     end
 end

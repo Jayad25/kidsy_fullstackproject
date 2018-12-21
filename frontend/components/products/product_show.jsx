@@ -18,21 +18,30 @@ class ProductShow extends React.Component{
         this.props.fetchProduct(this.props.match.params.productId) 
     }
 
-    // addcart(e){
-    //     e.preventDefault();
-    //     // debugger
-    //     if(cartId)
-    //     {
-    //         if (this.state.quantity) {
-    //             this.state.cart_id = this.props.cartId
-    //     //   debugger
-    //             this.props.createCartItem(this.state)
-    //             window.alert(`${this.props.product.title}'s added to your cart!`)
-    //         } else {
-    //         window.alert("Please Select A Quantity")
-    //         }
-    //     }
-    // }
+    addcart(e){
+        e.preventDefault();
+        debugger
+        if(this.props.cartId)
+        {
+            if (this.state.quantity) {
+                this.state.cart_id = this.props.cartId
+        //   debugger
+                this.props.createCartItem(this.state)
+                window.alert(`${this.props.product.title}'s added to your cart!`)
+            } else {
+            window.alert("Please Select A Quantity")
+            }
+        }else{
+            if (this.state.quantity) {
+                this.state.cart_id = this.props.cartId
+        //   debugger
+                this.props.createCartItem(this.state)
+                window.alert(`${this.props.product.title}'s added to your cart!`)
+            } else {
+            window.alert("Please Select A Quantity")
+            }
+        }
+    }
 
     render(){
         if(this.props.product){
@@ -53,7 +62,7 @@ class ProductShow extends React.Component{
                         ></input>
                     </h4>
                    <div className="cart-div"> <button className="add-to-cart-button"  
-                //    onClick={e=>this.addcart(e)}
+                   onClick={e=>this.addcart(e)}
                    >Add to Cart</button>
                    </div>
                    <div className="shipping">

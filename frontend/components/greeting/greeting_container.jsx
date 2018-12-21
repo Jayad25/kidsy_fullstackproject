@@ -7,7 +7,7 @@ import Greeting from './greeting';
 import {searchProducts} from '../../actions/product_actions';
 
 const mapStateToProps = ({ session, entities: { users } }) => {
-  
+
   return {
     currentUser: users[session.id]
   };
