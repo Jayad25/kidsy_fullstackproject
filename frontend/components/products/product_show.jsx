@@ -53,7 +53,7 @@ class ProductShow extends React.Component{
                         ></input>
                     </h4>
                    <div className="cart-div"> <button className="add-to-cart-button"  
-                   onClick={e=>this.addcart(e)}
+                //    onClick={e=>this.addcart(e)}
                    >Add to Cart</button>
                    </div>
                    <div className="shipping">

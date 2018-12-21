@@ -9,7 +9,7 @@ const RecentlyViewedIndexItem = ({ product }) => {
     // }
   return (
      
-    <li className="productitems">
+    <div className="productitems">
          
         <li>
             <Link to={`/products/${product.id}`}><img className='product_index_img' src={product.photoUrl}/>
@@ -19,7 +19,7 @@ const RecentlyViewedIndexItem = ({ product }) => {
             <Link to={`/products/${product.id}`} className="index-productName">{product.title}</Link></li>
         <li className='index-productCost'>${(product.price)}</li>
         
-    </li>);
+    </div>);
 };
 
 export default RecentlyViewedIndexItem;
