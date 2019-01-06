@@ -30,7 +30,7 @@ class Product < ApplicationRecord
     def self.top_twelve_results(query_params)
         return Product.all if query_params == ""
        
-        param = "%" + query_params.split("").join("%").downcase + '%'
+        param = "%" + query_params.downcase + '%'
     
         products = Product.where('lower(title) LIKE ?', param).to_a
       end
