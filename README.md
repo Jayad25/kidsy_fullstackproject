@@ -21,7 +21,7 @@ Kidsy is a shopping website for Kids Products. I used React and Redux on the fro
 
 ### Products
 ![All Products](https://i.imgur.com/SkhXdum.png)
-(https://i.imgur.com/Ozwhy28.png)
+[](https://i.imgur.com/Ozwhy28.png)
 
 ![Search](https://i.imgur.com/aSOxQJh.png)
 
