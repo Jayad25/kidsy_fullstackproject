@@ -57,6 +57,7 @@ const Protected = ({ component: Component, path, loggedIn, exact, redirectToModa
             )
     )} />
 );
+```
 
 ### Additional Resources
 * [Wiki](https://github.com/Jayad25/kidsy_fullstackproject/wiki)
