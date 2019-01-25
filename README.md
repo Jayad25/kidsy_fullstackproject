@@ -15,15 +15,25 @@ Kidsy is a shopping website for Kids Products. I used React and Redux on the fro
 
 ![Homepage](https://i.imgur.com/0lv5Wvh.png)
 
+
+
 ### Sign In and Register
 
 ![Sign In & Register](https://i.imgur.com/eP5cerN.jpg)
 
+
+
 ### Products
+
+
 ![All Products](https://i.imgur.com/SkhXdum.png)
-(https://i.imgur.com/Ozwhy28.png)
+[](https://i.imgur.com/Ozwhy28.png)
+
 
 ![Search](https://i.imgur.com/aSOxQJh.png)
+
+
+
 
 ### Add to Cart
 
@@ -35,13 +45,21 @@ Kidsy is a shopping website for Kids Products. I used React and Redux on the fro
 
 ![Profile](https://i.imgur.com/Crw0was.png)
 
+
+
 ### Create A Product
 
 ![Create A Product](https://i.imgur.com/FVYMfb7.png)
 
+
+
+
 ### Editing A Product
 
 ![Edit a Product](https://i.imgur.com/YsLMGCY.png)
+
+
+
 
 ### Deleting A Product
 ![Delete a Product](https://i.imgur.com/vBBKh22.png)
