@@ -1,17 +1,13 @@
 class Api::CartsController < ApplicationController
 
-    def create
-        @cart = Cart.new(cart_params)
-        if @cart.save
-            # render "api/cart_items"
-        else
-            render @cart.errors.full_messages, status:402
-        end
-    end
+    def show
 
-    def cart_params
-        he="s"
-        
-        params.require(:cart).permit(:user_id)
+    if current_user.cart
+      id = current_user.cart.id
+      @cart = Cart.find(id)
+    else
+      @cart = Cart.new({ user_id: current_user.id})
+      @cart.save
     end
+  end
 end

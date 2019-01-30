@@ -1,45 +1,56 @@
 class Api::CartItemsController < ApplicationController
-    def index
-        @cart_items = CartItem.find_by(cart_id:params[:cart_id])
-            render "api/cart_items/index"
-    end
+  def create
+    @cart_item = cartItem.new(cart_item_params)
+    product = Product.find_by(id: @cart_item.product_id)
 
-    def show
-        @cart_item = CartItem.find_by(id:params[:id])
-            render "api/cart_items/show"
-    end
 
-    def create
-        
+    if current_user.cart
+      @cart = current_user.cart
 
-        if(current_user.cart)
-            cart_id=current_user.cart.id
-        else
-            cart=Cart.create(user_id:current_user.id)
-            cart_id=cart.id
+      @cart.products.each do |already_exist_item| 
+        if already_exist_item.product_id == @cart_item.product_id
+          @cart_item = already_exist_item
         end
-        @cart_item = CartItem.new(cart_item_params)
-        @cart_item.cart_id=cart_id;
-            if @cart_item.save
-                render "api/cart_items/show"
-            else
-                render json:@cart_item.errors.full_messages,status:402
-            end
+      end
+
+    else
+      @cart = Cart.new({ user_id: current_user.id })
     end
 
+    
+    @cart.save
+    @cart_item.cart_id = @cart.id
 
-    def destroy
-        @cart_item = CartItem.find_by(id:params[:id])
-        if @cart_item.destroy
-            render "api/cart_items"
-        else
-            render json:@cart_item.errors.full_messages,status:402
-        end
+    if @cart_item.save
+
+      render "api/carts/show"
+    else
+      render json: @cart_item.errors.full_messages, status: 422
     end
 
+  end
 
-    def cart_item_params
-        
-        params.require(:cart_item).permit(:product_id,:quantity)
-    end
+
+  def destroy
+    @cart_item = cartItem.find(params[:id])
+    item = Product.find_by(id: @cart_item.product_id)
+    @cart = Cart.find_by(id: @cart_item.cart_id)
+    @cart.save
+    
+    
+      @cart_item.destroy
+      render "api/carts/show"
+    
+    
+  end
+
+
+  def cart_item_params
+    snackcase_params
+    params.require(:cartItem).permit(:product_id, :cart_id)
+  end
+
+    def snackcase_params
+    params[:cartItem] = params[:cartItem].transform_keys(&:underscore)
+  end
 end

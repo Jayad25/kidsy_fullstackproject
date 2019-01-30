@@ -49,3 +49,27 @@ export const productSearch = (title) => {
       data: { search: {title }}
     })
   };
+
+export const cartItem = (cartItem) => {
+    return (
+        $.ajax({
+            method: 'POST',
+            url: 'api/cartitems',
+            data: { cartItem }
+        })
+    )
+};
+
+export const deletecartItem = (id) => (
+    $.ajax({
+        method: 'DELETE',
+        url: `api/cartitems/${id}`
+    })
+);
+
+export const fetchCart = () => {
+    return $.ajax({
+        method: 'GET',
+        url: 'api/cart'
+    })
+};
