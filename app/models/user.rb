@@ -26,6 +26,8 @@ class User < ApplicationRecord
     foreign_key: :seller_id,
     primary_key: :id,
     class_name: 'Product'
+    
+    has_one :shopping_cart, dependent: :destroy
 
 
     
