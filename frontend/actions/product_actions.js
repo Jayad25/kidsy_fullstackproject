@@ -4,9 +4,7 @@ export const RECEIVE_ALL_PRODUCTS="RECEIVE_ALL_PRODUCTS";
 export const RECEIVE_PRODUCT="RECEIVE_PRODUCT";
 export const REMOVE_PRODUCT="REMOVE_PRODUCT";
 export const RECEIVE_PRODUCT_ERRORS="RECEIVE_PRODUCT_ERRORS";
-export const RECEIVE_CART = "RECEIVE_CART";
-export const RECEIVE_CART_PRODUCT = "RECEIVE_CART_PRODUCT";
-export const REMOVE_CART_PRODUCT = "REMOVE_CART_PRODUCT";
+
 
 const receiveProducts = products => (
     {
@@ -70,41 +68,7 @@ export const searchProducts = title => dispatch => (
       .then(products => dispatch(receiveProducts(products)))
   );
 
-export const receiveCart = (payload) => ({
-    type: RECEIVE_CART,
-    payload
-});
-
-export const requestCart = () => dispatch => {
-    return ProductAPIUtil.fetchCart().then((cart) =>
-        dispatch(receiveCart(cart)));
-};
-
-// -----------------------------------------
-export const receiveCartItem = (payload) => ({
-    type: RECEIVE_CART_PRODUCT,
-    payload
-});
-
-export const createCartItem = (item) => dispatch => {
-
-    return ProductAPIUtil.CartItem(item)
-        .then((item1) => dispatch(receiveCartItem(item1)),
-            err => (
-                dispatch(receiveErrors(err.responseJSON))
-            ));
-};
 
 
-// -----------------------------------------
 
-export const removeCartItem = (CartProductId) => ({
-    type: REMOVE_CART_PRODUCT,
-    CartProductId
-});
-
-export const deleteCartItem = (id) => dispatch => {
-    return ProductAPIUtil.deleteCartItem(id).then(() =>
-        dispatch(removeCartItem(id)));
-};
 

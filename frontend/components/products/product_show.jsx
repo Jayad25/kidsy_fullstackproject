@@ -1,7 +1,5 @@
 import React from 'react';
-import { Link } from 'react-router-dom';
-import {createCartItem} from '../../actions/cart_item_actions'
-import { LOGOUT_CURRENT_USER } from '../../actions/session_actions';
+
 
 class ProductShow extends React.Component{
     constructor(props){
@@ -18,30 +16,30 @@ class ProductShow extends React.Component{
         this.props.fetchProduct(this.props.match.params.productId) 
     }
 
-    addcart(e){
-        e.preventDefault();
+    // addcart(e){
+    //     e.preventDefault();
         
-        if(this.props.cartId)
-        {
-            if (this.state.quantity) {
-                this.state.cart_id = this.props.cartId
+    //     if(this.props.cartId)
+    //     {
+    //         if (this.state.quantity) {
+    //             this.state.cart_id = this.props.cartId
            
-                this.props.createCartItem(this.state)
-                window.alert(`${this.props.product.title}'s added to your cart!`)
-            } else {
-            window.alert("Please Select A Quantity")
-            }
-        }else{
-            if (this.state.quantity) {
-                this.state.cart_id = this.props.cartId
+    //             this.props.createCartItem(this.state)
+    //             window.alert(`${this.props.product.title}'s added to your cart!`)
+    //         } else {
+    //         window.alert("Please Select A Quantity")
+    //         }
+    //     }else{
+    //         if (this.state.quantity) {
+    //             this.state.cart_id = this.props.cartId
         
-                this.props.createCartItem(this.state)
-                window.alert(`${this.props.product.title}'s added to your cart!`)
-            } else {
-            window.alert("Please Select A Quantity")
-            }
-        }
-    }
+    //             this.props.createCartItem(this.state)
+    //             window.alert(`${this.props.product.title}'s added to your cart!`)
+    //         } else {
+    //         window.alert("Please Select A Quantity")
+    //         }
+    //     }
+    // }
 
     render(){
         if(this.props.product){
@@ -62,7 +60,7 @@ class ProductShow extends React.Component{
                         ></input>
                     </h4>
                    <div className="cart-div"> <button className="add-to-cart-button"  
-                   onClick={e=>this.addcart(e)}
+                   
                    >Add to Cart</button>
                    </div>
                    <div className="shipping">

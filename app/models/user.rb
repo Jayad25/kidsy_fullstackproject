@@ -28,12 +28,7 @@ class User < ApplicationRecord
     class_name: 'Product'
 
 
-    has_one :cart, dependent: :destroy
-
-
-    has_many :cart_items,
-    through: :carts,
-    source: :cart_items
+    
     
     def self.find_by_credentials(username, password)
         user = User.find_by(username: username)

@@ -21,10 +21,7 @@ class Product < ApplicationRecord
     primary_key: :id,
     class_name: 'User'
 
-    has_many :cart_items,
-    foreign_key: :product_id,
-    primary_key: :id,
-    class_name: 'CartItem'
+    
 
 
     def self.top_twelve_results(query_params)
