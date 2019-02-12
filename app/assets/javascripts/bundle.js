@@ -1660,7 +1660,7 @@ function (_React$Component) {
     _this = _possibleConstructorReturn(this, _getPrototypeOf(ProductShow).call(this, props));
     _this.state = {
       quantity: null,
-      cart_id: null,
+      shopping_cart_id: null,
       product_id: null
     };
     _this.addToCart = _this.addToCart.bind(_assertThisInitialized(_assertThisInitialized(_this)));

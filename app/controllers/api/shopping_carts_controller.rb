@@ -2,6 +2,7 @@ class Api::ShoppingCartsController < ApplicationController
 
     def create
         @shopping_cart = ShoppingCart.new(shopping_cart_params)
+        debugger
         unless @shopping_cart.save
             render json: @review.errors.full_messages, status: 422
         end

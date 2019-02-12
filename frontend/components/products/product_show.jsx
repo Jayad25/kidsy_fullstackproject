@@ -5,10 +5,10 @@ class ProductShow extends React.Component{
     constructor(props){
         super(props)
         this.state = {
-            quantity: null,
-            cart_id: null,
-            product_id: null
-        }
+          quantity: null,
+          shopping_cart_id: null,
+          product_id: null
+        };
         this.addToCart = this.addToCart.bind(this);
     }
    
