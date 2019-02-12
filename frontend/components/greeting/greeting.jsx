@@ -60,7 +60,10 @@ class Greeting extends React.Component{
      
      <div className="NavbarRight"> 
      {this.welcome()}
-      <i className="fas fa-shopping-cart"></i></div>
+         <Link to="/cart" className="cart-div">
+      <i className="fas fa-shopping-cart"></i>
+      </Link>
+       </div>
      </nav>
      <CategorieForm />
    </div>

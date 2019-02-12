@@ -9,37 +9,34 @@ class ProductShow extends React.Component{
             cart_id: null,
             product_id: null
         }
-        // this.addcart=this.addcart.bind(this)
+        this.addToCart = this.addToCart.bind(this);
     }
    
     componentDidMount(){
         this.props.fetchProduct(this.props.match.params.productId) 
     }
 
-    // addcart(e){
-    //     e.preventDefault();
-        
-    //     if(this.props.cartId)
-    //     {
-    //         if (this.state.quantity) {
-    //             this.state.cart_id = this.props.cartId
-           
-    //             this.props.createCartItem(this.state)
-    //             window.alert(`${this.props.product.title}'s added to your cart!`)
-    //         } else {
-    //         window.alert("Please Select A Quantity")
-    //         }
-    //     }else{
-    //         if (this.state.quantity) {
-    //             this.state.cart_id = this.props.cartId
-        
-    //             this.props.createCartItem(this.state)
-    //             window.alert(`${this.props.product.title}'s added to your cart!`)
-    //         } else {
-    //         window.alert("Please Select A Quantity")
-    //         }
-    //     }
-    // }
+    addToCart(e) {
+        e.preventDefault()
+        debugger
+        if (!this.props.currentUser) {
+            this.props.openModal("regtocontinue");
+        } else {
+            if (this.state.quantity) {
+                this.state.shopping_cart_id = this.props.cartId
+                this.props.createCartItem(this.state)
+                window.alert(`${this.state.quantity} ${this.props.product.product_name}'s added to your cart!`)
+            } else {
+                window.alert("Please Select A Quantity")
+            }
+        }
+    }
+
+    clearErrors() {
+        if (!this.props.errors) return null
+        this.props.removeErrors()
+    }
+
 
     render(){
         if(this.props.product){
@@ -59,8 +56,8 @@ class ProductShow extends React.Component{
                         onChange={(e) => this.setState({quantity: parseInt(e.target.value), product_id: this.props.product.id})}
                         ></input>
                     </h4>
-                   <div className="cart-div"> <button className="add-to-cart-button"  
-                   
+                   <div className="cart-div"> <button className="add-cart"  
+                                onClick={e => this.addToCart(e)}
                    >Add to Cart</button>
                    </div>
                    <div className="shipping">
