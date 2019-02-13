@@ -20,7 +20,9 @@ User.delete_all
  user1=User.create!(username: 'username',password: 'password',email:"chj@hm.com")
 user2=User.create!(username: 'sam',password: 'password',email:"sam@gmail.com")
 user3=User.create!(username: 'john',password: 'password',email:"john@gmail.com")
-
+ShoppingCart.create!(user_id: user1.id)
+ShoppingCart.create!(user_id: user2.id)
+ShoppingCart.create!(user_id: user3.id)
 
 p2=Product.create(
     seller_id:user1.id,
@@ -72,16 +74,6 @@ l2=Product.create(
     price:2.80,
     quantity:24)
 l2.photo.attach(io: File.open("./app/assets/images/image2.jpg"),filename:"image2.jpg")
-
-
-
-
-
-
-
-
-
-
 
 
 l1=Product.create(
