@@ -7,7 +7,7 @@
 
   json.products do
     json.set! cart_item.product_id do
-      json.extract! cart_item.product, :id, :user_id, :product_name, :description, :price
+      json.extract! cart_item.product, :id, :seller_id, :title, :description, :price
       json.photoUrl url_for(cart_item.product.photo)
     end
   end

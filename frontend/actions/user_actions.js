@@ -7,7 +7,7 @@ export const fetchUser = id => dispatch => {
 };
 
 const receiveUser = payload => {
-  // debugger
+
   return {
     type: RECEIVE_USER,
     payload

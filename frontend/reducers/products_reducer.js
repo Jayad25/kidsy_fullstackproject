@@ -15,7 +15,6 @@ const productsReducer = (state = {},action) =>{
             delete newState[action.productId];
             return newState;    
         case RECEIVE_USER:
-            // debugger
             return merge({}, state, action.payload.products);
         default:
             return state;

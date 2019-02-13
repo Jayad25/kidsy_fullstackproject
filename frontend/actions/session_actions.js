@@ -24,10 +24,10 @@ export const login = user => dispatch => (
 
 export const signup = user => dispatch => (
     SessionUtil.signup(user).then(user =>{
-        // debugger
+      
         return  dispatch(receiveCurrentUser(user))},
     err=>{
-            // debugger
+           
         return dispatch(receiveErrors(err.responseJSON))})
 )
 
@@ -39,7 +39,7 @@ export const logout = () => dispatch => (
 )
 
 export const clearErrors = () => dispatch => {
-    // debugger
+   
     dispatch(receiveErrors([]))
 }
 

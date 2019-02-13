@@ -6,11 +6,10 @@ const usersReducer = (state = {}, action) => {
   Object.freeze(state);
   switch (action.type) {
     case RECEIVE_CURRENT_USER:
-    // debugger
+
       return Object.assign({}, state, {[action.payload.user.id]:action.payload.user});
     case RECEIVE_USER:
-    // debugger
-    // return {[action.payload.user
+    
       return Object.assign({}, state, {[action.payload.user.id]:action.payload.user});
     case RECEIVE_ALL_PRODUCTS:
       // return action.products.sellers;

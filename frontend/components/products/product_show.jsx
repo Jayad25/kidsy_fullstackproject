@@ -18,7 +18,7 @@ class ProductShow extends React.Component{
 
     addToCart(e) {
         e.preventDefault()
-        debugger
+      
         if (!this.props.currentUser) {
             this.props.openModal("regtocontinue");
         } else {

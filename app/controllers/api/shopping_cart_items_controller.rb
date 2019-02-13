@@ -1,12 +1,10 @@
 class Api::ShoppingCartItemsController < ApplicationController
     def index
-        debugger
         @cart_items = ShoppingCartItem.where(shopping_cart_id: params[:cart_item])
     end
 
     def create
         @shopping_cart_item = ShoppingCartItem.new(shopping_cart_item_params)
-        debugger
         unless @shopping_cart_item.save
         render json: @shopping_cart_item.errors.full_messages, status: 422
         end
@@ -23,8 +21,6 @@ class Api::ShoppingCartItemsController < ApplicationController
 
     private
     def shopping_cart_item_params
-        x= "wgsdv"
-        debugger
         params.require(:cart_item).permit(:shopping_cart_id, :product_id, :quantity)
     end
 end

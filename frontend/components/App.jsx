@@ -9,6 +9,7 @@ import ProductShowContainer from './products/product_show_container';
 import CreateProductForm from "./products/create_product_container";
 import EditProductContainer from "./products/edit_product_container";
 import UserShowContainer from "./users/user_show_container";
+import CartContainer from "./cart/cart_container";
 
 import {AuthRoute,ProtectedRoute} from '../util/route_util';
 import CenterDisplay from './center_display';
@@ -37,6 +38,7 @@ import CenterDisplay from './center_display';
     <ProtectedRoute  exact path="/products/new" component={CreateProductForm} />  
     <Route  exact path="/products/:productId" component={ProductShowContainer} /> 
     <Route exact path="/products/" component={ProductsContainer} />
+       <Route exact path='/cart' component={CartContainer} />
      <Route  path="/products/:productId/edit" component={EditProductContainer} />
      
      <Redirect to="/" />
