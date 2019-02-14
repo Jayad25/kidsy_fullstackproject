@@ -66,20 +66,20 @@
     margin-left: 8px;
     border-radius: 0.5px
 }
-.add-to-cart-button{
-    padding-top: 2px;
-    border: 1px solid ;
-    padding-bottom: 3px;
-    height: 42px;
-    font-size: 18px;
-    font-family: "Graphik Webfont",-apple-system,BlinkMacSystemFont,"Roboto","Droid Sans","Segoe UI","Helvetica",Arial,sans-serif;
-    background-color:black;
-    color: white;
-    width: 322px;
-    // right: 5px;
-    position: relative;
-    border-radius: 5px
-}
+// .add-to-cart-button{
+//     padding-top: 2px;
+//     border: 1px solid ;
+//     padding-bottom: 3px;
+//     height: 42px;
+//     font-size: 18px;
+//     font-family: "Graphik Webfont",-apple-system,BlinkMacSystemFont,"Roboto","Droid Sans","Segoe UI","Helvetica",Arial,sans-serif;
+//     background-color:black;
+//     color: white;
+//     width: 322px;
+//     // right: 5px;
+//     position: relative;
+//     border-radius: 5px
+// }
 .cart-div{
     margin-top:23px;
     padding-left:53px;
@@ -93,4 +93,16 @@
     margin-top: 26px;
     font-family: inherit;
     padding-left: 53px
+}
+.add-cart{
+    font-size: 15px;
+    font-family: "Graphik Webfont",-apple-system,BlinkMacSystemFont,"Roboto","Droid Sans","Segoe UI","Helvetica",Arial,sans-serif;
+    color: black;
+    padding-left: 10px;
+    padding-right: 10px;
+    padding-top: 7px;
+    padding-bottom: 7px;
+    border: 1px solid;
+    border-radius: 5px;
+    margin-right: 12px;
 }
