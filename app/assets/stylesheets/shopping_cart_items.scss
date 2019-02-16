@@ -1,6 +1,21 @@
+.cart-main{
+    h1{
+    font-size: 28px;
+    margin: 37px 0px 0px 450px;
+    }
+}
 .cart-container{
     display: flex;
     flex-direction: row;
+    margin-top: 64px;
+    border: 1px solid black;
+    font-family: "Graphik Webfont",-apple-system,BlinkMacSystemFont,"Roboto","Droid Sans","Segoe UI","Helvetica",Arial,sans-serif;
+    padding-bottom: 38px;
+}
+.empty-cart{
+    margin-top: 102px;
+    margin-left: 204px;
+    line-height: 2
 }
 .inner-cart-list{
     display: flex;
@@ -9,8 +24,89 @@
 .cart-items{
     width: 60%
 }
+.cart-item-details{
+    list-style: none;
+    margin-left: 38px;
+    line-height: 2;
+}
 .cart-item-photo{
     width: 200px;
     height: 200px;
     object-fit: cover;
+}
+.inner-cart-list{
+    display: flex;
+    padding: 10px;
+    height: 100%;
+    min-width: 800px;
+    background-color: white;
+    box-sizing: border-box;
+    border-bottom: 1px solid #E5E4E2;
+    border-right: 1px solid #E5E4E2
+    
+}
+.remove-button{
+
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    width: 25%;
+    padding: 10px;
+    padding-top: 20px;
+    padding-bottom: 20px;
+    text-align: center;
+        margin-left: -70px;
+
+    button{
+        font-size: 15px;
+    font-family: "Graphik Webfont",-apple-system,BlinkMacSystemFont,"Roboto","Droid Sans","Segoe UI","Helvetica",Arial,sans-serif;
+    color: black;
+    padding-left: 10px;
+    padding-right: 10px;
+    padding-top: 7px; 
+    padding-bottom: 7px; 
+    border: 1px solid;
+    border-radius: 5px;
+    margin-right: 12px
+    }
+    }
+    .cart-total-container{
+        margin-left: 58px;
+    margin-top: 62px;
+    font-size: 17px;
+        line-height: 2;
+    }
+.cart-total-information{
+    display: flex
+}
+.cart-total-left, .cart-total-right{
+        display: flex;
+    flex-direction: column;
+    margin-right: 40px
+}
+.estimated-total{
+    display: flex;
+    /* margin-right: 46px; */
+    list-style: none;
+        justify-content: space-between;
+}
+.checkout-button {
+    margin-left: 64px;
+    button{
+            font-size: 15px;
+    font-family: "Graphik Webfont",-apple-system,BlinkMacSystemFont,"Roboto","Droid Sans","Segoe UI","Helvetica",Arial,sans-serif;
+    color: black;
+    padding-left: 10px;
+    padding-right: 10px;
+    border: 1px solid;
+    border-radius: 5px;
+    margin-right: 12px;
+    }
+    button:hover{
+        cursor: pointer;
+  background-color: black;
+  color: white;
+  margin-right: 12px;
+    }
 }

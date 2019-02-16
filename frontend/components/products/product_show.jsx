@@ -56,7 +56,7 @@ class ProductShow extends React.Component{
                         onChange={(e) => this.setState({quantity: parseInt(e.target.value), product_id: this.props.product.id})}
                         ></input>
                     </h4>
-                   <div className="cart-div"> <button className="add-cart"  
+                   <div className="product-show-cart-div"> <button className="add-cart"  
                                 onClick={e => this.addToCart(e)}
                    >Add to Cart</button>
                    </div>

@@ -609,7 +609,7 @@ function (_React$Component) {
       }, "Total Items:"), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("li", {
         className: "tax"
       }, "Tax:"), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("li", {
-        className: "shipping"
+        className: "shiping"
       }, "Shipping:")), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("ul", {
         className: "cart-total-right"
       }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("li", null, "$".concat(this.calcTotal(this.props.cartItems, this.props.cartProducts))), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("li", {
@@ -617,7 +617,7 @@ function (_React$Component) {
       }, "".concat(this.totalItems(this.props.cartItems))), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("li", {
         className: "tax"
       }, "--"), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("li", {
-        className: "shipping"
+        className: "shiping"
       }, "free"))), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
         className: "estimated-total"
       }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("li", null, "Total:"), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("li", null, "$".concat(this.calcTotal(this.props.cartItems, this.props.cartProducts)))), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
@@ -741,7 +741,7 @@ function (_React$Component) {
       }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(react_router_dom__WEBPACK_IMPORTED_MODULE_1__["Link"], {
         className: "item-product-name",
         to: "products/".concat(product.id)
-      }, product.product_name), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("li", {
+      }, product.title), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("li", {
         className: "item-product-price"
       }, "Price: $".concat(product.price.toLocaleString(), "/each")), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("li", {
         className: "item-product-quantity"
@@ -2023,7 +2023,7 @@ function (_React$Component) {
             });
           }
         })), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
-          className: "cart-div"
+          className: "product-show-cart-div"
         }, " ", react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("button", {
           className: "add-cart",
           onClick: function onClick(e) {

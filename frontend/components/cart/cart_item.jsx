@@ -14,7 +14,7 @@ class CartItem extends React.Component {
                     <img className="cart-item-photo" src={product.photoUrl} />
                 </Link>
                 <div className="cart-item-details">
-                    <Link className="item-product-name" to={`products/${product.id}`} >{product.product_name}</Link>
+                    <Link className="item-product-name" to={`products/${product.id}`} >{product.title}</Link>
                     <li className="item-product-price">{`Price: $${product.price.toLocaleString()}/each`}</li>
                     <li className="item-product-quantity">{`Quantity: ${item.quantity}`}</li>
                     <li className="item-product-subtotal">{`Subtotal: $${(
