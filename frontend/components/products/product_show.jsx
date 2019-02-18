@@ -25,7 +25,7 @@ class ProductShow extends React.Component{
             if (this.state.quantity) {
                 this.state.shopping_cart_id = this.props.cartId
                 this.props.createCartItem(this.state)
-                window.alert(`${this.state.quantity} ${this.props.product.product_name}'s added to your cart!`)
+                window.alert(`${this.state.quantity} ${this.props.product.title}'s added to your cart!`)
             } else {
                 window.alert("Please Select A Quantity")
             }

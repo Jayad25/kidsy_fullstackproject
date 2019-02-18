@@ -580,7 +580,8 @@ function (_React$Component) {
         return window.alert("There is nothing in your cart!");
       }
 
-      return window.alert("I hope you have enjoyed my site! Feel free to check out my Github and Linked-in links at the bottom of the page.");
+      this.props.deleteCartItem(this.props.cartId);
+      return window.alert("Your prodcuts on your way.");
     }
   }, {
     key: "render",
@@ -1978,7 +1979,7 @@ function (_React$Component) {
         if (this.state.quantity) {
           this.state.shopping_cart_id = this.props.cartId;
           this.props.createCartItem(this.state);
-          window.alert("".concat(this.state.quantity, " ").concat(this.props.product.product_name, "'s added to your cart!"));
+          window.alert("".concat(this.state.quantity, " ").concat(this.props.product.title, "'s added to your cart!"));
         } else {
           window.alert("Please Select A Quantity");
         }

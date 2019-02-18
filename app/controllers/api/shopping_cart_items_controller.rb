@@ -12,9 +12,11 @@ class Api::ShoppingCartItemsController < ApplicationController
     end
 
     def destroy
-        @shopping_cart_item = ShoppingCartItem.find_by(id: params[:id])
+        @shopping_cart_item = ShoppingCartItem.find_by(shopping_cart_id: params[:id])
+         debugger
         if @shopping_cart_item.destroy
-            render '/api/shopping_cart_items/show'
+           
+            render '/api/shopping_cart_items/index'
         else
             render json: @shopping_cart_item.errors.full_messsages, status: 422
         end
