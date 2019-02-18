@@ -20,7 +20,7 @@ class ProductShow extends React.Component{
         e.preventDefault()
       
         if (!this.props.currentUser) {
-            this.props.openModal("regtocontinue");
+            this.props.openModal("login");
         } else {
             if (this.state.quantity) {
                 this.state.shopping_cart_id = this.props.cartId
