@@ -5,7 +5,6 @@ class Api::ShoppingCartItemsController < ApplicationController
 
     def create
         @shopping_cart_item = ShoppingCartItem.new(shopping_cart_item_params)
-        # debugger
         unless @shopping_cart_item.save
         render json: @shopping_cart_item.errors.full_messages, status: 422
         end
@@ -13,7 +12,6 @@ class Api::ShoppingCartItemsController < ApplicationController
 
     def destroy
         @shopping_cart_item = ShoppingCartItem.find_by(shopping_cart_id: params[:id])
-         debugger
         if @shopping_cart_item.destroy
            
             render '/api/shopping_cart_items/index'
