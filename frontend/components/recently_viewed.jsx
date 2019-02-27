@@ -25,7 +25,7 @@ constructor(props) {
     return (
       
       <div className="product_items">
-        <p>Recently Viewed items</p>
+        <p>Popular Items</p>
         <ul className="recently_viewes_items">
           {products}
         </ul>

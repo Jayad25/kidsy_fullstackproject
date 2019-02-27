@@ -2170,7 +2170,7 @@ function (_React$Component) {
       });
       return react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
         className: "product_items"
-      }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("p", null, "Recently Viewed items"), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("ul", {
+      }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("p", null, "Popular Items"), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("ul", {
         className: "recently_viewes_items"
       }, products));
     }
