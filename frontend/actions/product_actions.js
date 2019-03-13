@@ -68,7 +68,10 @@ export const searchProducts = title => dispatch => (
       .then(products => dispatch(receiveProducts(products)))
   );
 
-
+export const categoryProducts = type => dispatch =>
+         ProductAPIUtil.productCategory(type).then(products =>
+           dispatch(receiveProducts(products))
+         );
 
 
 
