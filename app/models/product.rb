@@ -12,7 +12,8 @@
 #
 
 class Product < ApplicationRecord
-    validates :seller_id,:title,:description,:price, presence:true
+    validates :seller_id,:title,:description,:price,:category, presence:true
+     validates_inclusion_of :category, :in => ["Clothes", "Toys", "Shoes", "Food", "Accessories", "Books"]
     
     has_one_attached :photo
 

@@ -1,5 +1,5 @@
 
-  json.extract! @product, :id, :seller_id, :title, :description, :price, :quantity
+  json.extract! @product, :id, :seller_id, :title, :description, :price, :quantity, :category
     json.photoUrl url_for(@product.photo)
 
     json.seller do
