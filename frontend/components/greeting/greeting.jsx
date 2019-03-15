@@ -3,7 +3,7 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
 import SearchForm from '../search'
-import CategorieForm from '../categories'
+import CategoryForm from './category_form'
 
 
 
@@ -49,25 +49,26 @@ class Greeting extends React.Component{
   return this.props.currentUser ? this.personalGreeting() : this.sessionLinks()
  }
  render(){
-   return(<div className="NavBarTotal">
-   <nav className="NavBar"> 
-     <div className="NavBarLeft">
-     <Link to="/" className="header-link">
-      <h1 className="logo">Kidsy</h1>
-     </Link>
-     <SearchForm search={this.props.searchProducts} />
+   return (
+     <div className="NavBarTotal">
+       <nav className="NavBar">
+         <div className="NavBarLeft">
+           <Link to="/" className="header-link">
+             <h1 className="logo">Kidsy</h1>
+           </Link>
+           <SearchForm search={this.props.searchProducts} />
+         </div>
+
+         <div className="NavbarRight">
+           {this.welcome()}
+           <Link to="/cart" className="cart-div">
+             <i className="fas fa-shopping-cart" />
+           </Link>
+         </div>
+       </nav>
+       <CategoryForm category={this.props.categoryProducts} />
      </div>
-     
-     <div className="NavbarRight"> 
-     {this.welcome()}
-         <Link to="/cart" className="cart-div">
-      <i className="fas fa-shopping-cart"></i>
-      </Link>
-       </div>
-     </nav>
-     <CategorieForm />
-   </div>
-   )}
+   );}
 };
 
 

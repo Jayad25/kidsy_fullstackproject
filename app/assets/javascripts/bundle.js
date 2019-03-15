@@ -279,6 +279,7 @@ var searchProducts = function searchProducts(title) {
 };
 var categoryProducts = function categoryProducts(type) {
   return function (dispatch) {
+    debugger;
     return ProductAPIUtil.productCategory(type).then(function (products) {
       return dispatch(receiveProducts(products));
     });
@@ -775,74 +776,6 @@ function (_React$Component) {
 
 /***/ }),
 
-/***/ "./frontend/components/categories.jsx":
-/*!********************************************!*\
-  !*** ./frontend/components/categories.jsx ***!
-  \********************************************/
-/*! exports provided: default */
-/***/ (function(module, __webpack_exports__, __webpack_require__) {
-
-"use strict";
-__webpack_require__.r(__webpack_exports__);
-/* harmony import */ var react__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! react */ "./node_modules/react/index.js");
-/* harmony import */ var react__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(react__WEBPACK_IMPORTED_MODULE_0__);
-/* harmony import */ var react_router_dom__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! react-router-dom */ "./node_modules/react-router-dom/es/index.js");
-function _typeof(obj) { if (typeof Symbol === "function" && typeof Symbol.iterator === "symbol") { _typeof = function _typeof(obj) { return typeof obj; }; } else { _typeof = function _typeof(obj) { return obj && typeof Symbol === "function" && obj.constructor === Symbol && obj !== Symbol.prototype ? "symbol" : typeof obj; }; } return _typeof(obj); }
-
-function _classCallCheck(instance, Constructor) { if (!(instance instanceof Constructor)) { throw new TypeError("Cannot call a class as a function"); } }
-
-function _defineProperties(target, props) { for (var i = 0; i < props.length; i++) { var descriptor = props[i]; descriptor.enumerable = descriptor.enumerable || false; descriptor.configurable = true; if ("value" in descriptor) descriptor.writable = true; Object.defineProperty(target, descriptor.key, descriptor); } }
-
-function _createClass(Constructor, protoProps, staticProps) { if (protoProps) _defineProperties(Constructor.prototype, protoProps); if (staticProps) _defineProperties(Constructor, staticProps); return Constructor; }
-
-function _possibleConstructorReturn(self, call) { if (call && (_typeof(call) === "object" || typeof call === "function")) { return call; } return _assertThisInitialized(self); }
-
-function _assertThisInitialized(self) { if (self === void 0) { throw new ReferenceError("this hasn't been initialised - super() hasn't been called"); } return self; }
-
-function _getPrototypeOf(o) { _getPrototypeOf = Object.setPrototypeOf ? Object.getPrototypeOf : function _getPrototypeOf(o) { return o.__proto__ || Object.getPrototypeOf(o); }; return _getPrototypeOf(o); }
-
-function _inherits(subClass, superClass) { if (typeof superClass !== "function" && superClass !== null) { throw new TypeError("Super expression must either be null or a function"); } subClass.prototype = Object.create(superClass && superClass.prototype, { constructor: { value: subClass, writable: true, configurable: true } }); if (superClass) _setPrototypeOf(subClass, superClass); }
-
-function _setPrototypeOf(o, p) { _setPrototypeOf = Object.setPrototypeOf || function _setPrototypeOf(o, p) { o.__proto__ = p; return o; }; return _setPrototypeOf(o, p); }
-
-
-
-
-var categories =
-/*#__PURE__*/
-function (_React$Component) {
-  _inherits(categories, _React$Component);
-
-  function categories(props) {
-    _classCallCheck(this, categories);
-
-    return _possibleConstructorReturn(this, _getPrototypeOf(categories).call(this, props));
-  }
-
-  _createClass(categories, [{
-    key: "render",
-    value: function render() {
-      var _this = this;
-
-      return react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
-        className: "category-div"
-      }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("nav", {
-        className: "nav-category"
-      }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("button", {
-        onClick: function onClick() {
-          return _this.props.history.push("/category/Toys");
-        }
-      }, "Clothes"), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("button", null, "Toys"), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("button", null, "Food"), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("button", null, "Accessories"), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("button", null, "Books"), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("button", null, "Shoes")));
-    }
-  }]);
-
-  return categories;
-}(react__WEBPACK_IMPORTED_MODULE_0___default.a.Component);
-
-/* harmony default export */ __webpack_exports__["default"] = (Object(react_router_dom__WEBPACK_IMPORTED_MODULE_1__["withRouter"])(categories));
-
-/***/ }),
-
 /***/ "./frontend/components/center_display.jsx":
 /*!************************************************!*\
   !*** ./frontend/components/center_display.jsx ***!
@@ -934,6 +867,74 @@ function (_React$Component) {
 
 /***/ }),
 
+/***/ "./frontend/components/greeting/category_form.jsx":
+/*!********************************************************!*\
+  !*** ./frontend/components/greeting/category_form.jsx ***!
+  \********************************************************/
+/*! exports provided: default */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony import */ var react__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! react */ "./node_modules/react/index.js");
+/* harmony import */ var react__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(react__WEBPACK_IMPORTED_MODULE_0__);
+/* harmony import */ var react_router_dom__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! react-router-dom */ "./node_modules/react-router-dom/es/index.js");
+function _typeof(obj) { if (typeof Symbol === "function" && typeof Symbol.iterator === "symbol") { _typeof = function _typeof(obj) { return typeof obj; }; } else { _typeof = function _typeof(obj) { return obj && typeof Symbol === "function" && obj.constructor === Symbol && obj !== Symbol.prototype ? "symbol" : typeof obj; }; } return _typeof(obj); }
+
+function _classCallCheck(instance, Constructor) { if (!(instance instanceof Constructor)) { throw new TypeError("Cannot call a class as a function"); } }
+
+function _defineProperties(target, props) { for (var i = 0; i < props.length; i++) { var descriptor = props[i]; descriptor.enumerable = descriptor.enumerable || false; descriptor.configurable = true; if ("value" in descriptor) descriptor.writable = true; Object.defineProperty(target, descriptor.key, descriptor); } }
+
+function _createClass(Constructor, protoProps, staticProps) { if (protoProps) _defineProperties(Constructor.prototype, protoProps); if (staticProps) _defineProperties(Constructor, staticProps); return Constructor; }
+
+function _possibleConstructorReturn(self, call) { if (call && (_typeof(call) === "object" || typeof call === "function")) { return call; } return _assertThisInitialized(self); }
+
+function _assertThisInitialized(self) { if (self === void 0) { throw new ReferenceError("this hasn't been initialised - super() hasn't been called"); } return self; }
+
+function _getPrototypeOf(o) { _getPrototypeOf = Object.setPrototypeOf ? Object.getPrototypeOf : function _getPrototypeOf(o) { return o.__proto__ || Object.getPrototypeOf(o); }; return _getPrototypeOf(o); }
+
+function _inherits(subClass, superClass) { if (typeof superClass !== "function" && superClass !== null) { throw new TypeError("Super expression must either be null or a function"); } subClass.prototype = Object.create(superClass && superClass.prototype, { constructor: { value: subClass, writable: true, configurable: true } }); if (superClass) _setPrototypeOf(subClass, superClass); }
+
+function _setPrototypeOf(o, p) { _setPrototypeOf = Object.setPrototypeOf || function _setPrototypeOf(o, p) { o.__proto__ = p; return o; }; return _setPrototypeOf(o, p); }
+
+
+
+
+var CategoryForm =
+/*#__PURE__*/
+function (_React$Component) {
+  _inherits(CategoryForm, _React$Component);
+
+  function CategoryForm(props) {
+    _classCallCheck(this, CategoryForm);
+
+    return _possibleConstructorReturn(this, _getPrototypeOf(CategoryForm).call(this, props));
+  }
+
+  _createClass(CategoryForm, [{
+    key: "render",
+    value: function render() {
+      var _this = this;
+
+      return react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
+        className: "category-div"
+      }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("nav", {
+        className: "nav-category"
+      }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("button", {
+        onClick: function onClick() {
+          return _this.props.history.push("/category/Clothes");
+        }
+      }, "Clothes"), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("button", null, "Toys"), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("button", null, "Food"), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("button", null, "Accessories"), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("button", null, "Books"), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("button", null, "Shoes")));
+    }
+  }]);
+
+  return CategoryForm;
+}(react__WEBPACK_IMPORTED_MODULE_0___default.a.Component);
+
+/* harmony default export */ __webpack_exports__["default"] = (Object(react_router_dom__WEBPACK_IMPORTED_MODULE_1__["withRouter"])(CategoryForm));
+
+/***/ }),
+
 /***/ "./frontend/components/greeting/greeting.jsx":
 /*!***************************************************!*\
   !*** ./frontend/components/greeting/greeting.jsx ***!
@@ -947,7 +948,7 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var react__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(react__WEBPACK_IMPORTED_MODULE_0__);
 /* harmony import */ var react_router_dom__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! react-router-dom */ "./node_modules/react-router-dom/es/index.js");
 /* harmony import */ var _search__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ../search */ "./frontend/components/search.jsx");
-/* harmony import */ var _categories__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! ../categories */ "./frontend/components/categories.jsx");
+/* harmony import */ var _category_form__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! ./category_form */ "./frontend/components/greeting/category_form.jsx");
 function _typeof(obj) { if (typeof Symbol === "function" && typeof Symbol.iterator === "symbol") { _typeof = function _typeof(obj) { return typeof obj; }; } else { _typeof = function _typeof(obj) { return obj && typeof Symbol === "function" && obj.constructor === Symbol && obj !== Symbol.prototype ? "symbol" : typeof obj; }; } return _typeof(obj); }
 
 function _defineProperty(obj, key, value) { if (key in obj) { Object.defineProperty(obj, key, { value: value, enumerable: true, configurable: true, writable: true }); } else { obj[key] = value; } return obj; }
@@ -1066,7 +1067,9 @@ function (_React$Component) {
         className: "cart-div"
       }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("i", {
         className: "fas fa-shopping-cart"
-      })))), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(_categories__WEBPACK_IMPORTED_MODULE_3__["default"], null));
+      })))), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(_category_form__WEBPACK_IMPORTED_MODULE_3__["default"], {
+        category: this.props.categoryProducts
+      }));
     }
   }]);
 
@@ -1119,6 +1122,9 @@ var mapDispatchToProps = function mapDispatchToProps(dispatch) {
     },
     searchProducts: function searchProducts(title) {
       return dispatch(Object(_actions_product_actions__WEBPACK_IMPORTED_MODULE_5__["searchProducts"])(title));
+    },
+    categoryProducts: function categoryProducts(type) {
+      return dispatch(Object(_actions_product_actions__WEBPACK_IMPORTED_MODULE_5__["categoryProducts"])(type));
     },
     demoLogin: function demoLogin() {
       return dispatch(Object(_actions_session_actions__WEBPACK_IMPORTED_MODULE_2__["login"])({
@@ -3429,6 +3435,7 @@ var productSearch = function productSearch(title) {
   });
 };
 var productCategory = function productCategory(type) {
+  debugger;
   return $.ajax({
     method: 'GET',
     url: 'api/category',

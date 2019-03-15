@@ -50,10 +50,11 @@ export const productSearch = (title) => {
     })
   };
 
-export const productCategory = (type) => (
-    $.ajax({
+export const productCategory = (type) => {
+    debugger
+     return $.ajax({
         method: 'GET',
         url: 'api/category',
         data: { category: { type } }
     })
-);
+};
