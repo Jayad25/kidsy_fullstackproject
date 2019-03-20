@@ -6,12 +6,13 @@ export const REMOVE_PRODUCT="REMOVE_PRODUCT";
 export const RECEIVE_PRODUCT_ERRORS="RECEIVE_PRODUCT_ERRORS";
 
 
-const receiveProducts = products => (
-    {
+const receiveProducts = products => {
+    
+    return   {
         type:RECEIVE_ALL_PRODUCTS,
         products
     }
-)
+}
 
 const receiveProduct = product => (
     {

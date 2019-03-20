@@ -1,5 +1,7 @@
 class Api::CategoryController < ApplicationController
     def index
+      x= ""
+      debugger
     @products = Product.where(category: category_params[:type])
     render 'api/products/index'
   end

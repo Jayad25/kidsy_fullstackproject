@@ -10,7 +10,11 @@ class CategoryForm extends React.Component {
     return (
       <div className="category-div">
         <nav className="nav-category">
-          <button onClick={() => this.props.history.push(`/category/Clothes`)}>
+        
+          <button
+          // "/products?title="+this.state.title
+            onClick={() => this.props.history.push("/category/Clothes")}
+          >
             Clothes
           </button>
           <button>Toys</button>

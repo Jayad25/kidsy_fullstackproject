@@ -9,6 +9,7 @@ Rails.application.routes.draw do
     resources :shopping_carts, only: [:create]
     resources :shopping_cart_items, only: [:index, :create, :destroy]
     resources :search, only: [:index]
+    resources :category, only: [:index]
   end
  
   root "static_pages#root"

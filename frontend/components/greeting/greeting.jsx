@@ -15,6 +15,7 @@ class Greeting extends React.Component{
     this.welcome=this.welcome.bind(this);
   }
   sessionLinks(){
+    console.log(this.props)
   return(
     
         <nav className="headerright">

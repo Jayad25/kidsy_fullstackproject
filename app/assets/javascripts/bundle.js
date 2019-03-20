@@ -412,19 +412,17 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var _products_product_index_container__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! ./products/product_index_container */ "./frontend/components/products/product_index_container.jsx");
 /* harmony import */ var _session_form_login_form_container__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! ./session_form/login_form_container */ "./frontend/components/session_form/login_form_container.jsx");
 /* harmony import */ var _session_form_signup_form_container__WEBPACK_IMPORTED_MODULE_5__ = __webpack_require__(/*! ./session_form/signup_form_container */ "./frontend/components/session_form/signup_form_container.jsx");
-/* harmony import */ var _search__WEBPACK_IMPORTED_MODULE_6__ = __webpack_require__(/*! ./search */ "./frontend/components/search.jsx");
-/* harmony import */ var _products_product_show_container__WEBPACK_IMPORTED_MODULE_7__ = __webpack_require__(/*! ./products/product_show_container */ "./frontend/components/products/product_show_container.jsx");
-/* harmony import */ var _products_create_product_container__WEBPACK_IMPORTED_MODULE_8__ = __webpack_require__(/*! ./products/create_product_container */ "./frontend/components/products/create_product_container.jsx");
-/* harmony import */ var _products_edit_product_container__WEBPACK_IMPORTED_MODULE_9__ = __webpack_require__(/*! ./products/edit_product_container */ "./frontend/components/products/edit_product_container.jsx");
-/* harmony import */ var _users_user_show_container__WEBPACK_IMPORTED_MODULE_10__ = __webpack_require__(/*! ./users/user_show_container */ "./frontend/components/users/user_show_container.jsx");
-/* harmony import */ var _cart_cart_container__WEBPACK_IMPORTED_MODULE_11__ = __webpack_require__(/*! ./cart/cart_container */ "./frontend/components/cart/cart_container.jsx");
-/* harmony import */ var _util_route_util__WEBPACK_IMPORTED_MODULE_12__ = __webpack_require__(/*! ../util/route_util */ "./frontend/util/route_util.jsx");
-/* harmony import */ var _center_display__WEBPACK_IMPORTED_MODULE_13__ = __webpack_require__(/*! ./center_display */ "./frontend/components/center_display.jsx");
-/* harmony import */ var _middle_display__WEBPACK_IMPORTED_MODULE_14__ = __webpack_require__(/*! ./middle_display */ "./frontend/components/middle_display.jsx");
-/* harmony import */ var _modal_modal__WEBPACK_IMPORTED_MODULE_15__ = __webpack_require__(/*! ./modal/modal */ "./frontend/components/modal/modal.jsx");
-/* harmony import */ var _homepage__WEBPACK_IMPORTED_MODULE_16__ = __webpack_require__(/*! ./homepage */ "./frontend/components/homepage.jsx");
-/* harmony import */ var react_router_dom__WEBPACK_IMPORTED_MODULE_17__ = __webpack_require__(/*! react-router-dom */ "./node_modules/react-router-dom/es/index.js");
-
+/* harmony import */ var _products_product_show_container__WEBPACK_IMPORTED_MODULE_6__ = __webpack_require__(/*! ./products/product_show_container */ "./frontend/components/products/product_show_container.jsx");
+/* harmony import */ var _products_create_product_container__WEBPACK_IMPORTED_MODULE_7__ = __webpack_require__(/*! ./products/create_product_container */ "./frontend/components/products/create_product_container.jsx");
+/* harmony import */ var _products_edit_product_container__WEBPACK_IMPORTED_MODULE_8__ = __webpack_require__(/*! ./products/edit_product_container */ "./frontend/components/products/edit_product_container.jsx");
+/* harmony import */ var _users_user_show_container__WEBPACK_IMPORTED_MODULE_9__ = __webpack_require__(/*! ./users/user_show_container */ "./frontend/components/users/user_show_container.jsx");
+/* harmony import */ var _cart_cart_container__WEBPACK_IMPORTED_MODULE_10__ = __webpack_require__(/*! ./cart/cart_container */ "./frontend/components/cart/cart_container.jsx");
+/* harmony import */ var _util_route_util__WEBPACK_IMPORTED_MODULE_11__ = __webpack_require__(/*! ../util/route_util */ "./frontend/util/route_util.jsx");
+/* harmony import */ var _center_display__WEBPACK_IMPORTED_MODULE_12__ = __webpack_require__(/*! ./center_display */ "./frontend/components/center_display.jsx");
+/* harmony import */ var _middle_display__WEBPACK_IMPORTED_MODULE_13__ = __webpack_require__(/*! ./middle_display */ "./frontend/components/middle_display.jsx");
+/* harmony import */ var _modal_modal__WEBPACK_IMPORTED_MODULE_14__ = __webpack_require__(/*! ./modal/modal */ "./frontend/components/modal/modal.jsx");
+/* harmony import */ var _homepage__WEBPACK_IMPORTED_MODULE_15__ = __webpack_require__(/*! ./homepage */ "./frontend/components/homepage.jsx");
+/* harmony import */ var react_router_dom__WEBPACK_IMPORTED_MODULE_16__ = __webpack_require__(/*! react-router-dom */ "./node_modules/react-router-dom/es/index.js");
 
 
 
@@ -446,34 +444,34 @@ __webpack_require__.r(__webpack_exports__);
 var App = function App() {
   return react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
     className: "page"
-  }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(_modal_modal__WEBPACK_IMPORTED_MODULE_15__["default"], null), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(_greeting_greeting_container__WEBPACK_IMPORTED_MODULE_2__["default"], null), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(react_router_dom__WEBPACK_IMPORTED_MODULE_17__["Switch"], null, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(react_router_dom__WEBPACK_IMPORTED_MODULE_17__["Route"], {
+  }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(_modal_modal__WEBPACK_IMPORTED_MODULE_14__["default"], null), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(_greeting_greeting_container__WEBPACK_IMPORTED_MODULE_2__["default"], null), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(react_router_dom__WEBPACK_IMPORTED_MODULE_16__["Switch"], null, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(react_router_dom__WEBPACK_IMPORTED_MODULE_16__["Route"], {
     exact: true,
     path: "/",
-    component: _homepage__WEBPACK_IMPORTED_MODULE_16__["default"]
-  }), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(react_router_dom__WEBPACK_IMPORTED_MODULE_17__["Route"], {
+    component: _homepage__WEBPACK_IMPORTED_MODULE_15__["default"]
+  }), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(react_router_dom__WEBPACK_IMPORTED_MODULE_16__["Route"], {
     exact: true,
     path: "/users/:userId",
-    component: _users_user_show_container__WEBPACK_IMPORTED_MODULE_10__["default"]
-  }), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(_util_route_util__WEBPACK_IMPORTED_MODULE_12__["ProtectedRoute"], {
+    component: _users_user_show_container__WEBPACK_IMPORTED_MODULE_9__["default"]
+  }), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(_util_route_util__WEBPACK_IMPORTED_MODULE_11__["ProtectedRoute"], {
     exact: true,
     path: "/products/new",
-    component: _products_create_product_container__WEBPACK_IMPORTED_MODULE_8__["default"]
-  }), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(react_router_dom__WEBPACK_IMPORTED_MODULE_17__["Route"], {
+    component: _products_create_product_container__WEBPACK_IMPORTED_MODULE_7__["default"]
+  }), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(react_router_dom__WEBPACK_IMPORTED_MODULE_16__["Route"], {
     exact: true,
     path: "/products/:productId",
-    component: _products_product_show_container__WEBPACK_IMPORTED_MODULE_7__["default"]
-  }), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(react_router_dom__WEBPACK_IMPORTED_MODULE_17__["Route"], {
+    component: _products_product_show_container__WEBPACK_IMPORTED_MODULE_6__["default"]
+  }), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(react_router_dom__WEBPACK_IMPORTED_MODULE_16__["Route"], {
     exact: true,
     path: "/products/",
     component: _products_product_index_container__WEBPACK_IMPORTED_MODULE_3__["default"]
-  }), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(react_router_dom__WEBPACK_IMPORTED_MODULE_17__["Route"], {
+  }), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(react_router_dom__WEBPACK_IMPORTED_MODULE_16__["Route"], {
     exact: true,
     path: "/cart",
-    component: _cart_cart_container__WEBPACK_IMPORTED_MODULE_11__["default"]
-  }), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(react_router_dom__WEBPACK_IMPORTED_MODULE_17__["Route"], {
+    component: _cart_cart_container__WEBPACK_IMPORTED_MODULE_10__["default"]
+  }), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(react_router_dom__WEBPACK_IMPORTED_MODULE_16__["Route"], {
     path: "/products/:productId/edit",
-    component: _products_edit_product_container__WEBPACK_IMPORTED_MODULE_9__["default"]
-  }), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(react_router_dom__WEBPACK_IMPORTED_MODULE_17__["Redirect"], {
+    component: _products_edit_product_container__WEBPACK_IMPORTED_MODULE_8__["default"]
+  }), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(react_router_dom__WEBPACK_IMPORTED_MODULE_16__["Redirect"], {
     to: "/"
   })));
 };
@@ -921,6 +919,7 @@ function (_React$Component) {
       }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("nav", {
         className: "nav-category"
       }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("button", {
+        // "/products?title="+this.state.title
         onClick: function onClick() {
           return _this.props.history.push("/category/Clothes");
         }
@@ -996,6 +995,7 @@ function (_React$Component) {
     value: function sessionLinks() {
       var _this2 = this;
 
+      console.log(this.props);
       return react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("nav", {
         className: "headerright"
       }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(react_router_dom__WEBPACK_IMPORTED_MODULE_1__["Link"], _defineProperty({
@@ -1129,8 +1129,8 @@ var mapDispatchToProps = function mapDispatchToProps(dispatch) {
     demoLogin: function demoLogin() {
       return dispatch(Object(_actions_session_actions__WEBPACK_IMPORTED_MODULE_2__["login"])({
         user: {
-          username: 'username',
-          password: 'password'
+          username: "username",
+          password: "password"
         }
       }));
     }
